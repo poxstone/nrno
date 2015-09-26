@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var json_db = require('../controllers/json/menu');
 
-glb = {
-  rdir : '',
-  other : 'adios'
+/* GET globals */
+var glb = {
+  rdir : ''
 };
-db = {};
+
+/* GET db items */
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express',glb: glb,db: db });
+  res.render('index', { title: 'Presentación',glb: glb, db: json_db });
 });
 
 module.exports = router;
