@@ -28,7 +28,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(stylus.middleware({ src: __dirname + 'public/css', compile: compile}));
+app.use(stylus.middleware({ src: __dirname + 'public/stylus',dest: __dirname + '/public/css', compile: compile}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
