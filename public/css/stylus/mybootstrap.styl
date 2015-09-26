@@ -1,0 +1,725 @@
+@import 'nib'
+
+@import 'mixin.styl'
+@import 'variables.styl'
+
+@import 'bootstrap/variables'
+@import 'bootstrap/mixins'
+
+//@import 'animations.styl'
+
+/*MIXINS*/
+button-personalize($color, $background, $border, $priSec)
+    color $color
+    background-image none
+    background-color $background
+    border-color $border
+    transition all 250ms ease-in-out
+    box-shadow none
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle&
+        color $color
+        if $priSec == 'light'
+            background-color lighten($background, 12%)
+            border-color lighten($border, 12%)
+        else if $priSec == 'dark'
+            background-color lighten($border, 50%)
+            border-color $border
+        else
+            background-color darken($background, 12%)
+            border-color darken($border, 12%)
+
+    &:active,
+    &.active,
+    .open > .dropdown-toggle&
+        background-image none
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active
+            background-color $background
+            border-color $border
+    .badge
+        color $background
+        background-color $color
+    &[disabled="disabled"]
+        opacity 0.25
+        cursor default
+
+//ERROR VALIDATE
+field-control-validation($text-color = #555, $border-color = #ccc, $background-color = #f5f5f5)
+    // Color the label and help text
+    .help-block,
+    .control-label,
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline,
+    &.radio label,
+    &.checkbox label,
+    &.radio-inline label,
+    &.checkbox-inline label
+    &.control-label
+        color $text-color
+
+    // Set the border and box shadow on specific inputs to match
+    .form-control
+        border-color $border-color
+
+        &:focus
+            border-color $border-color
+          
+
+    // Set validation states also for addons
+    .input-group-addon
+        color $text-color
+        border-color $border-color
+        background-color $background-color
+
+    // Optional feedback icon
+    .form-control-abel
+        color $text-color
+
+/*HACK - REWRITE*/
+.content-fluid > .row
+.row > .row
+    margin-left 0
+    margin-right 0
+
+.glyphicon-cloud
+    top 3px
+    
+.navbar-brand
+    text-shadow none
+    @media (max-width $screen-sm)
+        margin 8px
+        margin-left 0
+//alerts
+.alert
+    border none
+    padding 8px 10px
+    text-shadow none
+    margin-bottom 4px
+    border-radius ($rad)/2
+    &.alert-danger
+        background $red
+        color white
+    &.alert-success
+        background $green
+        color white
+    &.alert-info
+        background $blue
+        color white
+    &.alert-warning
+        background $yellow
+        color white
+    &.alert-default
+        background lighten($gray,40%)
+        color white
+//modal
+.modal-backdrop
+    background #fff
+    &.in
+        opacity 0.9
+.modal-content
+    box-shadow rgba(0,0,0,.25) 0 0px 15px
+    border-color $borderColor
+    .form-horizontal > .form-group > label
+        @media (min-width: $screen-sm)
+            font-weight normal
+    .form-group-inner
+        border 1px dotted $borderColor
+        padding-bottom 10px
+        margin 0 5px 5px 0
+        border-width 1px
+        border-radius $rad
+
+        .control-label
+            text-align left
+    .form-group .form-group
+        margin-top 5px
+        .form-control
+            margin-top 5px
+.modal-header
+.modal-body
+.modal-footer
+    border-color $borderColor
+    .btn
+        @media (max-width: $screen-sm)
+            width 100%
+            margin auto
+            display block
+            & + .btn
+                margin 10px auto auto
+                
+.modal-header
+    h1,h2,h3,h4,h5
+        margin-top 10px
+        margin-bottom 10px
+        small
+            font-size 85%
+        
+.label
+    &.label-tags
+        position relative
+        display inline-block
+        color $textColor
+        background transparent
+        border 1px solid $borderColor
+        margin-top 4px
+        margin-right 4px
+        padding 4px 8px
+        font-weight normal
+        .close
+            line-height 0.5em
+            position relative
+            top -1px
+            right -4px
+.form-group.checkbox
+    margin-bottom 15px
+    & + &
+        margin-top -15px
+        padding-top 0
+//tpicker de date
+ul[datepicker-popup-wrap].ng-valid-date
+    table[datepicker]
+        th
+            .btn
+                border none
+                &:hover
+                    background $white
+                    color $blue
+        td
+            border none
+            .btn
+                border none
+                border-radius 0
+                box-shadow rgba(0,0,0,0) 0 0 0
+                transform scale(1)
+                transition all ease-in-out 250ms
+                position relative
+                background $white
+                    
+                &:hover
+                    z-index 2
+                    background $aquamarine
+                    color $white
+                    transform scale(1.2)
+                    box-shadow rgba(0,0,0,0.25) 2px 2px 4px
+                &.btn-info //this is today mark button
+                    background-color $blueDrak
+                    color white
+                    z-index 1
+                    &:hover
+                        color $white
+    li
+        .btn-group
+            @media (max-width:$screen-sm)
+                display block
+                margin-bottom 10px
+                overflow hidden
+            .btn
+                background $white
+                color $textColor
+                border-color $borderColor
+                &:hover
+                    background $white
+                    color $blue
+                &.btn-info //this is today mark button
+                    color $aquamarine
+        
+        > .btn
+            button-personalize($white, $blueDrak, $blueDrak, 'light')
+    
+//tpicker de time
+.timer
+    td
+        vertical-align middle
+        padding 0
+        position relative
+    input.form-control
+        margin-top 0 !important
+        padding-top 0
+        padding-bottom 0
+        height 30px
+    button.btn.btn-default
+        margin-left 10px
+        padding-top 4px
+        padding-bottom 4px
+        
+    a.btn.btn-link
+        padding 0
+        color $textColor
+        position absolute
+        top 0
+        left 0
+        right 0
+        transition all 250ms ease-in-out 
+        &:hover
+            color $blue
+
+.form-control
+    &[disabled]
+    &[readonly]
+        border-width 0
+        box-shadow none
+        appearance none
+        @media (min-width: $screen-sm)
+            padding-left 0
+            background $white
+        textarea&
+            border-radius $rad
+            border-width 0
+            min-height 1em
+            height 2.4em
+            overflow auto
+    /.timer-line .form-control
+    &.form-line
+    span&.form-line
+        box-shadow none
+        border-width 0 0 1px
+        border-radius 0
+        padding 5px 10px 0 5px//0
+        &[disabled]
+        &[readonly]
+            border-width 0
+            @media (min-width: $screen-sm)
+                padding-left 0
+            &[datepicker-popup]//time picker
+                border-bottom-width 1px
+                cursor pointer
+                &:hover
+                    color $blue
+    /span&
+        border-width 0
+        border-radius 0
+        box-shadow none
+        padding-left 0
+        padding-right 0
+        min-height 34px
+        height auto
+        cursor default
+        @media (min-width: $screen-sm)
+            font-weight bold
+.form-control
+input
+select
+textarea
+    &[readonly]
+        background white
+        
+.checkbox
+    input[type=checkbox]
+        margin-left 0
+        position relative
+        top 2px
+        left -5px
+//file-type
+.bootstrap-filestyle
+    //oculta el input file de cargar usuarios 
+    / input[type="file"].form-control.ng-pristine.ng-invalid.ng-invalid-required
+    / input[type="file"].form-control.ng-dirty.ng-invalid.ng-invalid-required
+    / input[type="file"].form-control.ng-dirty.ng-valid.ng-valid-required
+        display none
+    input.input-large
+        border 1px solid $borderColor
+        border-radius 4px
+        background $white
+        padding: 5px 12px 7px;
+        margin-right: -100px;
+        width: 99%;
+        & + label.btn
+            border-radius 0 $rad $rad 0
+//progress bar
+.sr-only
+    position static
+.table
+    background $white
+    > thead > tr > th
+        border-bottom none
+        padding 12px
+        vertical-align middle
+        &.ordered-header
+            white-space nowrap
+            &:hover
+                color $gray
+    &.table-hover
+        tbody,thead,tfoot
+            > tr:hover
+                > td
+                    background $gray4
+                    transition all 250ms ease-in-out
+    > tbody
+        border none
+        & + tbody
+            border none
+    > tbody,thead,tfoot
+        tr,td
+            border-color $borderColor
+        .td-config
+            position relative
+            width 36px
+        .td-color
+            width 5px
+            padding 0
+        tr, tr:hover
+            td.td-color
+                background $black
+        tr, tr:hover
+            &.complete
+                .td-color
+                    background-color $green
+                .td-state
+                    color $green
+            &.inactive
+                .td-color
+                    background-color $gray3
+                .td-state
+                    color $gray3
+            &.cancelled
+                .td-color
+                    background-color $red
+                .td-state
+                    color $red
+            &.new
+                .td-color
+                    background-color $aquamarine
+                .td-state
+                    color $aquamarine
+            &.inprogress
+                .td-color
+                    background-color $green
+                .td-state
+                    color $green
+    &.table-acordion
+        .tr-acordion
+            &:hover
+                background none
+            > td
+                padding 0
+                margin 0
+                border none
+            .table 
+                th
+                    padding 12px
+                th, td
+                    &:first-child
+                        padding-left 0
+                        text-align left
+        .div-acordion
+            position relative
+            top -1px
+            padding $paddingBox
+            background url(../img/inner-top-shadow.png) no-repeat center top $white
+            background-size 80% auto
+            box-shadow rgba(175,172,210,0.25) 0 8px 10px
+    .ordered-header
+        cursor pointer
+//menu de tablas
+.dropdown-toggle
+    color $textColor
+    display inline-block
+    height 20px
+    width 20px
+    vertical-align middle
+    text-align center
+    transition all 250ms ease-in-out
+    transform scale(1)
+    box-shadow rgba(0,0,0,0) 0 0 0 0
+    position relative
+    z-index 2
+    &:hover
+        color $blue
+    /.dropdown-menu
+        margin-top 0
+        border-radius 0
+        border none
+        padding 4px
+        top 36px
+        > li
+            > a
+                transition all 250ms ease-in-out
+                padding 3px 5px 3px
+                &:hover
+                    text-indent 0.5em
+                    background none
+                    color $blue
+            &.active > a
+                &, &:hover
+                    background $aquamarine
+    /.open
+        .dropdown-toggle
+            color $blue
+            background white
+            box-shadow rgba(0,0,0,0.25) 2px 4px 4px 0
+            transform scale(1.66)
+        
+        .dropdown-menu
+            animation menuDown ease-in-out 250ms 1
+    / .tableOverflow tbody > tr:last-child .dropdown-menu
+        top auto
+        bottom 20px
+        left 35px
+        box-shadow rgba(0,0,0,.175) 6px 6px 12px 
+        
+.pagination
+    margin auto auto $paddingBox
+    cursor default
+    > li
+        > a, span
+            border none
+            border-radius 0 !important
+            color $textColor
+            transition all ease-in-out 250ms
+            transform scale(1)
+            box-shadow rgba(0,0,0,0) 0 0 0 0
+        > a
+            &:hover
+            &:focus
+                cursor pointer
+                background $aquamarine
+                color white
+                transform scale(1.25)
+                box-shadow rgba(0,0,0,0.25) 0 2px 4px 0
+        > span:hover
+            background $white
+            color $textColor
+            z-index auto
+        &.active
+            > a
+                &
+                &:hover
+                &:focus
+                &:active
+                    background $textColor
+                    color $white
+                    cursor default
+                    box-shadow none
+                    transform scale(1)
+    
+
+/*NEW COMPONENTES*/
+.navbar-dark
+    background-color $blueDrak
+    border-color $blueDrak
+    min-height 35px
+    margin-bottom 0
+    transition all 500ms ease-in-out
+
+    .navbar-brand
+        color $navbar-inverse-brand-color
+        &:hover,
+        &:focus
+            color $navbar-inverse-brand-hover-color
+            background-color $navbar-inverse-brand-hover-bg
+
+    .navbar-text
+        color $navbar-inverse-color
+
+    .navbar-nav
+        li:hover
+            > .dropdown-menu
+                display block
+                animation menuDown 250ms ease-in-out 1
+            
+        > li > a
+            color $navbar-inverse-brand-color
+            padding-top $paddingTopMenu
+            padding-bottom $paddingTopMenu
+            transition all 250ms ease-in-out
+            margin-bottom -2px
+
+            &:hover,
+            &:focus
+                color $navbar-inverse-link-hover-color
+                background-color $navbar-inverse-link-hover-bg
+
+        > .active > a
+            &,
+            &:hover,
+            &:focus
+                color $white
+                background-color $blueDrak_hover
+
+        > .disabled > a
+            &,
+            &:hover,
+            &:focus
+                color $navbar-inverse-link-disabled-color
+                background-color $navbar-inverse-link-disabled-bg
+
+    // Darken the responsive nav toggle
+    .navbar-toggle
+        border-color $navbar-inverse-toggle-border-color
+        color $navbar-inverse-brand-color
+
+        &:hover,
+        &:focus
+            border-color $navbar-inverse-brand-color
+        .icon-bar
+            background-color $navbar-inverse-brand-color
+
+    .navbar-collapse,
+    .navbar-form
+        border-color darken($navbar-inverse-bg, 7%)
+        
+
+    // Dropdowns
+    .navbar-nav
+        > .open > a
+            &,
+            &:hover,
+            &:focus
+                background-color $navbar-inverse-link-active-bg
+                color $navbar-inverse-link-active-color
+
+        @media (max-width $grid-float-breakpoint-max)
+            // Dropdowns get custom display
+            .open .dropdown-menu
+                > .dropdown-header
+                    border-color $navbar-inverse-border
+
+                .divider
+                    background-color $navbar-inverse-border
+
+                > li > a
+                    color $navbar-inverse-link-color
+                    &:hover,
+                    &:focus
+                        color $navbar-inverse-link-hover-color
+                        background-color $navbar-inverse-link-hover-bg
+
+                > .active > a
+                    &,
+                    &:hover,
+                    &:focus
+                        color $navbar-inverse-link-active-color
+                        background-color $navbar-inverse-link-active-bg
+
+                > .disabled > a
+                    &,
+                    &:hover,
+                    &:focus
+                        color $navbar-inverse-link-disabled-color
+                        background-color $navbar-inverse-link-disabled-bg
+
+    .navbar-link
+        color $navbar-inverse-link-color
+
+        &:hover
+            color $navbar-inverse-link-hover-color
+
+    .btn-link
+        color $navbar-inverse-link-color
+
+        &:hover,
+        &:focus
+            color $navbar-inverse-link-hover-color
+
+        &[disabled],
+        fieldset[disabled] &
+            &:hover,
+            &:focus
+                color $navbar-inverse-link-disabled-color
+    //para mostrar en celular por que js no funciona
+    @media (max-width $screen-sm)
+        .navbar-collapse
+            max-height 0
+            display block
+            overflow auto
+            / #header:hover
+                .navbar-collapse
+                    max-height 100%
+                    animation menuDown 1s ease-in-out 1
+            .dropdown-menu
+                position static
+                width auto
+                float none
+                margin auto
+                background $navbar-inverse-link-disabled-bg
+                a
+                    color $navbar-inverse-brand-color
+                    text-indent 2em
+                    
+//editable in table
+.editable-click
+    cursor pointer
+
+.editable-wrap
+    border 1px solid $blue
+    border-radius 4px
+    background $white
+    .editable-controls
+        > input
+            background transparent
+            border none
+            text-indent 0.5em
+            color $blue
+            max-width 65px
+            &:focus
+                outline none
+                box-shadow none
+        .editable-buttons
+            button
+                border none
+                margin 0
+                position relative
+                overflow hidden
+                font-family 'Glyphicons Halflings'
+                font-style normal
+                font-weight 400
+                -webkit-font-smoothing antialiased
+                -moz-osx-font-smoothing grayscale
+                padding 1px
+                line-height 21px
+                width 24px
+                
+                &:before
+                    beforeAfter(block absolute 14px 14px)
+                    color $white
+                    left 0
+                    top 2px
+                    font-style $text_p
+                    height
+                    
+                &:first-child//ok
+                    button-personalize(transparent, $blue, $blue, 'light')
+                    &:before
+                        content '\e013'
+                & + button//cancel
+                    button-personalize(transparent, $gray3, $borderColor, 'dark')
+                    border-radius 0 $rad $rad 0
+                    &:before
+                        content '\e014'
+        
+    
+//botones
+.btn-primary
+    button-personalize($white, $primary, $primary, 'light')
+
+.btn-default
+    button-personalize($textColor, $white, $borderColor, 'dark')
+    
+.btn-dark
+    button-personalize($white, $blueDrak, $blueDrak, 'light')
+
+//validaciones
+.field_error
+    field-control-validation($red, $red, $gray4)
+.field_success
+    field-control-validation($green, $green, $gray4)
+.field_warning
+    field-control-validation($yellow, $yellow, $gray4)
+.field_info
+    field-control-validation($blue, $blue, $gray4)
