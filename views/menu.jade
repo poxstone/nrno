@@ -1,5 +1,7 @@
 link(rel="stylesheet",href="#{glb.rdir}/css/style.css")
 script(src="#{glb.rdir}/js/nrn-dsn.js")
+- lnks=[{n:'La santafé de nariño',l:''},{n:'La Biblioteca',l:''},{n:'Nariño en la tertulia',l:''},{n:'El Santuario',l:''}]
 ul
-  li
-    a menu 1
+  each v, i in lnks
+    li
+      a(href=v.l,title=v.n) #{v.n}
