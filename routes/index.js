@@ -12,6 +12,7 @@ var glb = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var qr = req.query;
+  console.log(req.query);
   res.render('index', { title: 'Presentación',glb:glb, db:json_db, qr:qr, contenido:json_db.presentacion});
 });
 

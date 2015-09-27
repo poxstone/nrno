@@ -1,14 +1,14 @@
 db = {
 
   menu : [
-    {titulo:'La Santafé de Nariño',link:'#'},
-    {titulo:'La Biblioteca',link:'#'},
-    {titulo:'Nariño en la tertulia',link:'#'},
-    {titulo:'El Santuario',link:'#'},
-    {titulo:'La Imprenta Patriótica',link:'#'},
-    {titulo:'La impresión de los derechos del hombre',link:'#'},
-    {titulo:'La aventura del pensamiento',link:'#'},
-    {titulo:'Ahora o nunca',link:'#'},
+    {titulo:'La Santafé de Nariño',link:'#',clase:'normal'},
+    {titulo:'La Biblioteca',link:'#',clase:'normal'},
+    {titulo:'Nariño en la tertulia',link:'#',clase:'normal'},
+    {titulo:'El Santuario',link:'#',clase:'normal'},
+    {titulo:'La Imprenta Patriótica',link:'#',clase:'normal'},
+    {titulo:'La impresión de los derechos del hombre',link:'#',clase:'normal'},
+    {titulo:'La aventura del pensamiento',link:'#',clase:'destacada'},
+    {titulo:'Ahora o nunca',link:'#',clase:'destacada'},
   ],
 
   social : [

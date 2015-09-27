@@ -3,4 +3,5 @@ script(src="#{glb.rdir}/js/nrn-dsn.js")
 ul#nrno-menu
   - each link, index in db.menu
     li
-      a(href=link.link,title=link.titulo)= link.titulo
+      a(href=link.link,title=link.titulo,class=link.clase)
+        span!= link.titulo
