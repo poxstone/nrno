@@ -1,0 +1,13 @@
+div#nrno-libros
+  ul
+    - each libro, indice in contenido.libros
+      li
+        a(href=libro.url)
+          h2= libro.titulo
+          figure
+            span.img
+              img(class=libro.estilo,src=libro.archivo)
+            figcaption= libro.pie
+            span= libro.hover
+          em= libro.autor
+        

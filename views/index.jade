@@ -2,6 +2,9 @@ extends layout
 block banner
   include menu
 block content
-  h1= title
+  include banner
+    
   include social
-  p Welcome to #{title} #{glb.rdir}
+  
+  h2 Documentos relacionados
+  include libros

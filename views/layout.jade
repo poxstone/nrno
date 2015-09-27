@@ -1,520 +1,538 @@
-doctype html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='es', version='XHTML+RDFa 1.0', dir='ltr', xmlns:content='http://purl.org/rss/1.0/modules/content/', xmlns:dc='http://purl.org/dc/terms/', xmlns:foaf='http://xmlns.com/foaf/0.1/', xmlns:og='http://ogp.me/ns#', xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#', xmlns:sioc='http://rdfs.org/sioc/ns#', xmlns:sioct='http://rdfs.org/sioc/types#', xmlns:skos='http://www.w3.org/2004/02/skos/core#', xmlns:xsd='http://www.w3.org/2001/XMLSchema#')
-head(profile='http://www.w3.org/1999/xhtml/vocab')
-  meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-  link(rel='shortcut icon', href='http://www.bibliotecanacional.gov.co/misc/favicon.ico', type='image/vnd.microsoft.icon')
-  meta(name='Generator', content='Drupal 7 (http://drupal.org)')
-  link(rel='alternate', type='application/rss+xml', title='Biblioteca Nacional de Colombia RSS', href='http://www.bibliotecanacional.gov.co/rss.xml')
-  meta(http-equiv='Cache-Control', content='no-cache, no-store, must-revalidate')
-  meta(http-equiv='Pragma', content='no-cache')
-  meta(http-equiv='Expires', content='0')
-  title= title
-  style(type='text/css', media='all').
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/system/system.base.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/system/system.menus.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/system/system.messages.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/system/system.theme.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.button.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.resizable.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.dialog.min.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.tabs.min.css?nv53rm");
-  style(type='text/css', media='all').
-    @import url("http://www.bibliotecanacional.gov.co/modules/aggregator/aggregator.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/date/date_api/date.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/field/theme/field.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/node/node.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/search/search.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/modules/user/user.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/youtube/css/youtube.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/views/css/views.css?nv53rm");
-  style(type='text/css', media='all').
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/ckeditor/ckeditor.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/styles/default/colorbox_style.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/ctools/css/ctools.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/panels/css/panels.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/dialog/jquery_ui_filter_dialog.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/nivo-slider.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/themes/default/default.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/views_nivo_slider/views_nivo_slider.css?nv53rm");
-  style(type='text/css', media='all and (min-width: 980px)').
-    @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/css/960.css?nv53rm");
-  style(type='text/css', media='all and (max-width: 760px)').
-    @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/css/mobile.css?nv53rm");
-  style(type='text/css', media='all').
-    @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/style.css?nv53rm");
-    @import url("http://www.bibliotecanacional.gov.co/sites/default/files/color/corporateclean-121ef932/colors.css?nv53rm");
-  //
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/jquery/1.5/jquery.min.js?v=1.5.2')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/misc/jquery.once.js?v=1.2')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/misc/drupal.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.accordion.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.button.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.mouse.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.draggable.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.position.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.resizable.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.dialog.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/views/js/jquery.ui.dialog.patch.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.tabs.min.js?v=1.8.11')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/jquery_ui_filter.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/accordion/jquery_ui_filter_accordion.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/dialog/jquery_ui_filter_dialog.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/tabs/jquery_ui_filter_tabs.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/default/files/languages/es_wrBruHQT7kh7TFe4JFr6ZPO6VDNp31FtAj445wk2Mbk.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/themes/corporateclean/js/jquery.cycle.all.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/libraries/colorbox/jquery.colorbox-min.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/js/colorbox.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/styles/default/colorbox_style.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/js/colorbox_load.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/jquery.nivo.slider.pack.js?nv53rm')
-    script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/views_nivo_slider/views_nivo_slider.js?nv53rm')
-    script(type='text/javascript').
-      jQuery.extend(Drupal.settings, {"basePath":"\\u002F", "pathPrefix":"", "ajaxPageState":{"theme":"corporateclean", "theme_token":"TTE19diTQZkO-suczVqvmMeigQcoChNl1p_CjhBtdhw", "js":{"0":1, "1":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fjquery\u002F1.5\u002Fjquery.min.js":1, "misc\u002Fjquery.once.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.core.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.widget.min.js":1, "misc\u002Fdrupal.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.accordion.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.button.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.mouse.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.draggable.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.position.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.resizable.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.dialog.min.js":1, "sites\u002Fall\u002Fmodules\u002Fviews\u002Fjs\u002Fjquery.ui.dialog.patch.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.tabs.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fjquery_ui_filter.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Faccordion\u002Fjquery_ui_filter_accordion.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fdialog\u002Fjquery_ui_filter_dialog.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Ftabs\u002Fjquery_ui_filter_tabs.js":1, "public:\u002F\u002Flanguages\u002Fes_wrBruHQT7kh7TFe4JFr6ZPO6VDNp31FtAj445wk2Mbk.js":1, "themes\u002Fcorporateclean\u002Fjs\u002Fjquery.cycle.all.js":1, "sites\u002Fall\u002Flibraries\u002Fcolorbox\u002Fjquery.colorbox-min.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fjs\u002Fcolorbox.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fstyles\u002Fdefault\u002Fcolorbox_style.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fjs\u002Fcolorbox_load.js":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fjquery.nivo.slider.pack.js":1, "sites\u002Fall\u002Fmodules\u002Fviews_nivo_slider\u002Fviews_nivo_slider.js":1}, "css":{"misc\u002Fui\u002Fjquery.ui.core.css":1, "misc\u002Fui\u002Fjquery.ui.theme.css":1, "modules\u002Fsystem\u002Fsystem.base.css":1, "modules\u002Fsystem\u002Fsystem.menus.css":1, "modules\u002Fsystem\u002Fsystem.messages.css":1, "modules\u002Fsystem\u002Fsystem.theme.css":1, "misc\u002Fui\u002Fjquery.ui.accordion.css":1, "misc\u002Fui\u002Fjquery.ui.button.css":1, "misc\u002Fui\u002Fjquery.ui.resizable.css":1, "misc\u002Fui\u002Fjquery.ui.dialog.css":1, "misc\u002Fui\u002Fjquery.ui.tabs.css":1, "modules\u002Faggregator\u002Faggregator.css":1, "sites\u002Fall\u002Fmodules\u002Fdate\u002Fdate_api\u002Fdate.css":1, "sites\u002Fall\u002Fmodules\u002Fdate\u002Fdate_popup\u002Fthemes\u002Fdatepicker.1.7.css":1, "modules\u002Ffield\u002Ftheme\u002Ffield.css":1, "modules\u002Fnode\u002Fnode.css":1, "modules\u002Fsearch\u002Fsearch.css":1, "modules\u002Fuser\u002Fuser.css":1, "sites\u002Fall\u002Fmodules\u002Fyoutube\u002Fcss\u002Fyoutube.css":1, "sites\u002Fall\u002Fmodules\u002Fviews\u002Fcss\u002Fviews.css":1, "sites\u002Fall\u002Fmodules\u002Fckeditor\u002Fckeditor.css":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fstyles\u002Fdefault\u002Fcolorbox_style.css":1, "sites\u002Fall\u002Fmodules\u002Fctools\u002Fcss\u002Fctools.css":1, "sites\u002Fall\u002Fmodules\u002Fpanels\u002Fcss\u002Fpanels.css":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fdialog\u002Fjquery_ui_filter_dialog.css":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fnivo-slider.css":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fthemes\u002Fdefault\u002Fdefault.css":1, "sites\u002Fall\u002Fmodules\u002Fviews_nivo_slider\u002Fviews_nivo_slider.css":1, "themes\u002Fcorporateclean\u002Fcss\u002F960.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fmobile.css":1, "themes\u002Fcorporateclean\u002Fstyle.css":1, "themes\u002Fcorporateclean\u002Fcolor\u002Fcolors.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fbasic-layout.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fie.css":1}}, "colorbox":{"transition":"elastic", "speed":"350", "opacity":"0.85", "slideshow":true, "slideshowAuto":true, "slideshowSpeed":"2500", "slideshowStart":"start slideshow", "slideshowStop":"stop slideshow", "current":"{current} of {total}", "previous":"« Prev", "next":"Next »", "close":"Close", "overlayClose":true, "maxWidth":"98%", "maxHeight":"98%", "initialWidth":"300", "initialHeight":"250", "fixed":true, "scrolling":true, "mobiledetect":true, "mobiledevicewidth":"480px"}, "jQueryUiFilter":{"disabled":0, "accordionHeaderTag":"h3", "accordionOptions":{"active":0, "animated":"slide", "autoHeight":"true", "clearStyle":"false", "collapsible":"false", "event":"click", "scrollTo":0, "history":"false"}, "dialogWhitelist":"", "dialogOptions":{"closeOnEscape":"true", "closeText":"Close", "closeButton":"false", "dialogClass":"", "draggable":"true", "height":"auto", "hide":"", "show":"", "width":"auto", "maxHeight":"false", "maxWidth":"false", "minHeight":"150", "minWidth":"150", "modal":"false", "position":"center", "resizable":"true", "stack":"true", "title":"", "dialogFeatures":{"form-onsubmit_close":1, "page-logo":0, "page-site_name":0, "page-site_slogan":0, "page-mission":0, "page-main_menu":0, "page-secondary_menu":0, "page-title":1, "page-title_prefix":0, "page-title_suffix":0, "page-tabs":1, "page-breadcrumb":0, "page-action_links":0, "page-feed_icons":0, "page-footer_message":0, "page-regions":0}}, "tabsOptions":{"collapsible":"false", "event":"click", "fx":0, "paging":{"back":"\u0026laquo; Previous", "next":"Next \u0026raquo;"}, "selected":"", "scrollTo":0, "history":"false"}, "tabsHeaderTag":"h3"}, "views_nivo_slider":{"views-nivo-slider-nivo-slider-izq-block":{"startSlide":0, "effect":"random", "slices":15, "animSpeed":500, "pauseTime":9000, "directionNav":true, "directionNavHide":true, "controlNav":false, "controlNavThumbs":false, "pauseOnHover":true, "manualAdvance":false, "captionOpacity":0.8}}});
-  body.html.front.not-logged-in.one-sidebar.sidebar-first.page-node
-    #skip-link
-      a.element-invisible.element-focusable(href='#main-content')
-        | Pasar al contenido principal
-    #header
-      #header-inside.container_12.clearfix
-        #header-inside-left.grid_8
-          style.
-            .contenido2{ padding: 0 0 0 122px;float:right;width:510px; text-align: left;} #main{float:right;}
-          a(href='http://www.bibliotecanacional.gov.co/', title='Inicio')
-            img(src='http://www.bibliotecanacional.gov.co/sites/default/files/logo.png', alt='Inicio')
-        #header-inside-right.grid_4
-          .region.region-search-area
-            #block-block-6.block.block-block.iconossuperiores
-              .content
-                p(align='right')
-                  a(href='http://www.mincultura.gov.co', target='_blank')
-                    img(src='http://www.bibliotecanacional.gov.co/imagenes/logo-mincultura-2014.png', usemap='#image-maps-2014-10-22-150139', alt='Ministerio de Cultura', title='Ministerio de Cultura', style='width: 300px; height: 67px; margin-left: 150px;')
-                map#ImageMapsCom-image-maps-2014-10-22-150139(name='image-maps-2014-10-22-150139')
-                  area(alt='Ministerio de Cultura | Colombia', title='Ministerio de Cultura | Colombia', href='http://www.mincultura.gov.co', shape='rect', coords='0,0,144,67', style='outline:none;', target='_blank')
-                  area(alt='Todos por un nuevo país: Paz, Equidad, Educación | Presidencia de la República de Colombia', title='Todos por un nuevo país: Paz, Equidad, Educación | Presidencia de la República de Colombia', href='http://www.presidencia.gov.co', shape='rect', coords='148,0,300,67', style='outline:none;', target='_blank')
-    #header-menu
-      #header-menu-inside.container_12.clearfix
-        .grid_12
-          #navigation.clearfix
-            ul.menu
-              li.first.expanded
-                a(href='http://www.bibliotecanacional.gov.co/content/la-biblioteca-nacional')
-                  | La Biblioteca Nacional
-                ul.menu
-                  li.first.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/acerca-de-la-biblioteca-nacional')
-                      | Acerca de la Biblioteca Nacional
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/becas-pasantias-convocatorias', title='Becas, Pasantías y Convocatorias')
-                      | Becas, Pasant&iacute;as y Convocatorias
-                  li.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-patrimonio-bibliogr%C3%A1fico-y-documental')
-                      | Plan Nacional de Patrimonio Bibliogr&aacute;fico y Documental
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/plan-digital')
-                      | Plan Digital
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-lectura-y-bibliotecas-0')
-                      | Plan Nacional de Lectura y Bibliotecas
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/la-biblioteca-en-medios')
-                      | La Biblioteca en medios
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/bnwiki/', target='_blank')
-                      | Wiki BNC
-                  li.last.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/cont%C3%A1ctenos')
-                      | Cont&aacute;ctenos
-              li.expanded
-                a(href='http://www.bibliotecanacional.gov.co/content/biblioteca-digital')
-                  | Biblioteca Digital
-                ul.menu
-                  li.first.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/b%C3%BAsqueda-biblioteca-digital', target='_blank')
-                      | Buscador de documentos digitales
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/colecciones-tem%C3%A1ticas')
-                      | Colecciones Tem&aacute;ticas
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/documentaci%C3%B3n-musical', title='Música y partituras')
-                      | Documentaci&oacute;n musical
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/exposiciones-virtuales')
-                      | Exposiciones virtuales
-                  li.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/tesoros-de-la-biblioteca-nacional-0')
-                      | Tesoros de la Biblioteca
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/herramientas-de-aprendizaje', title='Herramientas de aprendizaje')
-                      | Herramientas de aprendizaje
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/LABN', title='Laboratorio')
-                      | Laboratorio Digital, LABN | Semana del Libro Digital
-                  li.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/libros-digitales-de-la-bnc')
-                      | Libros digitales de la BNC
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/revistas-bn', title='Revistas de la Biblioteca Nacional')
-                      | Revistas
-                  li.last.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/pieza-del-mes', title='Pieza del mes')
-                      | Pieza del mes
-              li.expanded
-                a(href='http://www.bibliotecanacional.gov.co/content/servicios-y-tr%C3%A1mites')
-                  | Servicios y Tr&aacute;mites
-                ul.menu
-                  li.first.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/conozca-nuestra-sede')
-                      | Nuestra sede
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-usuarios')
-                      | Servicios para usuarios presenciales
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/servicios-virtuales')
-                      | Servicios virtuales
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/tr%C3%A1mites')
-                      | Tr&aacute;mites
-                  li.collapsed
-                    a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-bibliotecarios-y-profesionales-del-libro')
-                      | Servicios para Bibliotecarios y Profesionales del Libro
-                  li.last.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/estudio-se-usuarios')
-                      | Nuestros Usuarios
-              li.expanded
-                a(href='http://www.bibliotecanacional.gov.co/content/colecciones-y-fondos-documentales-y-bibliogr%C3%A1ficos', title='Colecciones')
-                  | Colecciones y Fondos
-                ul.menu
-                  li.first.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/colecci%C3%B3n-general', title='Colección General')
-                      | Colecci&oacute;n general
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/fondo-antiguo', title='Fondo antiguo')
-                      | Fondo Antiguo
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/fondos-especiales', title='fondos especiales')
-                      | Fondos especiales
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/hemeroteca-manuel-del-socorro-rodr%C3%ADguez', title='Hemeroteca')
-                      | Hemeroteca Manuel del Socorro Rodr&iacute;guez
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/centro-de-documentaci%C3%B3n-musical-1', title='CDM')
-                      | Centro de documentaci&oacute;n musical
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/fondos-gr%C3%A1ficos')
-                      | Fondos gr&aacute;ficos
-                  li.last.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/novedades', title='Novedades')
-                      | Novedades
-              li.expanded
-                a(href='http://www.bibliotecanacional.gov.co/content/red-nacional-de-bibliotecas-p%C3%BAblicas')
-                  | Red Nacional de Bibliotecas P&uacute;blicas
-                ul.menu
-                  li.first.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/%C2%BFqu%C3%A9-es-la-red-nacional-de-bibliotecas-p%C3%BAblicas', title='La Red')
-                      | &iquest;Qui&eacute;nes somos?
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/caja-herramientas/', target='_blank')
-                      | Caja abierta de Herramientas
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/ley-de-bibliotecas-p%C3%BAblicas')
-                      | Ley de Bibliotecas P&uacute;blicas
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/proyecto-uso-y-apropiaci%C3%B3n-de-tic')
-                      | Proyecto Uso y Apropiaci&oacute;n de TIC
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-lectura-y-bibliotecas-0')
-                      | Plan Nacional de Lectura y Bibliotecas
-                  li.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/directorio-de-contactos-rnbp')
-                      | Directorio de Contactos
-                  li.last.leaf
-                    a(href='http://www.bibliotecanacional.gov.co/content/formulario-%C3%BAnico-de-registro-y-estad%C3%ADsticas')
-                      | Formulario &Uacute;nico de Registro - FUR y Estad&iacute;sticas FUE
-              li.last.leaf
-                a(href='http://www.bibliotecanacional.gov.co/noticias')
-                  | Noticias
+- if (qr.html)
+  doctype html
+  html(lang="es")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')  
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+  body
     #banner
       .container_12.clearfix
         block banner
     #content
       .container_12.clearfix
         block content
-    #footer
-      #footer-inside.container_12.clearfix
-        .footer-area.grid_4
-          .region.region-footer-first
-            #block-block-2.block.block-block.piede
-              .content
-                table.content(style='border-top-width: 2px; border-top-style: solid; border-top-color: #006d7b; width: 960px;', border='0')
-                    tr
-                      td#left
-                        div(style='margin-left: 10px;')
-                          div(style='margin-top: 8px; padding-bottom: 8px;')
-                            a(href='https://www.facebook.com/bncolombia', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/facebook_large.png', alt='')
-                          div(style='padding-bottom: 8px;')
-                            a(href='https://twitter.com/BibliotecaNalCo', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/twitter_large.png', alt='')
-                          div(style='padding-bottom: 8px;')
-                            a(title='Portal de Blogs de la Biblioteca Nacional de Colombia', href='http://www.bibliotecanacional.gov.co/blogs', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/wp_large.png', alt='Blogs de la Biblioteca Nacional', width='79', height='13')
-                          div(style='padding-bottom: 8px;')
-                            a(title='Canal de Youtube de la Biblioteca Nacional de Colombia', href='http://www.youtube.com/user/bnacionaladmin', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/icono_youtube.png', alt='Youtube de la Biblioteca Nacional', width='79', height='13')
-                        div(style='border-top: 1px solid #006D7B; padding-left: 10px;')
-                          div(style='padding: 3px;')
-                            a(title='Ministerio de Cultura', href='http://www.mincultura.gov.co', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/pie.png', alt='', width='109', height='54')
-                          div(style='width: 48px; float: left; padding: 3px;')
-                            a(title='DNP', href='https://sinergia.dnp.gov.co/portaldnp/', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/sigob.png', alt='', width='37', height='22')
-                          div(style='padding: 3px;')
-                            a(title='Programa Gobierno en Línea', href='http://programa.gobiernoenlinea.gov.co/', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/gel.png', alt='', width='37', height='30')
-                          div(style='width: 48px; float: left; padding: 3px;')
-                            a(style='line-height: 1.538em; text-decoration: underline;', title='RNBP', href='http://www.bibliotecanacional.gov.co/content/red-nacional-de-bibliotecas-p%C3%BAblicas', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/logo_bpublicashome.png', alt='RNBP', width='39', height='51')
-                          div
-                            a(title='ISOlucion', href='http://www.mincultura.gov.co/ministerio/oficinas-y-grupos/oficina%20asesora%20de%20planeacion/Sistema%20de%20gestion%20de%20la%20calidad/Paginas/default.aspx', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/imagenes/banner/sgc.jpg', width='120', height='24', style='float: left;')
-                          div(style='padding: 6px 3px;')
-                            a(href='http://www.urnadecristal.gov.co/', target='_blank')
-                              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/u8132/MinCultura.gif', alt='', width='98', height='65', style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; font-size: 13px; line-height: 20px;")
-                      td#center(style='border-left: 1px solid #006D7B; border-right: 1px solid #006D7B;')
-                        table(style='margin-left: 10px; width: 310px;', border='0')
-                          tbody
-                            tr
-                              td.footer_info_1(style='padding-top: 12px;')
-                                | Biblioteca Nacional de Colombia
-                            tr
-                              td.footer_info_2
-                                | Calle 24 5-60 / Bogot&aacute;
-                            tr
-                              td.footer_info_3
-                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/footer_phone.png', alt='')
-                                | (57+1) 381 6464 / 
-                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/footer_fax.png', alt='')
-                                | (57+1) 381 6449
-                            tr
-                              td.footer_info_4
-                                a(href='mailto:bnc@mincultura.gov.co')
-                                  | bnc@mincultura.gov.co
-                            tr
-                              td.footer_info_5
-                                strong
-                                  | Lunes a viernes 8 am - 6 pm
-                            tr
-                              td.footer_info_6
-                                strong
-                                  | S&aacute;bados 9 am - 4 pm
-                            tr
-                              td.footer_info_7
-                                | Se permite el ingreso hasta treinta minutos antes del cierre.
-                            tr
-                              td.footer_info_8
-                                a(href='http://www.bibliotecanacional.gov.co/bnwiki/', target='_blank')
-                                  | Wiki BNC
-                            tr
-                              td
-                        table#vinculos(style='margin: 10px; width: 319px; height: 131px;')
-                          tbody
-                            tr
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/sitemap')
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    | Mapa del sitio
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/content/quejas-y-reclamos')
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    | Quejas y reclamos
-                            tr
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/content/términos-y-condiciones-de-uso')
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    | T&eacute;rminos y condiciones
-                              td
-                                p
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    a(href='http://www.bibliotecanacional.gov.co/content/bolet%C3%ADn-mensual-de-la-biblioteca-nacional', target='_self')
-                                      | Bolet&iacute;n Mensual BNC
-                            tr
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/index.php?q=user')
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    | Acceso al administrador
-                              td
-                                p
-                                  span(style='text-decoration: underline;', data-mce-mark='1')
-                                    span(data-mce-mark='1')
-                                      a(href='http://www.bibliotecanacional.gov.co/content/corredor-cultural-del-centro')
-                                        | Corredor Cultural del Centro
-                            tr
-                              td
-                                span(style='text-decoration: underline;', data-mce-mark='1')
-                                  a(href='http://www.bibliotecanacional.gov.co/correo', target='_blank')
-                                    | Acceso al correo institucional
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/content/efem%C3%A9rides')
-                                  span(style='text-decoration: underline;')
-                                    | Efemerides
-                        p
-                      td#right
-                        table(style='margin-top: 10px; margin-left: 10px; line-height: 16px;')
-                          tbody
-                            tr
-                              th(style='width: 150px; text-align: left; line-height: 20px; padding: 0px 8px 18px 10px;')
-                                | Servicios
-                              th(style='width: 150px; text-align: left; padding: 0px 8px 18px 0px;')
-                                | Tr&aacute;mites
-                              th(style='width: 150px; padding: 0px 8px 18px 10px;')
-                                | Colecciones
-                            tr
-                              td(style='padding: 0px 17px 13px 10px;')
-                                a(href='orientación-y-acceso-la-información?q=node/140')
-                                  | Reserva de Materiales
-                              td(style='padding: 0 31px 13px 0;')
-                                a(href='http://www.bibliotecanacional.gov.co/content/depósito-legal')
-                                  | Dep&oacute;sito legal
-                              td(style='vertical-align: top; padding: 0px 0px 13px 10px;', rowspan='2')
-                                a(href='http://www.bibliotecanacional.gov.co/content/colecciones-y-fondos-documentales-y-bibliogr%C3%A1ficos')
-                                  | Colecciones y fondos disponibles en la sede de la biblioteca
-                            tr
-                              td(style='padding: 0px 8px 10px 10px;')
-                                a(href='http://www.bibliotecanacional.gov.co/content/conozca-nuestra-sede')
-                                  | Conozca nuestra sede
-                              td(style='padding: 0px 14px 13px 0px;', valign='top')
-                                a(href='http://www.bibliotecanacional.gov.co/content/asignaci%C3%B3n-del-issn', target='_blank')
-                                  | Asignaci&oacute;n del ISSN
-                            tr
-                              td(style='padding: 0px 8px 10px 10px;', valign='top')
-                                a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-bibliotecarios-y-profesionales-del-libro')
-                                  span(data-mce-mark='1')
-                                    | Servicios para bibliotecarios
-                              td(style='padding: 0px 11px 0px 0px;')
-                                a(href='http://www.bibliotecanacional.gov.co/content/determinaci%C3%B3n-del-car%C3%A1cter-de-las-publicaciones')
-                                  | Determinaci&oacute;n del car&aacute;cter cient&iacute;fico de las publicaciones
-                              td(style='padding: 0px 13px 0px 10px;')
-                                a(href='documentos-digitalizados?q=node/81')
-                                  | &Iacute;ndice de colecciones digitales de la Biblioteca
-                            tr
-                              td(style='padding: 0px 8px 10px 10px;')
-                              td(style='padding: 0 31px 13px 0;', valign='top')
-                                p
-                                p
-                                  a(href='http://www.bibliotecanacional.gov.co/content/carnetización-e-inscripciones')
-                                    span(data-mce-mark='1')
-                                      span(style='position: relative; top: -6px;', data-mce-mark='1')
-                                        | Carnetizaci&oacute;n
-                              td
-                                a(href='http://www.bibliotecanacional.gov.co/formularios/view.php?id=18', target='_blank')
-                                  | Encuesta de Servicios
-                        br
-                        table#contendor_seleccion_idiomas(style='margin-left: 10px;', border='0')
-                          tbody
-                            tr
-                              td(style='border-top: 1px solid #006D7B; padding-left: 10px;')
-                                | BIBLIOTECA NACIONAL DE COLOMBIA
-                              td(style='border-top: 1px solid #006D7B;')
-                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/banderas.png', alt='', usemap='#Image-Maps_4201309091305134')
-                                map#_Image-Maps_4201309091305134(name='Image-Maps_4201309091305134')
-                                  area(title='English', shape='rect', coords='0,0,21,13', href='http://bit.ly/lUVcMJ', alt='', target='_blank')
-                                  area(title='French', shape='rect', coords='65,0,79,13', href='http://bit.ly/lVE9tr', alt='', target='_blank')
-                                  area(title='Spanish', shape='rect', coords='31,0,52,13', href='http://www.bibliotecanacional.gov.co', alt='', target='_blank')
-                        table#contendor_seleccion_idiomas(style='margin-left: 10px;', border='0')
-                          tbody
-                            tr
-                              td(style='border-top: 1px solid #006D7B; padding-left: 10px;')
-                                | El contenido producido por la Biblioteca Nacional que se publica en este sitio web puede ser reproducido citando la fuente.
-        .footer-area.grid_4
-    #footer-bottom
-      #footer-bottom-inside.container_12.clearfix
+-else
+  doctype html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='es', version='XHTML+RDFa 1.0', dir='ltr', xmlns:content='http://purl.org/rss/1.0/modules/content/', xmlns:dc='http://purl.org/dc/terms/', xmlns:foaf='http://xmlns.com/foaf/0.1/', xmlns:og='http://ogp.me/ns#', xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#', xmlns:sioc='http://rdfs.org/sioc/ns#', xmlns:sioct='http://rdfs.org/sioc/types#', xmlns:skos='http://www.w3.org/2004/02/skos/core#', xmlns:xsd='http://www.w3.org/2001/XMLSchema#')
+  head(profile='http://www.w3.org/1999/xhtml/vocab')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    link(rel='shortcut icon', href='http://www.bibliotecanacional.gov.co/misc/favicon.ico', type='image/vnd.microsoft.icon')
+    meta(name='Generator', content='Drupal 7 (http://drupal.org)')
+    link(rel='alternate', type='application/rss+xml', title='Biblioteca Nacional de Colombia RSS', href='http://www.bibliotecanacional.gov.co/rss.xml')
+    meta(http-equiv='Cache-Control', content='no-cache, no-store, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='0')
+    title= title
     //
+      style(type='text/css', media='all').
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/system/system.base.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/system/system.menus.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/system/system.messages.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/system/system.theme.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.button.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.resizable.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.dialog.min.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.tabs.min.css?nv53rm");
+      style(type='text/css', media='all').
+        @import url("http://www.bibliotecanacional.gov.co/modules/aggregator/aggregator.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/date/date_api/date.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/field/theme/field.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/node/node.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/search/search.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/modules/user/user.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/youtube/css/youtube.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/views/css/views.css?nv53rm");
+      style(type='text/css', media='all').
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/ckeditor/ckeditor.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/styles/default/colorbox_style.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/ctools/css/ctools.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/panels/css/panels.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/dialog/jquery_ui_filter_dialog.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/nivo-slider.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/themes/default/default.css?nv53rm");
+        @import url("http://www.bibliotecanacional.gov.co/sites/all/modules/views_nivo_slider/views_nivo_slider.css?nv53rm");
+    style(type='text/css', media='all and (min-width: 980px)').
+      @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/css/960.css?nv53rm");
+    //
+      style(type='text/css', media='all and (max-width: 760px)').
+        @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/css/mobile.css?nv53rm");
+    style(type='text/css', media='all').
+      @import url("http://www.bibliotecanacional.gov.co/themes/corporateclean/style.css?nv53rm");
+      @import url("http://www.bibliotecanacional.gov.co/sites/default/files/color/corporateclean-121ef932/colors.css?nv53rm");
+    //
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/jquery/1.5/jquery.min.js?v=1.5.2')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/misc/jquery.once.js?v=1.2')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/misc/drupal.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.accordion.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.button.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.mouse.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.draggable.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.position.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.resizable.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.dialog.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/views/js/jquery.ui.dialog.patch.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.tabs.min.js?v=1.8.11')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/jquery_ui_filter.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/accordion/jquery_ui_filter_accordion.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/dialog/jquery_ui_filter_dialog.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/jquery_ui_filter/tabs/jquery_ui_filter_tabs.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/default/files/languages/es_wrBruHQT7kh7TFe4JFr6ZPO6VDNp31FtAj445wk2Mbk.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/themes/corporateclean/js/jquery.cycle.all.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/libraries/colorbox/jquery.colorbox-min.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/js/colorbox.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/styles/default/colorbox_style.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/colorbox/js/colorbox_load.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/libraries/nivo-slider/jquery.nivo.slider.pack.js?nv53rm')
+      script(type='text/javascript', src='http://www.bibliotecanacional.gov.co/sites/all/modules/views_nivo_slider/views_nivo_slider.js?nv53rm')
       script(type='text/javascript').
-        function verHijasFondos(idCategoria)
-        {
-        var divItemActivo = document.getElementById("div-item"+idCategoria);
-        var divItemHijosActivo = document.getElementById("div-item-hijos"+idCategoria);
-        var centinelaCategoriaDesactivar = document.getElementById("idCategoriaActiva");
-        var divItemDesactivar = document.getElementById("div-item"+centinelaCategoriaDesactivar.value);
-        var divItemHijosDesactivar = document.getElementById("div-item-hijos"+centinelaCategoriaDesactivar.value);
-        divItemHijosDesactivar.className = "div-item-hijos-ocultar";
-        divItemDesactivar.className = "div-item";
-        divItemActivo.className = "div-item-activo";
-        divItemHijosActivo.className = "div-item-hijos";
-        centinelaCategoriaDesactivar.value = idCategoria;
-        }
-        function openOptionsServices()
-        {
-        var divOptions = document.getElementById('divOptionsServices');
-        var spanVineteService = document.getElementById('span_vinete');
-        var icon_right = document.getElementById('icon_flecha_right');
-        var icon_bottom = document.getElementById('icon_flecha_bottom');
-        if ((divOptions.style.display=='none' || divOptions.style.display==''))
-        {
-        divOptions.style.display = 'block';
-        spanVineteService.className = "vinete_menu_active";
-        icon_right.style.display = 'none';
-        icon_bottom.style.display = 'block';
-        }
-        else
-        {
-        divOptions.style.display = 'none';
-        spanVineteService.className = "vinete_menu";
-        icon_bottom.style.display = 'none';
-        icon_right.style.display = 'block';
-        }
-        }
-        jQuery(document).ready(function() {
-        jQuery('#search-personalizado-form').submit(function() {
-        var campoBusqueda = jQuery('#edit-search-personalizado-form--2').val();
-        jQuery('#edit-search-block-form--2').val(campoBusqueda);
-        jQuery('#search-block-form').submit();
-        return false;
-        });
-        });
-      script(type='text/javascript').
-        jQuery(document).ready(function($) {
-        $(window).load(function() {
-        $("#slideshow img").show();
-        $("#slideshow").fadeIn("slow");
-        $("#slider-controls-wrapper").fadeIn("slow");
-        $("#slideshow").cycle({
-        fx:    "growX",
-        speed:  "slow",
-        timeout: "15000",
-        random: 1,
-        nowrap: 1,
-        pause: 1,
-        pager:  "#slider-navigation",
-        pagerAnchorBuilder: function(idx, slide) {
-        return "#slider-navigation li:eq(" + (idx) + ") a";
-        },
-        slideResize: true,
-        containerResize: false,
-        height: "auto",
-        fit: 1,
-        before: function(){
-        $(this).parent().find(".slider-item.current").removeClass("current");
-        },
-        after: onAfter
-        });
-        });
-        function onAfter(curr, next, opts, fwd) {
-        var $ht = $(this).height();
-        $(this).parent().height($ht);
-        $(this).addClass("current");
-        }
-        $(window).load(function() {
-        var $ht = $(".slider-item.current").height();
-        $("#slideshow").height($ht);
-        });
-        $(window).resize(function() {
-        var $ht = $(".slider-item.current").height();
-        $("#slideshow").height($ht);
-        });
-        });
+        jQuery.extend(Drupal.settings, {"basePath":"\\u002F", "pathPrefix":"", "ajaxPageState":{"theme":"corporateclean", "theme_token":"TTE19diTQZkO-suczVqvmMeigQcoChNl1p_CjhBtdhw", "js":{"0":1, "1":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fjquery\u002F1.5\u002Fjquery.min.js":1, "misc\u002Fjquery.once.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.core.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.widget.min.js":1, "misc\u002Fdrupal.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.accordion.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.button.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.mouse.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.draggable.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.position.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.resizable.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.dialog.min.js":1, "sites\u002Fall\u002Fmodules\u002Fviews\u002Fjs\u002Fjquery.ui.dialog.patch.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_update\u002Freplace\u002Fui\u002Fui\u002Fminified\u002Fjquery.ui.tabs.min.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fjquery_ui_filter.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Faccordion\u002Fjquery_ui_filter_accordion.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fdialog\u002Fjquery_ui_filter_dialog.js":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Ftabs\u002Fjquery_ui_filter_tabs.js":1, "public:\u002F\u002Flanguages\u002Fes_wrBruHQT7kh7TFe4JFr6ZPO6VDNp31FtAj445wk2Mbk.js":1, "themes\u002Fcorporateclean\u002Fjs\u002Fjquery.cycle.all.js":1, "sites\u002Fall\u002Flibraries\u002Fcolorbox\u002Fjquery.colorbox-min.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fjs\u002Fcolorbox.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fstyles\u002Fdefault\u002Fcolorbox_style.js":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fjs\u002Fcolorbox_load.js":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fjquery.nivo.slider.pack.js":1, "sites\u002Fall\u002Fmodules\u002Fviews_nivo_slider\u002Fviews_nivo_slider.js":1}, "css":{"misc\u002Fui\u002Fjquery.ui.core.css":1, "misc\u002Fui\u002Fjquery.ui.theme.css":1, "modules\u002Fsystem\u002Fsystem.base.css":1, "modules\u002Fsystem\u002Fsystem.menus.css":1, "modules\u002Fsystem\u002Fsystem.messages.css":1, "modules\u002Fsystem\u002Fsystem.theme.css":1, "misc\u002Fui\u002Fjquery.ui.accordion.css":1, "misc\u002Fui\u002Fjquery.ui.button.css":1, "misc\u002Fui\u002Fjquery.ui.resizable.css":1, "misc\u002Fui\u002Fjquery.ui.dialog.css":1, "misc\u002Fui\u002Fjquery.ui.tabs.css":1, "modules\u002Faggregator\u002Faggregator.css":1, "sites\u002Fall\u002Fmodules\u002Fdate\u002Fdate_api\u002Fdate.css":1, "sites\u002Fall\u002Fmodules\u002Fdate\u002Fdate_popup\u002Fthemes\u002Fdatepicker.1.7.css":1, "modules\u002Ffield\u002Ftheme\u002Ffield.css":1, "modules\u002Fnode\u002Fnode.css":1, "modules\u002Fsearch\u002Fsearch.css":1, "modules\u002Fuser\u002Fuser.css":1, "sites\u002Fall\u002Fmodules\u002Fyoutube\u002Fcss\u002Fyoutube.css":1, "sites\u002Fall\u002Fmodules\u002Fviews\u002Fcss\u002Fviews.css":1, "sites\u002Fall\u002Fmodules\u002Fckeditor\u002Fckeditor.css":1, "sites\u002Fall\u002Fmodules\u002Fcolorbox\u002Fstyles\u002Fdefault\u002Fcolorbox_style.css":1, "sites\u002Fall\u002Fmodules\u002Fctools\u002Fcss\u002Fctools.css":1, "sites\u002Fall\u002Fmodules\u002Fpanels\u002Fcss\u002Fpanels.css":1, "sites\u002Fall\u002Fmodules\u002Fjquery_ui_filter\u002Fdialog\u002Fjquery_ui_filter_dialog.css":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fnivo-slider.css":1, "sites\u002Fall\u002Flibraries\u002Fnivo-slider\u002Fthemes\u002Fdefault\u002Fdefault.css":1, "sites\u002Fall\u002Fmodules\u002Fviews_nivo_slider\u002Fviews_nivo_slider.css":1, "themes\u002Fcorporateclean\u002Fcss\u002F960.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fmobile.css":1, "themes\u002Fcorporateclean\u002Fstyle.css":1, "themes\u002Fcorporateclean\u002Fcolor\u002Fcolors.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fbasic-layout.css":1, "themes\u002Fcorporateclean\u002Fcss\u002Fie.css":1}}, "colorbox":{"transition":"elastic", "speed":"350", "opacity":"0.85", "slideshow":true, "slideshowAuto":true, "slideshowSpeed":"2500", "slideshowStart":"start slideshow", "slideshowStop":"stop slideshow", "current":"{current} of {total}", "previous":"« Prev", "next":"Next »", "close":"Close", "overlayClose":true, "maxWidth":"98%", "maxHeight":"98%", "initialWidth":"300", "initialHeight":"250", "fixed":true, "scrolling":true, "mobiledetect":true, "mobiledevicewidth":"480px"}, "jQueryUiFilter":{"disabled":0, "accordionHeaderTag":"h3", "accordionOptions":{"active":0, "animated":"slide", "autoHeight":"true", "clearStyle":"false", "collapsible":"false", "event":"click", "scrollTo":0, "history":"false"}, "dialogWhitelist":"", "dialogOptions":{"closeOnEscape":"true", "closeText":"Close", "closeButton":"false", "dialogClass":"", "draggable":"true", "height":"auto", "hide":"", "show":"", "width":"auto", "maxHeight":"false", "maxWidth":"false", "minHeight":"150", "minWidth":"150", "modal":"false", "position":"center", "resizable":"true", "stack":"true", "title":"", "dialogFeatures":{"form-onsubmit_close":1, "page-logo":0, "page-site_name":0, "page-site_slogan":0, "page-mission":0, "page-main_menu":0, "page-secondary_menu":0, "page-title":1, "page-title_prefix":0, "page-title_suffix":0, "page-tabs":1, "page-breadcrumb":0, "page-action_links":0, "page-feed_icons":0, "page-footer_message":0, "page-regions":0}}, "tabsOptions":{"collapsible":"false", "event":"click", "fx":0, "paging":{"back":"\u0026laquo; Previous", "next":"Next \u0026raquo;"}, "selected":"", "scrollTo":0, "history":"false"}, "tabsHeaderTag":"h3"}, "views_nivo_slider":{"views-nivo-slider-nivo-slider-izq-block":{"startSlide":0, "effect":"random", "slices":15, "animSpeed":500, "pauseTime":9000, "directionNav":true, "directionNavHide":true, "controlNav":false, "controlNavThumbs":false, "pauseOnHover":true, "manualAdvance":false, "captionOpacity":0.8}}});
+    body.html.front.not-logged-in.one-sidebar.sidebar-first.page-node
+      #skip-link
+        a.element-invisible.element-focusable(href='#main-content')
+          | Pasar al contenido principal
+      #header
+        #header-inside.container_12.clearfix
+          #header-inside-left.grid_8
+            style.
+              .contenido2{ padding: 0 0 0 122px;float:right;width:510px; text-align: left;} #main{float:right;}
+            a(href='http://www.bibliotecanacional.gov.co/', title='Inicio')
+              img(src='http://www.bibliotecanacional.gov.co/sites/default/files/logo.png', alt='Inicio')
+          #header-inside-right.grid_4
+            .region.region-search-area
+              #block-block-6.block.block-block.iconossuperiores
+                .content
+                  p(align='right')
+                    a(href='http://www.mincultura.gov.co', target='_blank')
+                      img(src='http://www.bibliotecanacional.gov.co/imagenes/logo-mincultura-2014.png', usemap='#image-maps-2014-10-22-150139', alt='Ministerio de Cultura', title='Ministerio de Cultura', style='width: 300px; height: 67px; margin-left: 150px;')
+                  map#ImageMapsCom-image-maps-2014-10-22-150139(name='image-maps-2014-10-22-150139')
+                    area(alt='Ministerio de Cultura | Colombia', title='Ministerio de Cultura | Colombia', href='http://www.mincultura.gov.co', shape='rect', coords='0,0,144,67', style='outline:none;', target='_blank')
+                    area(alt='Todos por un nuevo país: Paz, Equidad, Educación | Presidencia de la República de Colombia', title='Todos por un nuevo país: Paz, Equidad, Educación | Presidencia de la República de Colombia', href='http://www.presidencia.gov.co', shape='rect', coords='148,0,300,67', style='outline:none;', target='_blank')
+      #header-menu
+        #header-menu-inside.container_12.clearfix
+          .grid_12
+            #navigation.clearfix
+              ul.menu
+                li.first.expanded
+                  a(href='http://www.bibliotecanacional.gov.co/content/la-biblioteca-nacional')
+                    | La Biblioteca Nacional
+                  ul.menu
+                    li.first.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/acerca-de-la-biblioteca-nacional')
+                        | Acerca de la Biblioteca Nacional
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/becas-pasantias-convocatorias', title='Becas, Pasantías y Convocatorias')
+                        | Becas, Pasant&iacute;as y Convocatorias
+                    li.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-patrimonio-bibliogr%C3%A1fico-y-documental')
+                        | Plan Nacional de Patrimonio Bibliogr&aacute;fico y Documental
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/plan-digital')
+                        | Plan Digital
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-lectura-y-bibliotecas-0')
+                        | Plan Nacional de Lectura y Bibliotecas
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/la-biblioteca-en-medios')
+                        | La Biblioteca en medios
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/bnwiki/', target='_blank')
+                        | Wiki BNC
+                    li.last.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/cont%C3%A1ctenos')
+                        | Cont&aacute;ctenos
+                li.expanded
+                  a(href='http://www.bibliotecanacional.gov.co/content/biblioteca-digital')
+                    | Biblioteca Digital
+                  ul.menu
+                    li.first.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/b%C3%BAsqueda-biblioteca-digital', target='_blank')
+                        | Buscador de documentos digitales
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/colecciones-tem%C3%A1ticas')
+                        | Colecciones Tem&aacute;ticas
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/documentaci%C3%B3n-musical', title='Música y partituras')
+                        | Documentaci&oacute;n musical
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/exposiciones-virtuales')
+                        | Exposiciones virtuales
+                    li.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/tesoros-de-la-biblioteca-nacional-0')
+                        | Tesoros de la Biblioteca
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/herramientas-de-aprendizaje', title='Herramientas de aprendizaje')
+                        | Herramientas de aprendizaje
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/LABN', title='Laboratorio')
+                        | Laboratorio Digital, LABN | Semana del Libro Digital
+                    li.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/libros-digitales-de-la-bnc')
+                        | Libros digitales de la BNC
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/revistas-bn', title='Revistas de la Biblioteca Nacional')
+                        | Revistas
+                    li.last.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/pieza-del-mes', title='Pieza del mes')
+                        | Pieza del mes
+                li.expanded
+                  a(href='http://www.bibliotecanacional.gov.co/content/servicios-y-tr%C3%A1mites')
+                    | Servicios y Tr&aacute;mites
+                  ul.menu
+                    li.first.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/conozca-nuestra-sede')
+                        | Nuestra sede
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-usuarios')
+                        | Servicios para usuarios presenciales
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/servicios-virtuales')
+                        | Servicios virtuales
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/tr%C3%A1mites')
+                        | Tr&aacute;mites
+                    li.collapsed
+                      a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-bibliotecarios-y-profesionales-del-libro')
+                        | Servicios para Bibliotecarios y Profesionales del Libro
+                    li.last.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/estudio-se-usuarios')
+                        | Nuestros Usuarios
+                li.expanded
+                  a(href='http://www.bibliotecanacional.gov.co/content/colecciones-y-fondos-documentales-y-bibliogr%C3%A1ficos', title='Colecciones')
+                    | Colecciones y Fondos
+                  ul.menu
+                    li.first.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/colecci%C3%B3n-general', title='Colección General')
+                        | Colecci&oacute;n general
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/fondo-antiguo', title='Fondo antiguo')
+                        | Fondo Antiguo
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/fondos-especiales', title='fondos especiales')
+                        | Fondos especiales
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/hemeroteca-manuel-del-socorro-rodr%C3%ADguez', title='Hemeroteca')
+                        | Hemeroteca Manuel del Socorro Rodr&iacute;guez
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/centro-de-documentaci%C3%B3n-musical-1', title='CDM')
+                        | Centro de documentaci&oacute;n musical
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/fondos-gr%C3%A1ficos')
+                        | Fondos gr&aacute;ficos
+                    li.last.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/novedades', title='Novedades')
+                        | Novedades
+                li.expanded
+                  a(href='http://www.bibliotecanacional.gov.co/content/red-nacional-de-bibliotecas-p%C3%BAblicas')
+                    | Red Nacional de Bibliotecas P&uacute;blicas
+                  ul.menu
+                    li.first.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/%C2%BFqu%C3%A9-es-la-red-nacional-de-bibliotecas-p%C3%BAblicas', title='La Red')
+                        | &iquest;Qui&eacute;nes somos?
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/caja-herramientas/', target='_blank')
+                        | Caja abierta de Herramientas
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/ley-de-bibliotecas-p%C3%BAblicas')
+                        | Ley de Bibliotecas P&uacute;blicas
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/proyecto-uso-y-apropiaci%C3%B3n-de-tic')
+                        | Proyecto Uso y Apropiaci&oacute;n de TIC
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/plan-nacional-de-lectura-y-bibliotecas-0')
+                        | Plan Nacional de Lectura y Bibliotecas
+                    li.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/directorio-de-contactos-rnbp')
+                        | Directorio de Contactos
+                    li.last.leaf
+                      a(href='http://www.bibliotecanacional.gov.co/content/formulario-%C3%BAnico-de-registro-y-estad%C3%ADsticas')
+                        | Formulario &Uacute;nico de Registro - FUR y Estad&iacute;sticas FUE
+                li.last.leaf
+                  a(href='http://www.bibliotecanacional.gov.co/noticias')
+                    | Noticias
+      #banner
+        .container_12.clearfix
+          block banner
+      #content
+        .container_12.clearfix
+          block content
+      #footer
+        #footer-inside.container_12.clearfix
+          .footer-area.grid_4
+            .region.region-footer-first
+              #block-block-2.block.block-block.piede
+                .content
+                  table.content(style='border-top-width: 2px; border-top-style: solid; border-top-color: #006d7b; width: 960px;', border='0')
+                      tr
+                        td#left
+                          div(style='margin-left: 10px;')
+                            div(style='margin-top: 8px; padding-bottom: 8px;')
+                              a(href='https://www.facebook.com/bncolombia', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/facebook_large.png', alt='')
+                            div(style='padding-bottom: 8px;')
+                              a(href='https://twitter.com/BibliotecaNalCo', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/twitter_large.png', alt='')
+                            div(style='padding-bottom: 8px;')
+                              a(title='Portal de Blogs de la Biblioteca Nacional de Colombia', href='http://www.bibliotecanacional.gov.co/blogs', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/wp_large.png', alt='Blogs de la Biblioteca Nacional', width='79', height='13')
+                            div(style='padding-bottom: 8px;')
+                              a(title='Canal de Youtube de la Biblioteca Nacional de Colombia', href='http://www.youtube.com/user/bnacionaladmin', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/icono_youtube.png', alt='Youtube de la Biblioteca Nacional', width='79', height='13')
+                          div(style='border-top: 1px solid #006D7B; padding-left: 10px;')
+                            div(style='padding: 3px;')
+                              a(title='Ministerio de Cultura', href='http://www.mincultura.gov.co', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/pie.png', alt='', width='109', height='54')
+                            div(style='width: 48px; float: left; padding: 3px;')
+                              a(title='DNP', href='https://sinergia.dnp.gov.co/portaldnp/', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/sigob.png', alt='', width='37', height='22')
+                            div(style='padding: 3px;')
+                              a(title='Programa Gobierno en Línea', href='http://programa.gobiernoenlinea.gov.co/', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/gel.png', alt='', width='37', height='30')
+                            div(style='width: 48px; float: left; padding: 3px;')
+                              a(style='line-height: 1.538em; text-decoration: underline;', title='RNBP', href='http://www.bibliotecanacional.gov.co/content/red-nacional-de-bibliotecas-p%C3%BAblicas', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/ultimo/_templates/BNC2011/recursos/images/piedepagina/logo_bpublicashome.png', alt='RNBP', width='39', height='51')
+                            div
+                              a(title='ISOlucion', href='http://www.mincultura.gov.co/ministerio/oficinas-y-grupos/oficina%20asesora%20de%20planeacion/Sistema%20de%20gestion%20de%20la%20calidad/Paginas/default.aspx', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/imagenes/banner/sgc.jpg', width='120', height='24', style='float: left;')
+                            div(style='padding: 6px 3px;')
+                              a(href='http://www.urnadecristal.gov.co/', target='_blank')
+                                img(src='http://www.bibliotecanacional.gov.co/sites/default/files/u8132/MinCultura.gif', alt='', width='98', height='65', style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; font-size: 13px; line-height: 20px;")
+                        td#center(style='border-left: 1px solid #006D7B; border-right: 1px solid #006D7B;')
+                          table(style='margin-left: 10px; width: 310px;', border='0')
+                            tbody
+                              tr
+                                td.footer_info_1(style='padding-top: 12px;')
+                                  | Biblioteca Nacional de Colombia
+                              tr
+                                td.footer_info_2
+                                  | Calle 24 5-60 / Bogot&aacute;
+                              tr
+                                td.footer_info_3
+                                  img(src='http://www.bibliotecanacional.gov.co/sites/default/files/footer_phone.png', alt='')
+                                  | (57+1) 381 6464 / 
+                                  img(src='http://www.bibliotecanacional.gov.co/sites/default/files/footer_fax.png', alt='')
+                                  | (57+1) 381 6449
+                              tr
+                                td.footer_info_4
+                                  a(href='mailto:bnc@mincultura.gov.co')
+                                    | bnc@mincultura.gov.co
+                              tr
+                                td.footer_info_5
+                                  strong
+                                    | Lunes a viernes 8 am - 6 pm
+                              tr
+                                td.footer_info_6
+                                  strong
+                                    | S&aacute;bados 9 am - 4 pm
+                              tr
+                                td.footer_info_7
+                                  | Se permite el ingreso hasta treinta minutos antes del cierre.
+                              tr
+                                td.footer_info_8
+                                  a(href='http://www.bibliotecanacional.gov.co/bnwiki/', target='_blank')
+                                    | Wiki BNC
+                              tr
+                                td
+                          table#vinculos(style='margin: 10px; width: 319px; height: 131px;')
+                            tbody
+                              tr
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/sitemap')
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      | Mapa del sitio
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/content/quejas-y-reclamos')
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      | Quejas y reclamos
+                              tr
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/content/términos-y-condiciones-de-uso')
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      | T&eacute;rminos y condiciones
+                                td
+                                  p
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      a(href='http://www.bibliotecanacional.gov.co/content/bolet%C3%ADn-mensual-de-la-biblioteca-nacional', target='_self')
+                                        | Bolet&iacute;n Mensual BNC
+                              tr
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/index.php?q=user')
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      | Acceso al administrador
+                                td
+                                  p
+                                    span(style='text-decoration: underline;', data-mce-mark='1')
+                                      span(data-mce-mark='1')
+                                        a(href='http://www.bibliotecanacional.gov.co/content/corredor-cultural-del-centro')
+                                          | Corredor Cultural del Centro
+                              tr
+                                td
+                                  span(style='text-decoration: underline;', data-mce-mark='1')
+                                    a(href='http://www.bibliotecanacional.gov.co/correo', target='_blank')
+                                      | Acceso al correo institucional
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/content/efem%C3%A9rides')
+                                    span(style='text-decoration: underline;')
+                                      | Efemerides
+                          p
+                        td#right
+                          table(style='margin-top: 10px; margin-left: 10px; line-height: 16px;')
+                            tbody
+                              tr
+                                th(style='width: 150px; text-align: left; line-height: 20px; padding: 0px 8px 18px 10px;')
+                                  | Servicios
+                                th(style='width: 150px; text-align: left; padding: 0px 8px 18px 0px;')
+                                  | Tr&aacute;mites
+                                th(style='width: 150px; padding: 0px 8px 18px 10px;')
+                                  | Colecciones
+                              tr
+                                td(style='padding: 0px 17px 13px 10px;')
+                                  a(href='orientación-y-acceso-la-información?q=node/140')
+                                    | Reserva de Materiales
+                                td(style='padding: 0 31px 13px 0;')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/depósito-legal')
+                                    | Dep&oacute;sito legal
+                                td(style='vertical-align: top; padding: 0px 0px 13px 10px;', rowspan='2')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/colecciones-y-fondos-documentales-y-bibliogr%C3%A1ficos')
+                                    | Colecciones y fondos disponibles en la sede de la biblioteca
+                              tr
+                                td(style='padding: 0px 8px 10px 10px;')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/conozca-nuestra-sede')
+                                    | Conozca nuestra sede
+                                td(style='padding: 0px 14px 13px 0px;', valign='top')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/asignaci%C3%B3n-del-issn', target='_blank')
+                                    | Asignaci&oacute;n del ISSN
+                              tr
+                                td(style='padding: 0px 8px 10px 10px;', valign='top')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/servicios-para-bibliotecarios-y-profesionales-del-libro')
+                                    span(data-mce-mark='1')
+                                      | Servicios para bibliotecarios
+                                td(style='padding: 0px 11px 0px 0px;')
+                                  a(href='http://www.bibliotecanacional.gov.co/content/determinaci%C3%B3n-del-car%C3%A1cter-de-las-publicaciones')
+                                    | Determinaci&oacute;n del car&aacute;cter cient&iacute;fico de las publicaciones
+                                td(style='padding: 0px 13px 0px 10px;')
+                                  a(href='documentos-digitalizados?q=node/81')
+                                    | &Iacute;ndice de colecciones digitales de la Biblioteca
+                              tr
+                                td(style='padding: 0px 8px 10px 10px;')
+                                td(style='padding: 0 31px 13px 0;', valign='top')
+                                  p
+                                  p
+                                    a(href='http://www.bibliotecanacional.gov.co/content/carnetización-e-inscripciones')
+                                      span(data-mce-mark='1')
+                                        span(style='position: relative; top: -6px;', data-mce-mark='1')
+                                          | Carnetizaci&oacute;n
+                                td
+                                  a(href='http://www.bibliotecanacional.gov.co/formularios/view.php?id=18', target='_blank')
+                                    | Encuesta de Servicios
+                          br
+                          table#contendor_seleccion_idiomas(style='margin-left: 10px;', border='0')
+                            tbody
+                              tr
+                                td(style='border-top: 1px solid #006D7B; padding-left: 10px;')
+                                  | BIBLIOTECA NACIONAL DE COLOMBIA
+                                td(style='border-top: 1px solid #006D7B;')
+                                  img(src='http://www.bibliotecanacional.gov.co/sites/default/files/banderas.png', alt='', usemap='#Image-Maps_4201309091305134')
+                                  map#_Image-Maps_4201309091305134(name='Image-Maps_4201309091305134')
+                                    area(title='English', shape='rect', coords='0,0,21,13', href='http://bit.ly/lUVcMJ', alt='', target='_blank')
+                                    area(title='French', shape='rect', coords='65,0,79,13', href='http://bit.ly/lVE9tr', alt='', target='_blank')
+                                    area(title='Spanish', shape='rect', coords='31,0,52,13', href='http://www.bibliotecanacional.gov.co', alt='', target='_blank')
+                          table#contendor_seleccion_idiomas(style='margin-left: 10px;', border='0')
+                            tbody
+                              tr
+                                td(style='border-top: 1px solid #006D7B; padding-left: 10px;')
+                                  | El contenido producido por la Biblioteca Nacional que se publica en este sitio web puede ser reproducido citando la fuente.
+          .footer-area.grid_4
+      #footer-bottom
+        #footer-bottom-inside.container_12.clearfix
+      //
+        script(type='text/javascript').
+          function verHijasFondos(idCategoria)
+          {
+          var divItemActivo = document.getElementById("div-item"+idCategoria);
+          var divItemHijosActivo = document.getElementById("div-item-hijos"+idCategoria);
+          var centinelaCategoriaDesactivar = document.getElementById("idCategoriaActiva");
+          var divItemDesactivar = document.getElementById("div-item"+centinelaCategoriaDesactivar.value);
+          var divItemHijosDesactivar = document.getElementById("div-item-hijos"+centinelaCategoriaDesactivar.value);
+          divItemHijosDesactivar.className = "div-item-hijos-ocultar";
+          divItemDesactivar.className = "div-item";
+          divItemActivo.className = "div-item-activo";
+          divItemHijosActivo.className = "div-item-hijos";
+          centinelaCategoriaDesactivar.value = idCategoria;
+          }
+          function openOptionsServices()
+          {
+          var divOptions = document.getElementById('divOptionsServices');
+          var spanVineteService = document.getElementById('span_vinete');
+          var icon_right = document.getElementById('icon_flecha_right');
+          var icon_bottom = document.getElementById('icon_flecha_bottom');
+          if ((divOptions.style.display=='none' || divOptions.style.display==''))
+          {
+          divOptions.style.display = 'block';
+          spanVineteService.className = "vinete_menu_active";
+          icon_right.style.display = 'none';
+          icon_bottom.style.display = 'block';
+          }
+          else
+          {
+          divOptions.style.display = 'none';
+          spanVineteService.className = "vinete_menu";
+          icon_bottom.style.display = 'none';
+          icon_right.style.display = 'block';
+          }
+          }
+          jQuery(document).ready(function() {
+          jQuery('#search-personalizado-form').submit(function() {
+          var campoBusqueda = jQuery('#edit-search-personalizado-form--2').val();
+          jQuery('#edit-search-block-form--2').val(campoBusqueda);
+          jQuery('#search-block-form').submit();
+          return false;
+          });
+          });
+        script(type='text/javascript').
+          jQuery(document).ready(function($) {
+          $(window).load(function() {
+          $("#slideshow img").show();
+          $("#slideshow").fadeIn("slow");
+          $("#slider-controls-wrapper").fadeIn("slow");
+          $("#slideshow").cycle({
+          fx:    "growX",
+          speed:  "slow",
+          timeout: "15000",
+          random: 1,
+          nowrap: 1,
+          pause: 1,
+          pager:  "#slider-navigation",
+          pagerAnchorBuilder: function(idx, slide) {
+          return "#slider-navigation li:eq(" + (idx) + ") a";
+          },
+          slideResize: true,
+          containerResize: false,
+          height: "auto",
+          fit: 1,
+          before: function(){
+          $(this).parent().find(".slider-item.current").removeClass("current");
+          },
+          after: onAfter
+          });
+          });
+          function onAfter(curr, next, opts, fwd) {
+          var $ht = $(this).height();
+          $(this).parent().height($ht);
+          $(this).addClass("current");
+          }
+          $(window).load(function() {
+          var $ht = $(".slider-item.current").height();
+          $("#slideshow").height($ht);
+          });
+          $(window).resize(function() {
+          var $ht = $(".slider-item.current").height();
+          $("#slideshow").height($ht);
+          });
+          });
