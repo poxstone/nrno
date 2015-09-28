@@ -1,7 +1,20 @@
+html
+  background #f4f2ef
 #banner
 #content
+  font-family $textFont
+  line-height 1.3em
+  font-size $fontSize
+  h1,h2,h3,h4,h5,h6
+    font-family $titleFont
+    text-shadow none
+    color $textColor
+    padding $paddingBox 0
+    margin $paddingBox auto
+    font-weight normal
+
   > div
-    outline 1px solid rgba(0,0,0,0.25)
+    //outline 1px solid rgba(0,255,0,.25)
     padding 0 10px
     max-width ($wrapper - 20)
     margin auto
@@ -13,6 +26,8 @@
 #content
   h1
     color orange
+  a
+    color $blue
 /*menu prindipal*/
 ul#nrno-menu
   defaultDisplay(inline-block)
@@ -21,8 +36,11 @@ ul#nrno-menu
     width 12.4%
     margin auto
     vertical-align top
+    border-top 1px solid $gray2
+    border-bottom 1px solid $gray2
+
     & + li
-      margin-left 1px
+      border-left 1px solid $gray2
     a
       background $salmon
       color $white
@@ -32,6 +50,7 @@ ul#nrno-menu
       line-height 100px
       width 100%
       transition ease-in-out 250ms all
+      font-family Merriweather, serif
       &:hover
         background $salmon_hover
       &:active
@@ -39,6 +58,7 @@ ul#nrno-menu
         background $salmon_active
 
       &.destacada
+        background $aquamarine
         &:hover
           background $aquamarine_hover
         &:active
@@ -49,3 +69,167 @@ ul#nrno-menu
         display inline-block
         line-height 1.2em
         vertical-align middle
+        padding ($paddingBox *2 ) $paddingBox
+
+#nrno-banner
+  position relative
+  padding-top 1px
+  margin-top -1px
+  margin-right 1px //descuadre respecto al menu
+  height 400px
+
+  .cont-img
+    position absolute
+    z-index -1
+    width 100%
+    height 100%
+    background $gray2
+    overflow hidden
+
+    .img
+      width 100%
+      background $gray fixed repeat center bottom
+      min-height 100%
+      //background-size cover
+    img.img
+      position absolute
+      width 100%
+      bottom 0
+
+  ul.menu
+    defaultDisplay(block)
+    font-family Merriweather, serif
+    font-style italic
+    position absolute
+    width 22%
+    margin-top $paddingBox *3
+    z-index 3
+    li
+      defaultDisplay(block)
+      margin-bottom 1px
+      a
+        display block
+        color $salmon
+        background $white
+        background rgba($white,.85)
+        padding $paddingBox
+        text-decoration none
+        transition ease-in-out 250ms all
+
+        &:hover
+          background $white
+          text-indent 1em
+
+        &:active
+        &.active
+          background $aquamarine
+          color $white
+
+  .article
+    position absolute
+    margin-top $paddingBox *3
+    width 100%
+    height 92.5%
+
+    .section
+      position absolute
+      height 82%
+      width 45.5%
+      left 22%
+      color $white
+      background rgba($gray2,.85)
+      margin-left $paddingBox *3
+      padding $paddingBox *2
+      box-shadow $box-shadow1
+
+      + .section
+        display none
+
+      h2
+        color $aquamarine
+        font-size $text_h1
+        text-align right
+        margin-top 0
+        padding-bottom $paddingBox *2
+        margin-bottom $paddingBox *2
+        border-bottom 1px solid $gray
+        font-style italic
+        font-weight normal
+
+      .inner
+        max-height 245px
+        //max-height: 225px;
+        overflow auto
+        scrollbar(rgba(#000,0))
+        padding-right $paddingBox
+        p:first-child
+          padding-top 0
+          margin-top 0
+  .botones
+    position absolute
+    right $paddingBox *10
+    bottom $paddingBox *3
+
+    a
+      display block
+      height 12px
+      width 12px
+      border-radius 100px
+      border 4px solid white
+      background $salmon
+      position relative
+      margin $paddingBox *2
+      cursor pointer
+
+      span
+        display none
+        background $white
+        color $textColor
+        padding ($paddingBox *0.5) $paddingBox
+        position absolute
+        bottom 100%
+        left 100%
+        margin-bottom 15px
+        margin-left 15px
+        white-space nowrap
+        &:after
+          content ''
+          display block
+          position absolute
+          top 100%
+          left 0
+          arrow 15px 15px upLeft white
+
+      &:hover
+        background $salmon_hover
+        span
+          display block
+#nrno-social
+  ulUnformat(inline-block)
+  &
+    float right
+    white-space nowrap
+    margin ($paddingBox *1.5) 0
+  a
+    display inline-block
+    background $gray2 center no-repeat
+    background-size 100% 100%
+    border-radius 100px
+    height 28px
+    width 28px
+    margin-right 4px
+    transition ease-in-out 250ms all
+    &:hover
+      background-color $aquamarine
+    span
+      display none
+    &.Facebook
+      background-image url(../img/ico-facebook.png)
+    &.Twitter
+      background-image url(../img/ico-twitter.png)
+#contenido
+  background $white
+  padding 1px ($paddingBox *2) ($paddingBox *2)
+  h2.titulo_biblio
+    padding-bottom ($paddingBox -5) *2
+    border-bottom 1px solid $gray

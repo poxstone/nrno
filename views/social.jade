@@ -1,4 +1,5 @@
 ul#nrno-social
-  each v, i in db.social
+  each media, index in db.social
     li
-      a(href=v.l,title=v.n) #{v.n}
+      a(href=media.link,class=media.nombre,title=media.nombre)
+        span= media.nombre

@@ -1,20 +1,26 @@
 div#nrno-banner
-  img(src=contenido.imagen)
+  div.cont-img
+    - img= glb.rdir+'/img/'+contenido.id+'/ban_'+contenido.imagen
+    //div.img(style="background-image:url(#{img})")
+    img.img(src="#{img}")
   ul.menu
     - each banner, index in contenido.banners
       li
-        a(href="#{index}",title=banner.titulo) #{banner.titulo}
-  article
+        a(href="#{index}",title=banner.titulo)
+          span=banner.titulo
+  article.article
     - each banner, index in contenido.banners
-      section
+      section.section
         - if (index==0)
           h2 Introducción
         - else
           h2= banner.titulo
-        each parrafo, numero in banner.parrafos
-          p!=parrafo
+        div.inner
+          - each parrafo, numero in banner.parrafos
+            p!=parrafo
     - if (contenido.botones.length >= 1)
       div.botones
         - each boton, index in contenido.botones
-          a(href=link,title=boton.titulo)= boton.titulo
+          a(href=link,title=boton.titulo,class=boton.tipo)
+            span ver #{boton.tipo}
           
