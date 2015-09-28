@@ -2,12 +2,15 @@ div#nrno-libros
   ul
     - each libro, indice in contenido.libros
       li
-        a(href=libro.url)
-          h2= libro.titulo
+        - img= glb.rdir+'/img/'+contenido.id+'/'
+        a(href="#{img + libro.archivo}.pdf")
+          h3.tit= libro.titulo
           figure
-            span.img
-              img(class=libro.estilo,src=libro.archivo)
+            span.imagen
+              div hola
+              //div.img(style="background-image:url#{img}min_#{libro.archivo}.jpg)")
+              img.img(src="#{img}min_#{libro.archivo}.jpg")
             figcaption= libro.pie
-            span= libro.hover
+            span.hover= libro.hover
           em= libro.autor
         
