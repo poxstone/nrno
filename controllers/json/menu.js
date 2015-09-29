@@ -1,14 +1,14 @@
 db = {
 
   menu : [
-    {titulo:'La Santafé de Nariño',link:'#',clase:'normal'},
-    {titulo:'La Biblioteca',link:'#',clase:'normal'},
-    {titulo:'Nariño en la tertulia',link:'#',clase:'normal'},
-    {titulo:'El Santuario',link:'#',clase:'normal'},
-    {titulo:'La Imprenta Patriótica',link:'#',clase:'normal'},
-    {titulo:'La impresión de los derechos del hombre',link:'#',clase:'normal'},
-    {titulo:'La aventura del pensamiento',link:'#',clase:'destacada'},
-    {titulo:'Ahora o nunca',link:'#',clase:'destacada'},
+    {titulo:'La Santafé <i>de</i> Nariño',link:'/santafe',clase:'normal'},
+    {titulo:'<i>La</i> Biblioteca',link:'/biblioteca',clase:'normal'},
+    {titulo:'Nariño <i>en la</i> tertulia',link:'narino',clase:'normal'},
+    {titulo:'<i>El</i> Santuario',link:'santuario',clase:'normal'},
+    {titulo:'<i>La</i> Imprenta <i>Patriótica</i>',link:'imprenta',clase:'normal'},
+    {titulo:'<i>La</i> impresión <i>de los derechos</i> del hombre',link:'impresion',clase:'normal'},
+    {titulo:'<i>La</i> aventura <i>del</i> pensamiento',link:'pensamiento',clase:'destacada'},
+    {titulo:'Ahora <i>o</i> nunca',link:'ahora',clase:'destacada'},
   ],
 
   social : [
@@ -18,8 +18,8 @@ db = {
 
   presentacion : {
     id: 'presentacion',//tambien es el folder de las imagenes
-    titulo :'La Santafe ilustrada',
-    imagen : 'IMG00168.jpg',
+    titulo :'Presentación',
+    imagen : 'banner.jpg',
     banners : [
       {titulo:'La Santafé de Nariño',parrafos:['A finales del siglo XVIII, Santafé de Bogotá se imaginaba a sí misma como una ciudad ilustrada, una ciudad de libros y ávidos lectores. Con cerca de 20.000 habitantes, era corte virreinal, silla arzobispal, sede de la Real Audiencia, de los tribunales de justicia y de las cajas reales, además de asiento de tres colegios mayores, un colegio para niñas, cinco escuelas populares, dos imprentas, un teatro público y un papel periódico oficial. También fue la primera capital de América que contó con una biblioteca pública. La Real Biblioteca Pública de Santafé de Bogotá –hoy Biblioteca Nacional de Colombia– abrió sus puertas el 9 de enero de 1777, bajo el mandato del virrey Manuel Antonio Flórez, y fue presentada en su momento por el Papel Periódico de Santafé de Bogotá como “un riquísimo museo dedicado al esplendor del Reino, al aumento de la Sabiduría y a las delicias de la Virtud”. Sus colecciones se sumaron a las de aquellas bibliotecas establecidas y cultivadas por décadas por las órdenes religiosas y por un crecido número de peninsulares y criollos ilustrados.']},
       {titulo:'Nariño: el lector',parrafos:['Entre las bibliotecas privadas de Santafé de Bogotá, destacaba la imponente y ciertamente única biblioteca‐librería de Antonio Nariño. Miembro de una de las “primeras familias del Reino”, hijo del gallego Vicente de Nariño y Vásquez, contador oficial de las cajas del Reino, y de la santafereña Catalina Álvarez del Casal, Nariño fue un apasionado de los libros, un gran lector y un autodidacta formidable: todo parece indicar que estudió por algún tiempo en el Colegio Mayor de San Bartolomé, aunque no concluyó sus estudios por razones médicas. Desde muy niño tuvo acceso a las colecciones de libros. Cientos de lecturas le dieron una sólida formación intelectual y un bagaje de ideas difícilmente comparable. Durante el proceso judicial que enfrentó en 1793 por traducir y publicar La Declaración de los Derechos del Hombre y del Ciudadano él mismo mencionó los “tantos libros y papeles públicos que solía leer en los momentos de [su] reposo”.','Los testimonios de los amigos de Nariño –y también de sus malquerientes– destacan el talante de lector incansable del santafereño. Según le escribió a Nariño uno de sus amigos más entrañables, el ilustrado antioqueño Francisco Antonio Zea, en una carta fechada en junio de 1794: “no puedo abrir un libro donde no lea mis deberes para contigo, que no me recuerde tus bondades”. Asimismo, el historiador José Manuel Restrepo escribió en su Historia de la Revolución de la República de Colombia –no sin cierta sorna– que Nariño “se dedicó a leer, formando una buena librería y reuniendo varias máquinas de física. Con esto y con una imprenta que tenía y en que se publicaban algunos folletos, pasaba por un sabio en Santafé”. Las autoridades reales incluso reconocían sus “conocimientos, instrucción y buenas luces” y en el escrito de acusación formal en su contra lo describían como un gran lector, como si de un nuevo oficio se tratara: “[la] lectura de los autores de que se vale ha sido su principal ocupación”.']},
@@ -70,7 +70,14 @@ db = {
         estilo:'Hipervinculo a catáologo BNC',
       },
     ],
-  }
+  },
+
+  santafe : {
+    id: 'santafe',//tambien es el folder de las imagenes
+    titulo :'La Santafe ilustrada',
+    imagen : 'IMG00168.jpg',
+  },
+
 };
 
 module.exports = db;

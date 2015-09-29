@@ -51,11 +51,13 @@ ul#nrno-menu
       display block
       display flex
       text-align center
-      height 105px
+      height 110px
       line-height 100px
       width 100%
       transition ease-in-out 250ms all
       font-family Merriweather, serif
+      font-size 0.9em
+      font-weight lighter
       box-shadow rgba(0,0,0,0) 0 0 0
       position relative
       text-decoration none
@@ -78,11 +80,14 @@ ul#nrno-menu
 
       span
         display inline-block
-        line-height 1.1em
+        line-height 1.2em
         vertical-align middle
         align-self center
         transform translateY(-5px)
         padding ($paddingBox *1.5 ) $paddingBox
+        i
+          display inline-block
+          width 90%
 
 #nrno-banner
   position relative
@@ -91,6 +96,8 @@ ul#nrno-menu
   margin-right 1px //descuadre respecto al menu
   height 400px
   background $gray2
+  &.presentacion
+    height 448px
 
   .cont-img
     position absolute
@@ -99,6 +106,7 @@ ul#nrno-menu
     height 100%
     background $gray2
     overflow hidden
+
 
     .img
       width 100%
@@ -139,7 +147,7 @@ ul#nrno-menu
         &.active
           background $aquamarine
           color $white
-        
+
 
   .article
     position absolute
@@ -224,14 +232,14 @@ ul#nrno-menu
         span
           animation menuUp ease-in-out 250ms
           display block
-          
+
 #nrno-social
   ulUnformat(inline-block)
   &
     float right
     white-space nowrap
     margin ($paddingBox *1.5 - 2px) 0 ($paddingBox *1.5)
-  a
+  a.lnk
     display inline-block
     background $gray2 center no-repeat
     background-size 100% 100%
@@ -253,8 +261,28 @@ ul#nrno-menu
   background $white
   padding 1px ($paddingBox *2) ($paddingBox *2)
   h2.titulo_biblio
+  h2.titulo_presentacion
     padding-bottom (($paddingBox *2) - 3px)
     border-bottom 1px solid $gray
+    font-style italic
+
+  h2.titulo_presentacion
+    color $aquamarine
+
+  p
+    text-align justify
+  p.creditos
+    font-style italic
+    color black
+    font-weight bold
+    small
+      font-weigth normal
+    strong
+      font-weigth normal
+      color $textGray
+
+
+
 #nrno-libros
   p.tit
     font-size $fontSize
@@ -357,3 +385,12 @@ ul#nrno-menu
 
       em
         display none
+#chrono
+  overflow auto
+  background-color $gray3
+  //scrollbar(rgba(#000,0))
+  height 200px
+  img
+    height 100%
+    width auto
+    max-width none

@@ -1,0 +1,10 @@
+extends layout
+block banner
+  include menu
+block content
+  include banner
+
+  div#contenido
+    include social
+    h2.titulo_biblio Documentos relacionados
+    include libros
