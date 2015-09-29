@@ -26,7 +26,48 @@ html
 #banner
   a
     color black
-
+#popUp
+  display block
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  overflow auto
+  background-color $gray4
+  background-color rgba($gray4,.9)
+  z-index 10000
+  .modal-cont
+    background $white
+    padding $paddingBox *2
+    border-radius $rad
+    margin auto
+    left 10%
+    right 10%
+    top 10%
+    bottom 10%
+    position absolute
+    box-shadow $box-shadow3
+  .iframe
+    box-shadow $box-shadow3
+    background $gray2
+    margin auto
+    position absolute
+    left $paddingBox
+    right $paddingBox
+    top $paddingBox
+    bottom 20%
+  .cita
+    margin auto
+    position absolute
+    left 10px
+    right $paddingBox
+    top 80%
+    bottom 10px
+    padding-top $paddingBox
+    
+    
+  
 #content
   h1
     color orange
