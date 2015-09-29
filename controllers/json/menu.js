@@ -48,7 +48,7 @@ db = {
         hover:'"Erección de la Real Biblioteca". Papel Periódico de Santafé de Bogotá (diciembre 1796).',
         pie:'BNC: RS 1. Describe la fundación de la biblioteca real.',
         url:'',
-        archivo:'',
+        archivo:'Imagenro_264_Page_001',
         estilo:'Flip',
       },
       {
@@ -57,17 +57,8 @@ db = {
         hover:'“Los frutos del árbol noble”. Papel Periódico de Santafé de Bogotá (febrero de 1791).',
         pie:'Texto atribuido a Antonio Nariño, en el que habla sobre los valores del ciudadano ilustrado, BNC: F. Pineda 183',
         url:'Pendiente URL de Conservación',
-        archivo:'ps18_papelperiodico_santafedebogota_1791',
+        archivo:'nro_3_Page_002',
         estilo:'Flip',
-      },
-      {
-        titulo:'“Los frutos del árbol noble” en Papel Periódico de Santafé de Bogotá (Nº4: 4-III-1791: Pag. 25-28).',
-        autor:'Texto atribuido a Antonio Nariño, en el que habla sobre los valores del ciudadano ilustrado',
-        hover:'',
-        pie:'Texto atribuido a Antonio Nariño, en el que habla sobre los valores del ciudadano ilustrado, BNC: F. Pineda 183',
-        url:'Pendiente URL de Conservación',
-        archivo:'',
-        estilo:'',
       },
       {
         titulo:'Cartas de Caldas',

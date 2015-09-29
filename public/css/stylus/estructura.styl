@@ -13,6 +13,7 @@ html
     padding $paddingBox 0
     margin $paddingBox auto
     font-weight normal
+    line-height 1em
 
   > div
     //outline 1px solid rgba(0,255,0,.25)
@@ -45,34 +46,42 @@ ul#nrno-menu
     & + li
       border-left 1px solid $gray2
     a
-      background $salmon
+      background $salmon url(../img/bg-menu.png) center 90% no-repeat
       color $white
       display block
+      display flex
       text-align center
-      height 100px
+      height 105px
       line-height 100px
       width 100%
       transition ease-in-out 250ms all
       font-family Merriweather, serif
+      box-shadow rgba(0,0,0,0) 0 0 0
+      position relative
       &:hover
-        background $salmon_hover
+        z-index 1
+        background-color $salmon_hover
+        background-position-y 95%
+        box-shadow rgba(0,0,0,0.5) 0 4px 12px 0
       &:active
       &.active
-        background $salmon_active
+        background-color $salmon_active
 
       &.destacada
-        background $aquamarine
+        background-color $aquamarine
         &:hover
-          background $aquamarine_hover
+          background-color $aquamarine_hover
         &:active
         &.active
-          background $aquamarine_active
+          background-color $aquamarine_active
 
       span
         display inline-block
-        line-height 1.2em
+        line-height 1.1em
         vertical-align middle
-        padding ($paddingBox *2 ) $paddingBox
+        align-self center
+        transform translateY(-5px)
+        padding ($paddingBox *1.5 ) $paddingBox
 
 #nrno-banner
   position relative
@@ -154,6 +163,7 @@ ul#nrno-menu
         font-size $text_h1
         text-align right
         margin-top 0
+        line-height 0.575em
         padding-bottom $paddingBox *2
         margin-bottom $paddingBox *2
         border-bottom 1px solid $gray
@@ -161,7 +171,7 @@ ul#nrno-menu
         font-weight normal
 
       .inner
-        max-height 245px
+        max-height 235px
         //max-height: 225px;
         overflow auto
         scrollbar(rgba(#000,0))
@@ -240,28 +250,51 @@ ul#nrno-menu
 #nrno-libros
   p.tit
     font-size $fontSize
-    padding 20px
+    padding $paddingBox
+    color $textColor
+    text-decoration none
+    margin auto
   ul
     ulUnformat(inline-block)
-    text-align justify
+    &
+      text-align justify
+      margin 0 -1.25%
+      font-style italic
     li
-      width 24%
+      width 22.5%
       position relative
       vertical-align top
-      margin-top $paddingBox
-      & + li
-        margin-left 1.25%
+      margin $paddingBox 1.25%
       a
         display block
-        border 1px solid $gray3
+        border 1px solid transparent
         width 100%
         height 275px
         margin auto
         position relative
+        top 0
         overflow hidden
         padding 0
         border-radius $rad
-        
+        color $textColor
+        text-decoration none
+        transition ease-in-out 250ms all
+        box-shadow rgba(0,0,0,0) 0 0 0 0
+
+        &:hover
+          border 1px solid $gray3
+          box-shadow rgba(0,0,0,.2) 4px 8px 10px 0
+          top -5px
+
+          .hover
+            opacity 1
+          .figcaption
+            opacity 0
+          .img
+            transform scale(1.5) rotate(15deg)
+            opacity 0.25
+
+
       .figure
         overflow hidden
         display block
@@ -270,21 +303,47 @@ ul#nrno-menu
         position relative
         height 150px
         width 100%
+
       .figcaption
+      .hover
         display block
+        color $white
+        position absolute
+        left 0
+        right 0
+        top 0
+        bottom 0
+        padding $paddingBox
+        transition ease-in-out 500ms all
+        text-shadow rgba(0,0,0,.5) 0 0 12px
+        line-height (150px - ( $paddingBox *2))
+        span
+          display inline-block
+          vertical-align middle
+          line-height 1.3em
+
+      .figcaption
+        opacity 1
+      .hover
+        opacity 0
+
       .imagen
         position absolute
         width 100%
         height 100%
         z-index 0
         display block
-        background $gray2
+        background $aquamarine
+        overflow hidden
+
       .img
         position absolute
         width 100%
+        min-height 100%
         display block
-        
-      .hover
-        position absolute
+        opacity 0.5
+        transition ease-in-out 500ms all
+        transform scale(1) rotate(0deg)
+
       em
         display none

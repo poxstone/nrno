@@ -1,8 +1,8 @@
 div#nrno-banner
   div.cont-img
     - img= glb.rdir+'/img/'+contenido.id+'/ban_'+contenido.imagen
-    //div.img(style="background-image:url(#{img})")
-    img.img(src="#{img}")
+    div.img(style="background-image:url(#{img})")
+    //img.img(src="#{img}")
   ul.menu
     - each banner, index in contenido.banners
       li
