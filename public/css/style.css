@@ -326,7 +326,7 @@ body.show-popUp {
   bottom: 0;
   overflow: auto;
   background-color: #ccc;
-  background-color: rgba(204,204,204,0.9);
+  background-color: rgba(255,255,255,0.9);
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -361,8 +361,8 @@ body.show-popUp {
   background: rgba(0,0,0,0.75);
   padding: 10px;
   margin: auto;
-  left: 5%;
-  right: 5%;
+  left: 25%;
+  right: 25%;
   top: 5%;
   bottom: 5%;
   position: absolute;
@@ -464,7 +464,7 @@ ul#nrno-menu li a {
   display: block;
   display: flex;
   text-align: center;
-  height: 110px;
+  height: 100px;
   line-height: 100px;
   width: 100%;
   -webkit-transition: ease-in-out 250ms all;
@@ -605,7 +605,7 @@ ul#nrno-menu li a span i {
 }
 #nrno-banner ul.menu li a:active,
 #nrno-banner ul.menu li a.active {
-  background: #068e91;
+  background: #e75f3b;
   color: #fff;
 }
 #nrno-banner .article {
@@ -934,6 +934,7 @@ ul#nrno-menu li a span i {
   right: 0;
   top: 0;
   bottom: 0;
+  font-style: normal;
   padding: 10px;
   -webkit-transition: ease-in-out 500ms all;
   -moz-transition: ease-in-out 500ms all;
@@ -962,9 +963,9 @@ ul#nrno-menu li a span i {
   flex-item-align: center;
 }
 #nrno-libros ul li .figcaption {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 #nrno-libros ul li .hover {
   opacity: 0;
@@ -985,9 +986,9 @@ ul#nrno-menu li a span i {
   width: 100%;
   min-height: 100%;
   display: block;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
   -webkit-transition: ease-in-out 500ms all;
   -moz-transition: ease-in-out 500ms all;
   -ms-transition: ease-in-out 500ms all;

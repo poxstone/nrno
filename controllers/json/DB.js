@@ -9,7 +9,7 @@ db = {
     {titulo:'Nariño <i>en la</i> tertulia',link:'narino',clase:'normal'},
     {titulo:'<i>El</i> Santuario',link:'santuario',clase:'normal'},
     {titulo:'<i>La</i> Imprenta <i>Patriótica</i>',link:'imprenta',clase:'normal'},
-    {titulo:'<i>La</i> impresión <i>de los derechos</i> del hombre',link:'impresion',clase:'normal'},
+    {titulo:'<i>La</i> impresión <i>de los <span>Derechos</span></i><span> del Hombre</span>',link:'impresion',clase:'normal'},
     {titulo:'<i>La</i> aventura <i>del</i> pensamiento',link:'pensamiento',clase:'destacada'},
     {titulo:'Ahora <i>o</i> nunca',link:'ahora',clase:'destacada'},
   ],
