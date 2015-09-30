@@ -96,7 +96,7 @@ body
       height auto
       display none
 
-  .cita
+  #popUp-pie
     margin auto
     position absolute
     left $paddingBox *2
@@ -164,9 +164,10 @@ ul#nrno-menu
         align-self center
         transform translateY(-5px)
         padding ($paddingBox *1.5 ) $paddingBox
+        width 100%
         i
           display inline-block
-          width 90%
+          width 100%
 
 #nrno-banner
   position relative
@@ -266,7 +267,15 @@ ul#nrno-menu
         overflow auto
         scrollbar(rgba(#000,0))
         padding-right $paddingBox
+        //text-align justify
+        blockquote
+          text-align justify
+          background transparent url('../img/blockquote.png') no-repeat top left
+          margin $paddingBox *2 0
+          padding 0 $paddingBox *4 0 $paddingBox *4
+          background-size 32px
         p:first-child
+        blockquote:first-child
           padding-top 0
           margin-top 0
   .botones
@@ -360,9 +369,9 @@ ul#nrno-menu
       font-weigth normal
       color $textGray
 
-
-
 #nrno-libros
+  padding-bottom $paddingBox*4
+  min-height 300px
   p.tit
     font-size $fontSize
     padding $paddingBox
@@ -384,7 +393,7 @@ ul#nrno-menu
         display block
         border 1px solid transparent
         width 100%
-        height 275px
+        min-height 250px
         margin auto
         position relative
         top 0
@@ -416,7 +425,7 @@ ul#nrno-menu
         margin auto
         padding 0
         position relative
-        height 150px
+        height 200px
         width 100%
 
       .figcaption

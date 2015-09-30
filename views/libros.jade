@@ -1,17 +1,29 @@
 div#nrno-libros
   ul
-    - each libro, indice in contenido.libros
-      li
-        - img= glb.rdir+'/img/'+contenido.id+'/'
-        a(href="#{img}min_#{libro.archivo}.jpg",onclick="show_popUp.view(this,event);",target="_blank")
-          figure.figure
-            span.imagen
-              //div.img(style="background-image:url#{img}min_#{libro.archivo}.jpg)")
-              img.img(src="#{img}min_#{libro.archivo}.jpg")
-            figcaption.figcaption
-              span= libro.pie
-            figcaption.hover
-              span= libro.hover
-          em= libro.autor
-          p.tit= libro.titulo
+    - if (contenido.libros.length)
+      - each libro, indice in contenido.libros
+        li
+          - img= glb.rdir+'/img/'+contenido.id+'/'
+          a(href="#{libro.url}",onclick="show_popUp.view(this,event);",target="_blank")
+            figure.figure
+              span.imagen
+                - if ( libro.archivo == '' )
+                  - img_src = '/img/img.png'
+                - else
+                  - img_src = img+'min_'+libro.archivo+'.jpg'
+                  
+                //div.img(style="background-image:url(#{img_src})")
+                img.img(src=img_src)
+                
+              figcaption.figcaption
+                span= libro.pie
+              figcaption.hover
+                  span
+                    - if (libro.hover !='')
+                      |#{libro.hover}
+                    -else
+                      |#{libro.pie}
+                  
+            em= libro.autor
+            p.tit= libro.titulo
         

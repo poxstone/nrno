@@ -3,24 +3,28 @@ div#nrno-banner
     - img= glb.rdir+'/img/'+contenido.id+'/ban_'+contenido.imagen
     div.img(style="background-image:url(#{img})")
     //img.img(src="#{img}")
-  ul.menu
-    - each banner, index in contenido.banners
-      li
-        a(href="#{index}",title=banner.titulo)
-          span=banner.titulo
-  article.article
-    - each banner, index in contenido.banners
-      section.section
-        - if (index==0)
-          h2 Introducción
-        - else
-          h2= banner.titulo
-        div.inner
-          - each parrafo, numero in banner.parrafos
-            p!=parrafo
-    - if (contenido.botones.length >= 1)
+  - if (contenido.banners.length)
+    ul#ban-menu.menu
+      - each banner, index in contenido.banners
+        li
+          a(href="##{contenido.id+index}",onclick="show_ban.view(this,event)",title=banner.titulo)
+            span=banner.titulo
+            
+  - if (contenido.banners.length)
+    article#ban-article.article
+      - each banner, index in contenido.banners
+        section.section(id="#{contenido.id+index}")
+          - if (index==0)
+            h2 Introducción
+          - else
+            h2= banner.titulo
+          div.inner
+            - each parrafo, numero in banner.parrafos
+              p!=parrafo
+            
+    - if (contenido.botones.length)
       div.botones
         - each boton, index in contenido.botones
-          a(href=link,title=boton.titulo,class=boton.tipo,onclick="show_popUp.view(this,event);",target="_blank")
+          a(href=boton.link,title=boton.titulo,class=boton.tipo,onclick="show_popUp.view(this,event);",target="_blank")
             span ver #{boton.tipo}
           
