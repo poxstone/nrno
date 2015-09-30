@@ -79,7 +79,7 @@ body
     &:hover
       background rgba($gray,.33)
       opacity 1
-      
+
   #popUp-iframe
     box-shadow $box-shadow3
     background $white
@@ -142,6 +142,7 @@ ul#nrno-menu
       transition ease-in-out 250ms all
       font-family Merriweather, serif
       font-size 0.9em
+      font-style normal
       font-weight lighter
       box-shadow rgba(0,0,0,0) 0 0 0
       position relative
@@ -163,7 +164,7 @@ ul#nrno-menu
         &.active
           background-color $aquamarine_active
 
-      span
+      .text
         display inline-block
         line-height 1.2em
         vertical-align middle
@@ -171,9 +172,13 @@ ul#nrno-menu
         transform translateY(-5px)
         padding ($paddingBox *1.5 ) $paddingBox
         width 100%
-        i
+        margin-left -($paddingBox)
+        margin-right -($paddingBox)
+        span
           display inline-block
           width 100%
+          i
+            font-style italic
 
 #nrno-banner
   position relative
@@ -481,9 +486,9 @@ ul#nrno-menu
         display none
 #chrono
   overflow auto
-  background-color $gray3
+  background $gray3 url(../img/presentacion/bg_cronologia.png) left center
   //scrollbar(rgba(#000,0))
-  height 200px
+  height 300px
   img
     height 100%
     width auto

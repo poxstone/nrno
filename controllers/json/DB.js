@@ -4,14 +4,14 @@ db = {
     rdir: rdir,
   },
   menu : [
-    {titulo:'La Santafé <i>de</i> Nariño',link:'/santafe',clase:'normal'},
-    {titulo:'<i>La</i> Biblioteca',link:'/biblioteca',clase:'normal'},
-    {titulo:'Nariño <i>en la</i> tertulia',link:'narino',clase:'normal'},
-    {titulo:'<i>El</i> Santuario',link:'santuario',clase:'normal'},
-    {titulo:'<i>La</i> Imprenta <i>Patriótica</i>',link:'imprenta',clase:'normal'},
-    {titulo:'<i>La</i> impresión <i>de los <span>Derechos</span></i><span> del Hombre</span>',link:'impresion',clase:'normal'},
-    {titulo:'<i>La</i> aventura <i>del</i> pensamiento',link:'pensamiento',clase:'destacada'},
-    {titulo:'Ahora <i>o</i> nunca',link:'ahora',clase:'destacada'},
+    {titulo:'La Santafé <span>de</span> Nariño',link:'/santafe',clase:'normal'},
+    {titulo:'<span>La</span> Biblioteca',link:'/biblioteca',clase:'normal'},
+    {titulo:'Nariño <span>en la</span> tertulia',link:'narino',clase:'normal'},
+    {titulo:'<span>El</span> Santuario',link:'santuario',clase:'normal'},
+    {titulo:'<span>La</span> Imprenta <span>Patriótica</span>',link:'imprenta',clase:'normal'},
+    {titulo:'<span>La</span> impresión <span>de los <i>Derechos</i></span><i> del Hombre</i>',link:'impresion',clase:'normal'},
+    {titulo:'<span>La</span> aventura <span>del</span> pensamiento',link:'pensamiento',clase:'destacada'},
+    {titulo:'Ahora <span>o</span> nunca',link:'ahora',clase:'destacada'},
   ],
 
   social : [
@@ -45,7 +45,7 @@ db = {
     libros : [
       {
         titulo:'Plano de la ciudad de Santafé de Bogotá y sus alrededores Santafé',
-        autor:'Carlos J. Cabrer',
+        autor:'Carlos J. Cabrer',//se vá
         hover:'Plano de la ciudad de Santafé de Bogotá (1797).',
         pie:'Plano de la ciudad de Santafé de 1797. Hecho por el mismo ingeniero que ayudó a Nariño a diseñar el Santuario.',
         url:'Proviene de: Atlas histórico de Bogotá (Cuéllar Sáchez y Mejía Pavoni, 2007, p. 21)',
