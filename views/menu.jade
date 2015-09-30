@@ -1,8 +1,11 @@
 link(rel="stylesheet",href="#{glb.rdir}/css/style.css")
 script(src="#{glb.rdir}/js/nrn-dsn.js")
-div#popUp
+div#nrno-popUp
   div.modal-cont
-    div.iframe
+    a#popup-quit(onclick="show_popUp.hide(this,event)") &times;
+    div#popUp-iframe
+      iframe#iframe-src
+      img#image-src
     div.cita
       | my ser popUp
   

@@ -3,7 +3,7 @@ div#nrno-libros
     - each libro, indice in contenido.libros
       li
         - img= glb.rdir+'/img/'+contenido.id+'/'
-        a(href="#{img}min_#{libro.archivo}.jpg")
+        a(href="#{img}min_#{libro.archivo}.jpg",onclick="show_popUp.view(this,event);",target="_blank")
           figure.figure
             span.imagen
               //div.img(style="background-image:url#{img}min_#{libro.archivo}.jpg)")

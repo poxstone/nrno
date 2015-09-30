@@ -1,6 +1,11 @@
 html
   background #f4f2ef
   min-width $wrapper
+html
+body
+  &.show-popUp
+    overflow hidden !important
+
 #banner
 #content
   font-family $textFont
@@ -26,8 +31,8 @@ html
 #banner
   a
     color black
-#popUp
-  display block
+#nrno-popUp
+  display none
   position fixed
   top 0
   left 0
@@ -36,38 +41,65 @@ html
   overflow auto
   background-color $gray4
   background-color rgba($gray4,.9)
+  transition ease-in-out 750ms all
   z-index 10000
+  .show-popUp &
+    display block
   .modal-cont
+    background $black
+    background rgba(0,0,0,.75)
+    padding $paddingBox
+    margin auto
+    left 5%
+    right 5%
+    top 5%
+    bottom 5%
+    position absolute
+    box-shadow $box-shadow3
+    color $white
+  #popup-quit
+    display block
+    float right
+    background rgba($gray,0)
+    width $paddingBox *2
+    height $paddingBox *2
+    color white
+    font-size $text_h3
+    opacity .75
+    cursor pointer
+    text-align center
+    margin auto $paddingBox
+    transition ease-in-out 250ms all
+    &:hover
+      background rgba($gray,.33)
+      opacity 1
+  #popUp-iframe
+    box-shadow $box-shadow3
     background $white
-    padding $paddingBox *2
-    border-radius $rad
-    margin auto
-    left 10%
-    right 10%
-    top 10%
-    bottom 10%
-    position absolute
-    box-shadow $box-shadow3
-  .iframe
-    box-shadow $box-shadow3
-    background $gray2
     margin auto
     position absolute
-    left $paddingBox
-    right $paddingBox
-    top $paddingBox
+    left $paddingBox *2
+    right $paddingBox *2
+    top $paddingBox *4
     bottom 20%
+    overflow auto
+    > iframe
+    > img
+      width 100%
+      min-height 100%
+      height auto
+      display none
+
   .cita
     margin auto
     position absolute
-    left 10px
-    right $paddingBox
+    left $paddingBox *2
+    right $paddingBox *2
     top 80%
     bottom 10px
-    padding-top $paddingBox
-    
-    
-  
+    padding-top $paddingBox *2
+    text-align justify
+
 #content
   h1
     color orange
