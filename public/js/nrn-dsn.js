@@ -1,19 +1,24 @@
 var util = {
-  preventDefault : function(evento){
+  preventDefault: function(evento){
     if(event.preventDefault){ evento.preventDefault() }else{ evento.returnValue = false; }
   },
-  addClass : function(obj,clase){
+  addClass: function(obj,clase){
     if( !obj.className.match(clase) ){
       obj.className = obj.className + ' ' + clase;
     }
   },
-  rmClass : function(obj,clase){
+  rmClass: function(obj,clase){
     //quita la clase
     obj.className = obj.className.replace(clase,'');
     //quita los dobles espacios
     obj.className = obj.className.replace('  ',' ');
-    vars.image_src.style.display="none";
-    vars.iframe_src.style.display="none";
+  },
+  tgClass: function(obj,clase){
+    if(obj.className.match(clase)){
+      util.rmClass(obj,clase);
+    }else{
+      util.addClass(obj,clase);
+    }
   }
 };
 
@@ -60,6 +65,10 @@ var show_popUp = {
       //ocultamos popup
       util.rmClass(vars.body,'show-popUp');
       util.rmClass(vars.body,'hide-popUp');
+      
+      //ocultamos recurso img e iframe
+      vars.image_src.style.display="none";
+      vars.iframe_src.style.display="none";
 
       //limpiamos src de iframe e img
       vars.image_src.src = '';

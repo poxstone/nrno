@@ -16,11 +16,11 @@ router.get('/', function(req, res, next) {
 });
 router.get('/santafe', function(req, res, next) {
   var qry = req.query;
-  res.render('santafe', { title: 'Santafe',glb:db.glb, db:json_db, qr:qry, contenido:json_db.santafe});
+  res.render('internas', { title: 'Santafe',glb:db.glb, db:json_db, qr:qry, contenido:json_db.santafe});
 });
 router.get('/biblioteca', function(req, res, next) {
   var qry = req.query;
-  res.render('biblioteca', { title: 'Biblioteca',glb:db.glb, db:json_db, qr:qry, contenido:json_db.biblioteca});
+  res.render('', { title: 'Biblioteca',glb:db.glb, db:json_db, qr:qry, contenido:json_db.biblioteca});
 });
 
 module.exports = router;
