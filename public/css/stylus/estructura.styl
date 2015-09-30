@@ -41,10 +41,16 @@ body
   overflow auto
   background-color $gray4
   background-color rgba($gray4,.9)
+  opacity 0
   transition ease-in-out 750ms all
   z-index 10000
   .show-popUp &
     display block
+    opacity 1
+    animation loadingShow ease-in-out 750ms
+  .hide-popUp &
+    display block
+    animation loadingHide ease-in-out 750ms
   .modal-cont
     background $black
     background rgba(0,0,0,.75)
@@ -85,7 +91,7 @@ body
     overflow auto
     > iframe
     > img
-      width 100%
+      min-width 100%
       min-height 100%
       height auto
       display none

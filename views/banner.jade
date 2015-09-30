@@ -21,6 +21,6 @@ div#nrno-banner
     - if (contenido.botones.length >= 1)
       div.botones
         - each boton, index in contenido.botones
-          a(href=link,title=boton.titulo,class=boton.tipo)
+          a(href=link,title=boton.titulo,class=boton.tipo,onclick="show_popUp.view(this,event);",target="_blank")
             span ver #{boton.tipo}
           
