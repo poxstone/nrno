@@ -79,6 +79,7 @@ body
     &:hover
       background rgba($gray,.33)
       opacity 1
+      
   #popUp-iframe
     box-shadow $box-shadow3
     background $white
@@ -91,10 +92,15 @@ body
     overflow auto
     > iframe
     > img
-      min-width 100%
-      min-height 100%
-      height auto
       display none
+      height 100%
+      width auto
+      margin auto
+      transition ease-in-out 250ms all
+      &.zoom
+        min-width 100%
+        min-height 100%
+        height auto
 
   #popUp-pie
     margin auto
