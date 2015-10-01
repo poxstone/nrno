@@ -1,3 +1,4 @@
+var rdir = 'http://www.bibliotecanacional.gov.co/imagenes/antonio_narino';
 var rdir = '';
 db = {
   glb : {//variable global

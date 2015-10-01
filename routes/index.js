@@ -20,7 +20,7 @@ router.get('/santafe', function(req, res, next) {
 });
 router.get('/biblioteca', function(req, res, next) {
   var qry = req.query;
-  res.render('', { title: 'Biblioteca',glb:db.glb, db:json_db, qr:qry, contenido:json_db.biblioteca});
+  res.render('internas', { title: 'Biblioteca',glb:db.glb, db:json_db, qr:qry, contenido:json_db.biblioteca});
 });
 
 module.exports = router;

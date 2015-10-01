@@ -14,10 +14,7 @@ div#nrno-banner
     article#ban-article.article
       - each banner, index in contenido.banners
         section.section(id="#{contenido.id+index}")
-          - if (index==0)
-            h2 Introducción
-          - else
-            h2= banner.titulo
+          h2= banner.titulo
           div.inner
             - each parrafo, numero in banner.parrafos
               p!=parrafo
