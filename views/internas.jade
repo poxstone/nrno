@@ -4,7 +4,7 @@ block banner
 block content
   include banner
 
-  div#contenido
+  div#contenido(class="#{contenido.id}")
     include social
     h2.titulo_biblio Documentos relacionados
     include libros

@@ -279,11 +279,21 @@ ul#nrno-menu
         padding-right $paddingBox
         //text-align justify
         blockquote
+          position relative
           text-align justify
-          background transparent url('../img/blockquote.png') no-repeat top left
+          background transparent url('../img/blockquote_ini.png') no-repeat top left
           margin $paddingBox *2 0
           padding 0 $paddingBox *4 0 $paddingBox *4
           background-size 32px
+          &:after
+            content ""
+            display block
+            position absolute
+            z-index 0
+            width 100%
+            height 100%
+            background transparent url('../img/blockquote_end.png') no-repeat bottom right
+
         p:first-child
         blockquote:first-child
           padding-top 0
@@ -355,6 +365,10 @@ ul#nrno-menu
       background-image url(../img/ico-facebook.png)
     &.Twitter
       background-image url(../img/ico-twitter.png)
+    &.Youtube
+      background-image url(../img/ico-youtube.png)
+    &.Blog
+      background-image url(../img/ico-blog.png)
 #contenido
   background $white
   padding 1px ($paddingBox *2) ($paddingBox *2)
@@ -487,9 +501,88 @@ ul#nrno-menu
 #chrono
   overflow auto
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center
-  //scrollbar(rgba(#000,0))
-  height 300px
+  position relative
+  scrollbar(rgba(#000,0))
+  height 500px
   img
     height 100%
     width auto
     max-width none
+
+  .nrno-times
+    position absolute
+    width 1960px
+    height 4px
+    top 50%
+    left 700px
+    display block
+    list-style none
+    margin 0
+    padding 0
+
+    li
+      position absolute
+      margin 0 0 0 -64px
+      border 1px solid $salmon
+      width 112px
+      height 100px
+      padding 0 0 $paddingBox $paddingBox
+      background rgba(red,.33)
+    a
+      border 1px solid $aquamarine
+      position absolute
+      display block
+      padding $paddingBox $paddingBox 0 0
+      color $white
+
+    .line_0
+      left 0%
+      top 0%
+    .line_1
+      left 5.5%
+      bottom 0%
+    .line_2
+      left 14%
+      bottom 0%
+    .line_3
+      left 14%
+      top 0%
+    .line_4
+      left 22.5%
+      top 0%
+    .line_5
+      left 31%
+      bottom 0%
+    .line_6
+      left 31%
+      top 0%
+    .line_7
+      left 39.5%
+      bottom 0%
+    .line_8
+      left 48%
+      bottom 0%
+    .line_9
+      left 48%
+      top 0%
+    .line_10
+      left 57%
+      top 0%
+    .line_11
+      left 65.5%
+      bottom 0%
+    .line_12
+      left 74%
+      bottom 0%
+    .line_13
+      left 74%
+      top 0%
+    .line_14
+      left 82.5%
+      bottom 0%
+    .line_15
+      left 91%
+      top 0%
+    .line_16
+      left 100%
+      bottom 0%

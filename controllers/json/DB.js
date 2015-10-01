@@ -5,19 +5,41 @@ db = {
     rdir: rdir,
   },
   menu : [
-    {titulo:'La Santafé <span>de</span> Nariño',link:'/santafe',clase:'normal'},
-    {titulo:'<span>La</span> Biblioteca',link:'/biblioteca',clase:'normal'},
+    {titulo:'La Santafé <span>de</span> Nariño',link:'santafe',clase:'normal'},
+    {titulo:'<span>La</span> biblioteca',link:'biblioteca',clase:'normal'},
     {titulo:'Nariño <span>en la</span> tertulia',link:'narino',clase:'normal'},
     {titulo:'<span>El</span> Santuario',link:'santuario',clase:'normal'},
     {titulo:'<span>La</span> Imprenta <span>Patriótica</span>',link:'imprenta',clase:'normal'},
-    {titulo:'<span>La</span> impresión <span>de los <i>Derechos</i></span><i> del Hombre</i>',link:'impresion',clase:'normal'},
+    {titulo:'<span>La</span> impresión <span>de los <i>Derechos</i></span><i> del Hombre</i>',link:'derechos',clase:'normal'},
     {titulo:'<span>La</span> aventura <span>del</span> pensamiento',link:'pensamiento',clase:'destacada'},
     {titulo:'Ahora <span>o</span> nunca',link:'ahora',clase:'destacada'},
   ],
 
+  chrono : [
+    {year:"1765",date:"9 de abril de 1765", description:"Nace en Santafé de Bogotá Antonio Amador José de Nariño y Álvarez del Casal, hijo del español Vicente de Nariño y Vásquez y la santafereña Catalina Álvarez del Casal."},
+    {year:"1785",date:"27 de marzo de 1785", description:"Se casa con la criolla santafereña Magdalena Ortega y Mesa."},
+    {year:"1788",date:"1 de enero de 1788", description:"Es nombrado alcalde del segundo voto de la ciudad (juez en lo civil y en lo militar)."},
+    {year:"1788",date:"15 de enero de 1788", description:"Nariño escribe a José Celestino Mutis informándole de sus intenciones de “tener en casa una especie de tertulia o junta de amigos de genio”. Esta es la primera noticia que se tiene del Arcano Sublime de la Filantropía."},
+    {year:"1789",date:"8 de agosto de 1789", description:"Nariño, alcalde ordinario de Santafé de Bogotá, asume también el cargo de tesorero de diezmos del Arzobispado de la ciudad."},
+    {year:"1793",date:"1 de abril de 1793", description:"Entra en funcionamiento la Imprenta Patriótica en Santafé de Bogotá, con cajones de letras que Nariño había traído en 1791."},
+    {year:"1793",date:"Diciembre de 1793", description:"Nariño traduce y publica por vez primera en la América española los Derechos del hombre del ciudadano."},
+    {year:"1794",date:"29 de agosto de 1794", description:"Nariño es encarcelado por traducir e imprimir los Derechos del hombre del ciudadano acusado de fraguar un intento de sublevación en el virreinato."},
+    {year:"1795",date:"Julio - agosto de 1795", description:"Nariño presenta ante la Real Audiencia de Santafé su célebre Defensa por traducir y publicar los  Derechos del hombre del ciudadano."},
+    {year:"1795",date:"28 de noviembre de 1795", description:"Nariño es condenado a diez años de prisión en África y extrañamiento perpetuo de América, además de que se le confiscaran todos sus bienes, incluidos su taller de imprenta y su biblioteca."},
+    {year:"1796",date:"17 de marzo de 1796", description:"Nariño se fuga en Cádiz. Recorre Madrid buscando una audiencia con las autoridades metropolitanas. Luego viaja a Francia e Inglaterra. Regresa a Santafé en abril de 1797."},
+    {year:"1810",date:"19 de septiembre de 1810", description:"Nariño publica las Reflexiones al Manifiesto de la Junta Gubernativa de Cartagena, documento con el que regresa al ruedo político."},
+    {year:"1811",date:"14 de julio de 1811", description:"Publica el primer número de su célebre periódico La Bagatela (1811-1812)."},
+    {year:"1811",date:"19 de septiembre de 1811", description:"Es elegido presidente del Estado de Cundinamarca tras la dimisión del titular Jorge Tadeo Lozano a raíz de una polémica suscitada por La Bagatela."},
+    {year:"1814",date:"14 de mayo de 1814", description:"Las fuerzas realistas apresan a Nariño en la acción de Tacines y conducido a Pasto. De allí lo llevan a Quito, Guayaquil, Lima, y finalmente Cádiz, donde permanecería hasta 1820."},
+    {year:"1821",date:"6 de mayo de 1821", description:"Nariño inaugura el Congreso de Cúcuta en calidad de vicepresidente de la República de Colombia."},
+    {year:"1823",date:"13 de diciembre de 1823", description:"Nariño muere en Villa de Leyva a la de edad de 58 años."},
+  ],
+
   social : [
-    {nombre:'Facebook',link:'#'},
-    {nombre:'Twitter',link:'#'},
+    {nombre:'Facebook',link:'https://www.facebook.com/bncolombia'},
+    {nombre:'Twitter',link:'https://twitter.com/BibliotecaNalCo'},
+    {nombre:'Blog',link:'http://www.bibliotecanacional.gov.co/blogs/'},
+    {nombre:'Youtube',link:'https://www.youtube.com/user/bnacionaladmin'},
   ],
 
 ///////////
@@ -221,7 +243,176 @@ biblioteca : {
   ],
 },
 ///////////
-
+narino : {
+  id: 'narino',//tambien es el folder de las imagenes
+  titulo :'Nariño en la tertulia',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/narino/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+imprenta : {
+  id: 'imprenta',//tambien es el folder de las imagenes
+  titulo :'La Imprenta Patriótica',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/imprenta/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+santuario : {
+  id: 'santuario',//tambien es el folder de las imagenes
+  titulo :'El Santuario',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/santuario/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+derechos : {
+  id: 'derechos',//tambien es el folder de las imagenes
+  titulo :'La impresión de los Derechos del Hombre',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/derechos/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+pensamiento : {
+  id: 'pensamiento',//tambien es el folder de las imagenes
+  titulo :'La aventura del pensamiento',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/pensamiento/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+ahora : {
+  id: 'ahora',//tambien es el folder de las imagenes
+  titulo :'Ahora o nunca',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/ahora/.jpg'},
+    {tipo:'vídeo',link:'#'},
+  ],
+  libros : [
+    {
+      titulo:'',
+      autor:'',//se vá
+      hover:'',
+      pie:'',
+      url:'',
+      archivo:'',
+      estilo:'',
+    }
+  ],
+},
+///////////
+pruebas : {
+  id: 'pruebas',//tambien es el folder de las imagenes
+  titulo :'Pruebas',
+  imagen : '',
+  banners : [
+    {titulo:'',parrafos:['']},
+  ],
+  botones : [
+    {tipo:'imagen',link: rdir+'/img/pruebas/pruebas.jpg'},
+    {tipo:'vídeo normal',link:'https://www.youtube.com/watch?v=bpOSxM0rNPM'},
+    {tipo:'vídeo short',link:'https://youtu.be/bpOSxM0rNPM'},
+    {tipo:'vídeo iframe',link:'http://www.youtube.com/embed/bpOSxM0rNPM'},
+  ],
+  libros : [
+    {
+      titulo:'Titulo de prueba',
+      autor:'Autor de prueba',//se vá
+      hover:'Hover de prueba',
+      pie:'Pie de prueba',
+      url:'/img/pruebas/pruebas.jpg',
+      archivo:'pruebas',
+      estilo:'estilo de prueba',
+    }
+  ],
+},
+///////////
 
 };
 

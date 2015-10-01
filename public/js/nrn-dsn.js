@@ -65,7 +65,7 @@ var show_popUp = {
       //ocultamos popup
       util.rmClass(vars.body,'show-popUp');
       util.rmClass(vars.body,'hide-popUp');
-      
+
       //ocultamos recurso img e iframe
       vars.image_src.style.display="none";
       vars.iframe_src.style.display="none";
@@ -130,3 +130,20 @@ var show_ban = {
 
   }
 };
+
+var menu_active= {
+  check: function(lnks){
+
+  },
+  ini: function(){
+    show_ban.vars = {};
+    var vars = show_ban.vars;
+    vars.menu= document.getElementById('nrno-menu');
+    if(vars.menu){
+      vars.lnks = vars.menu.getElementsByTagName('a');
+      
+    }
+  }
+};
+
+menu_active.ini();

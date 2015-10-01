@@ -18,6 +18,14 @@ block content
     
     div#chrono
       img(src="#{glb.rdir}/img/presentacion/cronologia.png")
+      ul.nrno-times
+        - each time, index in db.chrono
+          li(class="line_#{index}")
+            a
+              strong= time.year
+              small= time.date
+              span= time.description
+      
       
     h2.titulo_presentacion Créditos
     p.creditos
