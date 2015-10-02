@@ -500,14 +500,16 @@ ul#nrno-menu
         display none
 #chrono
   overflow auto
+  overflow-y hidden
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center
   position relative
   scrollbar(rgba(#000,0))
-  height 500px
+  height 600px
   img
     height 100%
     width auto
     max-width none
+    display none
 
   .nrno-times
     position absolute
@@ -518,71 +520,162 @@ ul#nrno-menu
     display block
     list-style none
     margin 0
+    font-size $text_small
+    line-height 1.2em
     padding 0
+    border-top dotted 4px white
 
     li
       position absolute
-      margin 0 0 0 -64px
+      margin 20px
+      margin-left -74px
       border 1px solid $salmon
-      width 112px
-      height 100px
-      padding 0 0 $paddingBox $paddingBox
-      background rgba(red,.33)
+      transition ease-in-out 250ms all
+      transform scale(1)
+      cursor default
+      
+      &:before
+      &:after
+        content ""
+        display block
+        position absolute
+        left 50%
+        transition ease-in-out 250ms all
+        opacity 1
+      &:before
+        content ""
+        display block
+        width 1px
+        height 20px
+        border-left 1px dotted white
+        margin-left -1px
+      &:after
+        border-radius 100px
+        height 10px
+        width 10px
+        background $salmon
+        margin-left -10px
+        border 4px solid $aquamarine
+      
+      &:hover
+        transform scale(1.25)
+        &
+          background rgba(0,0,0,.33)
+          border-color rgba(0,0,0,.33)
+        a
+          border-color $salmon
+          background $salmon
+        strong
+          color $black
+        &:before
+        &:after
+          opacity 0
+      
+        
     a
       border 1px solid $aquamarine
-      position absolute
+      position relative
       display block
-      padding $paddingBox $paddingBox 0 0
+      padding ($paddingBox *0.5) ($paddingBox *0.5) 0 0
+      margin ($paddingBox * -1) ($paddingBox * -1) ($paddingBox * 0.5) ($paddingBox *0.5)
       color $white
+      text-align center
+      width auto
+      width 130px
+      min-height 180px
+      transition ease-in-out 250ms all
+      
+      > *
+        margin 0 $paddingBox
+        transition ease-in-out 250ms all
+      
+      strong
+        display block
+        font-size $text_h1= 32px
+        font-style italic
+        line-height 1.25em
+        margin-bottom 0.25em
+        border-bottom 1px solid #fff
+        white-space nowrap
+        padding $paddingBox 0 ($paddingBox * 0.25)
+        &:before
+        &:after
+          display inline-block
+          content "\25E6"
+      small
+        display block
+        line-height 1.2em
+        font-weight bold
+      span
+        display block
+        padding ($paddingBox * 0.25) 0 $paddingBox
 
+    .line_1
+    .line_2
+    .line_5
+    .line_7
+    .line_8
+    .line_11
+    .line_12
+    .line_14
+    .line_16
+      bottom 15px
+      &:before
+        margin-top 10px
+        top 100%
+      &:after
+        top 100%
+        margin-top 20px
+      
+    .line_0
+    .line_3
+    .line_4
+    .line_6
+    .line_9
+    .line_10
+    .line_13
+    .line_15
+    .line_17
+    .line_18
+      top 15px
+      &:before
+        bottom 100%
+        margin-bottom 20px
+      &:after
+        bottom 100%
+        margin-bottom 30px
+      
     .line_0
       left 0%
-      top 0%
     .line_1
       left 5.5%
-      bottom 0%
     .line_2
       left 14%
-      bottom 0%
     .line_3
       left 14%
-      top 0%
     .line_4
       left 22.5%
-      top 0%
     .line_5
       left 31%
-      bottom 0%
     .line_6
       left 31%
-      top 0%
     .line_7
       left 39.5%
-      bottom 0%
     .line_8
       left 48%
-      bottom 0%
     .line_9
       left 48%
-      top 0%
     .line_10
       left 57%
-      top 0%
     .line_11
       left 65.5%
-      bottom 0%
     .line_12
       left 74%
-      bottom 0%
     .line_13
       left 74%
-      top 0%
     .line_14
       left 82.5%
-      bottom 0%
     .line_15
       left 91%
-      top 0%
     .line_16
       left 100%
-      bottom 0%
