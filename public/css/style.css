@@ -1291,12 +1291,14 @@ ul#nrno-menu li a .text span i {
   display: none;
 }
 #chrono {
-  overflow: auto;
-  overflow-y: hidden;
   background: #cfd8dc url("../img/presentacion/bg_cronologia.png") left center;
   position: relative;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  height: 600px;
+  -webkit-animation: bg_left 40s linear infinite;
+  -moz-animation: bg_left 40s linear infinite;
+  -ms-animation: bg_left 40s linear infinite;
+  -o-animation: bg_left 40s linear infinite;
+  animation: bg_left 40s linear infinite;
 }
 #chrono::-webkit-scrollbar {
   width: 6px;
@@ -1318,21 +1320,29 @@ ul#nrno-menu li a .text span i {
   border-radius: 10px;
   background: #666;
 }
+#chrono .envol {
+  overflow: auto;
+  overflow-y: hidden;
+  position: relative;
+  height: 600px;
+}
 #chrono img {
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -70px;
+  margin-left: 20px;
+  display: block;
   width: auto;
-  max-width: none;
-  display: none;
 }
 #chrono .nrno-times {
   position: absolute;
   width: 1960px;
   height: 4px;
   top: 50%;
-  left: 700px;
+  left: 610px;
   display: block;
   list-style: none;
-  margin: 0;
+  margin: 0 20px;
   font-size: 11px;
   line-height: 1.2em;
   padding: 0;
@@ -1354,6 +1364,9 @@ ul#nrno-menu li a .text span i {
   -o-transform: scale(1);
   transform: scale(1);
   cursor: default;
+}
+#chrono .nrno-times li:last-child {
+  margin-right: 10px;
 }
 #chrono .nrno-times li:before,
 #chrono .nrno-times li:after {
@@ -1588,6 +1601,39 @@ ul#nrno-menu li a .text span i {
 }
 #chrono .nrno-times .line_16 {
   left: 100%;
+}
+#chrono .go-right,
+#chrono .go-left {
+  display: block;
+  position: absolute;
+  width: 50px;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  z-index: 2;
+  -webkit-transition: ease-in-out 250ms all;
+  -moz-transition: ease-in-out 250ms all;
+  -ms-transition: ease-in-out 250ms all;
+  -o-transition: ease-in-out 250ms all;
+  transition: ease-in-out 250ms all;
+}
+#chrono .go-right:before,
+#chrono .go-left:before {
+  content: 'H';
+  display: block;
+  text-align: center;
+}
+#chrono .go-right:hover,
+#chrono .go-left:hover {
+  background: rgba(255,255,255,0.25);
+}
+#chrono .go-left {
+  left: 0;
+}
+#chrono .go-right {
+  right: 0;
+  z-index: 10px;
 }
 #banner html,
 #content html {
@@ -1865,7 +1911,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
@@ -1882,7 +1927,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
@@ -1899,24 +1943,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
-  100% {
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    -o-transform: rotate(30deg);
-    transform: rotate(30deg);
-  }
-}
-@-ms-keyframes bg_top {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
   100% {
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
@@ -1933,7 +1959,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
@@ -1946,7 +1971,6 @@ ul#nrno-menu li a .text span i {
   0% {
     background-position: center 0;
   }
-
   100% {
     background-position: center -254px;
   }
@@ -1955,7 +1979,6 @@ ul#nrno-menu li a .text span i {
   0% {
     background-position: center 0;
   }
-
   100% {
     background-position: center -254px;
   }
@@ -1964,16 +1987,6 @@ ul#nrno-menu li a .text span i {
   0% {
     background-position: center 0;
   }
-
-  100% {
-    background-position: center -254px;
-  }
-}
-@-ms-keyframes bg_downUp {
-  0% {
-    background-position: center 0;
-  }
-
   100% {
     background-position: center -254px;
   }
@@ -1982,9 +1995,40 @@ ul#nrno-menu li a .text span i {
   0% {
     background-position: center 0;
   }
-
   100% {
     background-position: center -254px;
+  }
+}
+@-moz-keyframes bg_left {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -1779 center;
+  }
+}
+@-webkit-keyframes bg_left {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -1779 center;
+  }
+}
+@-o-keyframes bg_left {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -1779 center;
+  }
+}
+@keyframes bg_left {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -1779 center;
   }
 }
 @-moz-keyframes opacityAlf {
@@ -1993,25 +2037,21 @@ ul#nrno-menu li a .text span i {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   5% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   55% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2024,25 +2064,21 @@ ul#nrno-menu li a .text span i {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   5% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   55% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2055,56 +2091,21 @@ ul#nrno-menu li a .text span i {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   5% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   55% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-}
-@-ms-keyframes opacityAlf {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-
-  5% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
-  50% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
-  55% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2117,25 +2118,21 @@ ul#nrno-menu li a .text span i {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   5% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   55% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2150,7 +2147,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(0, 10px);
     -moz-transform: translate(0, 10px);
@@ -2158,7 +2154,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 10px);
     transform: translate(0, 10px);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2175,7 +2170,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(0, 10px);
     -moz-transform: translate(0, 10px);
@@ -2183,7 +2177,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 10px);
     transform: translate(0, 10px);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2200,7 +2193,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(0, 10px);
     -moz-transform: translate(0, 10px);
@@ -2208,32 +2200,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 10px);
     transform: translate(0, 10px);
   }
-
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-}
-@-ms-keyframes upDown {
-  0% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  50% {
-    -webkit-transform: translate(0, 10px);
-    -moz-transform: translate(0, 10px);
-    -ms-transform: translate(0, 10px);
-    -o-transform: translate(0, 10px);
-    transform: translate(0, 10px);
-  }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2250,7 +2216,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(0, 10px);
     -moz-transform: translate(0, 10px);
@@ -2258,7 +2223,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 10px);
     transform: translate(0, 10px);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2275,7 +2239,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
-
   50% {
     -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
@@ -2283,7 +2246,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(15deg);
     transform: rotate(15deg);
   }
-
   100% {
     -webkit-transform: rotate(-15deg);
     -moz-transform: rotate(-15deg);
@@ -2300,7 +2262,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
-
   50% {
     -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
@@ -2308,7 +2269,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(15deg);
     transform: rotate(15deg);
   }
-
   100% {
     -webkit-transform: rotate(-15deg);
     -moz-transform: rotate(-15deg);
@@ -2325,7 +2285,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
-
   50% {
     -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
@@ -2333,32 +2292,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(15deg);
     transform: rotate(15deg);
   }
-
-  100% {
-    -webkit-transform: rotate(-15deg);
-    -moz-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    -o-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-  }
-}
-@-ms-keyframes rotate_m {
-  0% {
-    -webkit-transform: rotate(-15deg);
-    -moz-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    -o-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-  }
-
-  50% {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    -o-transform: rotate(15deg);
-    transform: rotate(15deg);
-  }
-
   100% {
     -webkit-transform: rotate(-15deg);
     -moz-transform: rotate(-15deg);
@@ -2375,7 +2308,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
-
   50% {
     -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
@@ -2383,7 +2315,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(15deg);
     transform: rotate(15deg);
   }
-
   100% {
     -webkit-transform: rotate(-15deg);
     -moz-transform: rotate(-15deg);
@@ -2400,7 +2331,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -2408,7 +2338,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(364deg);
     -moz-transform: rotate(364deg);
@@ -2425,7 +2354,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -2433,7 +2361,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(364deg);
     -moz-transform: rotate(364deg);
@@ -2450,7 +2377,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -2458,32 +2384,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
-  100% {
-    -webkit-transform: rotate(364deg);
-    -moz-transform: rotate(364deg);
-    -ms-transform: rotate(364deg);
-    -o-transform: rotate(364deg);
-    transform: rotate(364deg);
-  }
-}
-@-ms-keyframes rotate_f {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  50% {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
   100% {
     -webkit-transform: rotate(364deg);
     -moz-transform: rotate(364deg);
@@ -2500,7 +2400,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -2508,7 +2407,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(364deg);
     -moz-transform: rotate(364deg);
@@ -2525,7 +2423,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(10px, 0);
     -moz-transform: translate(10px, 0);
@@ -2533,7 +2430,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(10px, 0);
     transform: translate(10px, 0);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2550,7 +2446,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(10px, 0);
     -moz-transform: translate(10px, 0);
@@ -2558,7 +2453,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(10px, 0);
     transform: translate(10px, 0);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2575,7 +2469,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(10px, 0);
     -moz-transform: translate(10px, 0);
@@ -2583,32 +2476,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(10px, 0);
     transform: translate(10px, 0);
   }
-
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-}
-@-ms-keyframes leftRight {
-  0% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  50% {
-    -webkit-transform: translate(10px, 0);
-    -moz-transform: translate(10px, 0);
-    -ms-transform: translate(10px, 0);
-    -o-transform: translate(10px, 0);
-    transform: translate(10px, 0);
-  }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2625,7 +2492,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
   50% {
     -webkit-transform: translate(10px, 0);
     -moz-transform: translate(10px, 0);
@@ -2633,7 +2499,6 @@ ul#nrno-menu li a .text span i {
     -o-transform: translate(10px, 0);
     transform: translate(10px, 0);
   }
-
   100% {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
@@ -2653,13 +2518,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2679,13 +2542,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2705,39 +2566,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
-  100% {
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-}
-@-ms-keyframes menuDown {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-
-  75% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2757,13 +2590,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2783,13 +2614,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(10px);
     transform: translateY(10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2809,13 +2638,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(10px);
     transform: translateY(10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2835,39 +2662,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(10px);
     transform: translateY(10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
-  100% {
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-}
-@-ms-keyframes menuUp {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
-    transform: translateY(10px);
-  }
-
-  75% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2887,13 +2686,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(10px);
     transform: translateY(10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -2913,13 +2710,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-20%);
     transform: translateY(-20%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -2939,13 +2734,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-20%);
     transform: translateY(-20%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -2965,39 +2758,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-20%);
     transform: translateY(-20%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
-  100% {
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-}
-@-ms-keyframes loadingShow {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-20%);
-    -moz-transform: translateY(-20%);
-    -ms-transform: translateY(-20%);
-    -o-transform: translateY(-20%);
-    transform: translateY(-20%);
-  }
-
-  50% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3017,13 +2782,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-20%);
     transform: translateY(-20%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3040,13 +2803,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(0%);
     transform: translateY(0%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3066,13 +2827,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(0%);
     transform: translateY(0%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3092,39 +2851,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(0%);
     transform: translateY(0%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(20%);
-    -moz-transform: translateY(20%);
-    -ms-transform: translateY(20%);
-    -o-transform: translateY(20%);
-    transform: translateY(20%);
-  }
-}
-@-ms-keyframes loadingHide {
-  0% {
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-
-  50% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3144,13 +2875,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(0%);
     transform: translateY(0%);
   }
-
   50% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3173,13 +2902,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3199,13 +2926,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3225,39 +2950,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
-  100% {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@-ms-keyframes cargando_open {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-
-  75% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3277,13 +2974,11 @@ ul#nrno-menu li a .text span i {
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
   }
-
   75% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
   }
-
   100% {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);

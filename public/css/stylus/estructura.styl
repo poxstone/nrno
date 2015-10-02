@@ -499,27 +499,33 @@ ul#nrno-menu
       em
         display none
 #chrono
-  overflow auto
-  overflow-y hidden
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center
   position relative
   scrollbar(rgba(#000,0))
-  height 600px
+  animation bg_left 40s linear infinite
+  .envol
+    overflow auto
+    overflow-y hidden
+    position relative
+    height 600px
+
   img
-    height 100%
+    position absolute
+    top 50%
+    margin-top -70px
+    margin-left $paddingBox *2
+    display block
     width auto
-    max-width none
-    display none
 
   .nrno-times
     position absolute
     width 1960px
     height 4px
     top 50%
-    left 700px
+    left 610px
     display block
     list-style none
-    margin 0
+    margin 0 ($paddingBox *2)
     font-size $text_small
     line-height 1.2em
     padding 0
@@ -533,7 +539,10 @@ ul#nrno-menu
       transition ease-in-out 250ms all
       transform scale(1)
       cursor default
-      
+      &:last-child
+        margin-right $paddingBox
+
+
       &:before
       &:after
         content ""
@@ -556,7 +565,7 @@ ul#nrno-menu
         background $salmon
         margin-left -10px
         border 4px solid $aquamarine
-      
+
       &:hover
         transform scale(1.25)
         &
@@ -570,8 +579,7 @@ ul#nrno-menu
         &:before
         &:after
           opacity 0
-      
-        
+
     a
       border 1px solid $aquamarine
       position relative
@@ -584,11 +592,11 @@ ul#nrno-menu
       width 130px
       min-height 180px
       transition ease-in-out 250ms all
-      
+
       > *
         margin 0 $paddingBox
         transition ease-in-out 250ms all
-      
+
       strong
         display block
         font-size $text_h1= 32px
@@ -626,7 +634,7 @@ ul#nrno-menu
       &:after
         top 100%
         margin-top 20px
-      
+
     .line_0
     .line_3
     .line_4
@@ -644,7 +652,7 @@ ul#nrno-menu
       &:after
         bottom 100%
         margin-bottom 30px
-      
+
     .line_0
       left 0%
     .line_1
@@ -679,3 +687,25 @@ ul#nrno-menu
       left 91%
     .line_16
       left 100%
+  .go-right
+  .go-left
+    display block
+    position absolute
+    width 50px
+    top 0
+    bottom 0
+    background rgba(255,255,255,.1)
+    cursor pointer
+    z-index 2
+    transition ease-in-out 250ms all
+    &:before
+      content 'H'
+      display block
+      text-align center
+    &:hover
+      background rgba(255,255,255,.25)
+  .go-left
+    left 0
+  .go-right
+    right 0
+    z-index 10px

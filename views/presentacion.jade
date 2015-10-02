@@ -17,14 +17,18 @@ block content
     p La conmemoración de los 250 años de su natalicio es una oportunidad para poner entre paréntesis nuestras certezas presentes y volver sobre Nariño, para preguntarnos con él acerca de problemas históricos que, lejos de estar anclados en un pasado lejano e irrecuperable, constituyen la agenda de nuestro agitado presente. Esta exposición virtual no tiene otro propósito más que restituir la potencia de las ideas y de las realizaciones del Nariño de antes de las Independencias y ofrecer una comprensión renovada de su figura y de las soluciones que nos legó frente a los desafíos planteados por la política de su época –para los cuales no había soluciones dadas de antemano–. Esperamos que revisitar los escritos de Nariño nos permita recuperar la historicidad de su mundo político y volver un poco más legible el proceso de institución de las comunidades políticas que una vez fuimos y de las que somos herederos. 
     
     div#chrono
-      img(src="#{glb.rdir}/img/presentacion/cronologia.png")
-      ul.nrno-times
-        - each time, index in db.chrono
-          li(class="line_#{index}")
-            a
-              strong= time.year
-              small= time.date
-              span= time.description
+      a.go-left(onclick="goL.left(this,'click')",onmouseover="goL.left(this,'over')",onmouseout="goL.left(this,'out')")
+      a.go-right(onclick="goL.right(this,'click')",onmouseover="goL.right(this,'over')",onmouseout="goL.right(this,'out')")
+      div.envol
+        h2
+          img(src="#{glb.rdir}/img/presentacion/tit_cronologia.png")
+        ul.nrno-times
+          - each time, index in db.chrono
+            li(class="line_#{index}")
+              a
+                strong= time.year
+                small= time.date
+                span= time.description
       
       
     h2.titulo_presentacion Créditos

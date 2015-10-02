@@ -1,3 +1,4 @@
+;
 var util = {
   preventDefault: function(evento){
     if(event.preventDefault){ evento.preventDefault() }else{ evento.returnValue = false; }
@@ -18,6 +19,13 @@ var util = {
       util.rmClass(obj,clase);
     }else{
       util.addClass(obj,clase);
+    }
+  },
+  use_jquery: function(){
+    if ( !$ && jQuery ){
+      $ = jQuery;
+    }else{
+      console.log('Query no existe');
     }
   }
 };
@@ -93,15 +101,6 @@ var show_popUp = {
     return show_popUp.vars;
   }
 };
-if (document.body.addEventListener) {
-    document.body.addEventListener("load", function(){
-      show_popUp.ini();
-    }, false);
-}else {
-    document.body.attachEvent("onload", function(){
-      show_popUp.ini();
-    });
-}
 
 //*MENU BANNER*//
 var show_ban = {
@@ -141,9 +140,61 @@ var menu_active= {
     vars.menu= document.getElementById('nrno-menu');
     if(vars.menu){
       vars.lnks = vars.menu.getElementsByTagName('a');
-      
+
     }
   }
 };
 
+var goL = {
+  left:function(obj,evento){
+    var div = $("#chrono .envol");
+    if(evento=="over"){
+      var move = (div.scrollLeft() - 3000)+'px';
+      var time = 15000;
+    }else if(evento=="click"){
+      var move = (div.scrollLeft() - 300)+'px';
+      var time = 500;
+    }else if(evento=="out"){
+      var move = div.scrollLeft()+'px';
+      var time = 0;
+    }
+    div.stop(true).animate({
+      'scrollLeft':move}
+      ,time,function() {
+    });
+  },
+  right:function(objeto,evento){
+    var div = $("#chrono .envol");
+    if(evento=="over"){
+      var move = (div.scrollLeft() + 3000)+'px';
+      var time = 15000;
+    }else if(evento=="click"){
+      var move = (div.scrollLeft() + 300)+'px';
+      var time = 500;
+    }else if(evento=="out"){
+      var move = div.scrollLeft()+'px';
+      var time = 0;
+    }
+    div.stop(true).animate({
+      'scrollLeft':move}
+      ,time,function() {
+    });
+  },
+  ini: function(){
+
+  }
+};
+
 menu_active.ini();
+
+if (document.body.addEventListener) {
+    document.body.addEventListener("load", function(){
+      util.use_jquery();
+      show_popUp.ini();
+    }, false);
+}else {
+    document.body.attachEvent("onload", function(){
+      util.use_jquery();
+      show_popUp.ini();
+    });
+}
