@@ -14,7 +14,7 @@ div#nrno-banner(class="#{contenido.id}")
     article#ban-article.article
       - each banner, index in contenido.banners
         section.section(id="#{contenido.id+index}")
-          h2= banner.titulo
+          h2!= banner.titulo
           div.inner
             - each parrafo, numero in banner.parrafos
               p!=parrafo

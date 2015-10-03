@@ -212,6 +212,8 @@ ul#nrno-menu
       height $paddingBox *2
       width 100%
       background linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.75))
+      .presentacion&
+        display none
 
     .img
       width 100%
@@ -236,12 +238,15 @@ ul#nrno-menu
       margin-bottom 1px
       a
         display block
+        position relative
         color $salmon
         background $white
         background rgba($white,.85)
         padding $paddingBox
         text-decoration none
         transition ease-in-out 250ms all
+        transform scale(1)
+        box-shadow rgba(0,0,0,0) 0 0 0 0
         .pensamiento&
         .ahora&
           color $aquamarine
@@ -249,6 +254,9 @@ ul#nrno-menu
         &:hover
           background $white
           text-indent 1em
+          z-index 1
+          transform scale(1.1)
+          box-shadow rgba(0,0,0,.33) 4px 4px 6px 0
 
         &:active
         &.active
@@ -309,6 +317,19 @@ ul#nrno-menu
         scrollbar(rgba(#000,0))
         padding-right $paddingBox
         //text-align justify
+        a
+          color $salmon
+          text-decoration underline
+          transition ease-in-out 250ms all
+          display inline-block
+          &:hover
+            color $salmon_hover
+          .pensamiento&
+          .ahora&
+            color $aquamarine
+            &:hover
+              color $aquamarine_hover
+
         blockquote
           position relative
           text-align justify
@@ -320,8 +341,9 @@ ul#nrno-menu
             content ""
             display block
             position absolute
+            top 0
             z-index 0
-            width 100%
+            width 90%
             height 100%
             background transparent url('../img/blockquote_end.png') no-repeat bottom right
 

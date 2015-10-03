@@ -25,13 +25,13 @@ var util = {
     var exp = new RegExp(nav,'i');
     var nav = navigator.userAgent;
     var retorno = false;
-    
+
     if( nav.match(exp) ){
       retorno = true;
     }
-    
+
     return retorno;
-    
+
   },
   use_jquery: function(){
     if ( !$ && jQuery ){
@@ -42,6 +42,8 @@ var util = {
   }
 };
 
+
+//*MOSTRAR POPUP*//
 var show_popUp = {
   view : function(este,evento){
     //evita click
@@ -116,6 +118,30 @@ var show_popUp = {
 
 //*MENU BANNER*//
 var show_ban = {
+  auto_charge: function(){
+    var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
+    var change = false;
+    //extraer variable
+    var url = location.hash;
+
+    //comprueba si hay un has para activar el botoón
+    if(url.match(/#/)){
+      for(i=0; i < vars.ban_links.length; i++){
+        var href= vars.ban_links[i].href;
+        var hash = new RegExp(url,'i');
+        if( href.match(hash) ){
+          vars.ban_links[i].click();
+          change = true;
+        }
+      }
+    }
+
+    if( !change ){
+      console.log
+      vars.ban_links[0].click();
+    }
+
+  },
   view: function(este, evento){
     util.preventDefault(evento);
     //asigna variables
@@ -123,43 +149,49 @@ var show_ban = {
 
     //extrae la url
     var url = (este.getAttribute('href')!='') ? este.getAttribute('href') : '';
+
+    //Cambia estado de ventana
+    if( history.replaceState ){
+      history.replaceState({},"", url);
+    }
+
     //selecciona sección a mostrar
     var section = document.getElementById( url.replace('#','') );
-    
+
     //deshabilita los links
     for( i = 0; i < vars.ban_links.length; i++ ){
-      
+
       //muestra el que sí
       util.rmClass(vars.ban_links[i],'active');
     }
     //coloca activo sobre el que sí
     util.addClass(este,'active');
-    
-    
+
+
     //selecciona eltiempo con base a el navegador
     var time = (util.agent('msie'))? 0: 500 ;
-    
+
     //lo oculta a la izquierda
     util.addClass(vars.ban_article,'hide-left');
-    
-    
+
+
     //muestra y oculta
     setTimeout(function(){
-        
+
       //oculta los elementos
       for( i = 0; i < vars.ban_sections.length; i++ ){
         vars.ban_sections[i].style.display = "none";
       }
-      
+
       //vuelve a ponerlo
       util.rmClass(vars.ban_article,'hide-left');
       util.addClass(vars.ban_article,'show-left');
-      
+
       //muestra el que sí
       section.style.display = 'block';
-      
+
     },time);
-    
+
   },
   ini: function(){
     show_ban.vars = {};
@@ -168,6 +200,7 @@ var show_ban = {
     vars.ban_menu = document.getElementById('ban-menu');
     vars.ban_links = vars.ban_menu.getElementsByTagName('a');
     vars.ban_sections = vars.ban_article.getElementsByTagName('section');
+    show_ban.auto_charge();
 
     return show_ban.vars;
 
@@ -253,7 +286,7 @@ var min_banner= {
     min_banner.vars= {};
     var vars= min_banner.vars;
     vars.banner = document.getElementById('nrno-banner');
-    
+
     if( util.agent('msie') ){
       min_banner.maxi_ie();
     }else{
@@ -262,7 +295,7 @@ var min_banner= {
         min_banner.maxi();
       },1250);
     }
-    
+
   }
 }
 $(function(){min_banner.ini()});
