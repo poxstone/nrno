@@ -21,6 +21,18 @@ var util = {
       util.addClass(obj,clase);
     }
   },
+  agent : function(nav){
+    var exp = new RegExp(nav,'i');
+    var nav = navigator.userAgent;
+    var retorno = false;
+    
+    if( nav.match(exp) ){
+      retorno = true;
+    }
+    
+    return retorno;
+    
+  },
   use_jquery: function(){
     if ( !$ && jQuery ){
       $ = jQuery;
@@ -106,29 +118,62 @@ var show_popUp = {
 var show_ban = {
   view: function(este, evento){
     util.preventDefault(evento);
-
+    //asigna variables
     var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
 
+    //extrae la url
     var url = (este.getAttribute('href')!='') ? este.getAttribute('href') : '';
+    //selecciona sección a mostrar
     var section = document.getElementById( url.replace('#','') );
-
-    for( i = 0; i < vars.ban_sections.length; i++ ){
-      vars.ban_sections[i].style.display = "none";
+    
+    //deshabilita los links
+    for( i = 0; i < vars.ban_links.length; i++ ){
+      
+      //muestra el que sí
+      util.rmClass(vars.ban_links[i],'active');
     }
-    section.style.display = 'block';
-
+    //coloca activo sobre el que sí
+    util.addClass(este,'active');
+    
+    
+    //selecciona eltiempo con base a el navegador
+    var time = (util.agent('msie'))? 0: 500 ;
+    
+    //lo oculta a la izquierda
+    util.addClass(vars.ban_article,'hide-left');
+    
+    
+    //muestra y oculta
+    setTimeout(function(){
+        
+      //oculta los elementos
+      for( i = 0; i < vars.ban_sections.length; i++ ){
+        vars.ban_sections[i].style.display = "none";
+      }
+      
+      //vuelve a ponerlo
+      util.rmClass(vars.ban_article,'hide-left');
+      util.addClass(vars.ban_article,'show-left');
+      
+      //muestra el que sí
+      section.style.display = 'block';
+      
+    },time);
+    
   },
   ini: function(){
     show_ban.vars = {};
     var vars = show_ban.vars;
     vars.ban_article = document.getElementById('ban-article');
     vars.ban_menu = document.getElementById('ban-menu');
+    vars.ban_links = vars.ban_menu.getElementsByTagName('a');
     vars.ban_sections = vars.ban_article.getElementsByTagName('section');
 
     return show_ban.vars;
 
   }
 };
+$(function(){show_ban.ini()});
 
 var menu_active= {
   check: function(lnks){
@@ -184,17 +229,40 @@ var goL = {
 
   }
 };
-
 menu_active.ini();
 
-if (document.body.addEventListener) {
-    document.body.addEventListener("load", function(){
-      util.use_jquery();
-      show_popUp.ini();
-    }, false);
-}else {
-    document.body.attachEvent("onload", function(){
-      util.use_jquery();
-      show_popUp.ini();
-    });
+var min_banner= {
+  maxi_ie: function(){
+    var vars= min_banner.vars;
+    vars.height= $(vars.banner).height();
+    $(vars.banner).height(0);
+    $(vars.banner).stop().animate({
+      'height': vars.height
+    },2000);
+  },
+  mini: function (){
+    var vars= min_banner.vars;
+    util.addClass(vars.banner,'mini');
+  },
+  maxi: function(){
+    var vars= min_banner.vars;
+    //util.rmClass(vars.banner,'mini');
+    util.addClass(vars.banner,'maxi');
+  },
+  ini: function (){
+    min_banner.vars= {};
+    var vars= min_banner.vars;
+    vars.banner = document.getElementById('nrno-banner');
+    
+    if( util.agent('msie') ){
+      min_banner.maxi_ie();
+    }else{
+      min_banner.mini();
+      setTimeout(function(){
+        min_banner.maxi();
+      },1250);
+    }
+    
+  }
 }
+$(function(){min_banner.ini()});
