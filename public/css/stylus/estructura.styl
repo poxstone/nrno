@@ -242,6 +242,9 @@ ul#nrno-menu
         padding $paddingBox
         text-decoration none
         transition ease-in-out 250ms all
+        .pensamiento&
+        .ahora&
+          color $aquamarine
 
         &:hover
           background $white
@@ -251,6 +254,10 @@ ul#nrno-menu
         &.active
           background $salmon
           color $white
+          .pensamiento&
+          .ahora&
+            background $aquamarine
+            color $white
 
 
   .article
@@ -290,6 +297,9 @@ ul#nrno-menu
         border-bottom 1px solid $gray
         font-style italic
         font-weight normal
+        .pensamiento&
+        .ahora&
+          color $aquamarine
 
       .inner
         max-height 235px
@@ -335,6 +345,9 @@ ul#nrno-menu
       margin $paddingBox *2
       cursor pointer
       text-decoration none
+      .pensamiento&
+      .ahora&
+        background $aquamarine
 
       span
         display none
@@ -358,6 +371,9 @@ ul#nrno-menu
 
       &:hover
         background $salmon_hover
+        .pensamiento&
+        .ahora&
+          background $aquamarine_hover
         span
           animation menuUp ease-in-out 250ms
           display block
@@ -397,22 +413,25 @@ ul#nrno-menu
   h2.titulo_presentacion
     padding-bottom (($paddingBox *2) - 3px)
     border-bottom 1px solid $gray
-    font-style italic
 
   h2.titulo_presentacion
     color $aquamarine
 
   p
     text-align justify
-  p.creditos
+    margin-bottom $paddingBox
+  .creditos
     font-style italic
     color black
     font-weight bold
     small
       font-weigth normal
     strong
-      font-weigth normal
+      font-weight normal
       color $textGray
+  .cred_antes
+    border-top 1px dotted $gray
+    padding-top $paddingBox
 
 #nrno-libros
   padding-bottom $paddingBox*4

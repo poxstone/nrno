@@ -8,7 +8,7 @@ div#nrno-popUp
       img#image-src(onclick="util.tgClass(this,'zoom')")
     div#popUp-pie
   
-ul#nrno-menu
+ul#nrno-menu(class="#{contenido.id}")
   - each link, index in db.menu
     li
       a(href=link.link,class=link.clase)
