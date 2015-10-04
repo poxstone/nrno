@@ -164,6 +164,44 @@ var show_popUp = {
 
 //*MENU BANNER*//
 var show_ban = {
+  focus_lib: function(){
+    var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
+    //secciones para buscar vinculos con hash
+    var $article =  $(vars.ban_article);
+
+    //valida si ya se aplicaron eventos de focus
+    if( !$article.is('.e_focus_lib') ){
+
+      //selecciona vinculos hacia libros
+      var $links_libros = $(vars.ban_sections).find('a[href^="#"]');
+
+      //bucle para aplicar eventos
+      $links_libros.each(function(ind,elem){
+        var $lnk_libro = $(elem);
+        var id_obj = $lnk_libro.attr('href');
+        var $libro_to_focus = $(id_obj);
+        var obj_top = $libro_to_focus.offset().top - 100;
+
+        //aplica eventos con click
+        $lnk_libro.bind('click',function(e){
+          e.preventDefault();
+          $('html,body').stop(true).animate({
+            'scrollTop' : obj_top
+          }
+          ,600
+          ,function(){
+              $libro_to_focus.focus();
+          });
+        });
+
+      });
+
+      //marca que ya se aplicaron eventos de focus
+      $article.addClass('e_focus_lib');
+
+    }
+
+  },
   auto_charge: function(){
     var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
     var change = false;
@@ -213,13 +251,11 @@ var show_ban = {
     //coloca activo sobre el que sí
     util.addClass(este,'active');
 
-
     //selecciona eltiempo con base a el navegador
     var time = (util.agent('msie'))? 0: 500 ;
 
     //lo oculta a la izquierda
     util.addClass(vars.ban_article,'hide-left');
-
 
     //muestra y oculta
     setTimeout(function(){
@@ -246,8 +282,9 @@ var show_ban = {
     vars.ban_menu = document.getElementById('ban-menu');
     vars.ban_links = vars.ban_menu.getElementsByTagName('a');
     vars.ban_sections = vars.ban_article.getElementsByTagName('section');
-    show_ban.auto_charge();
 
+    show_ban.auto_charge();
+    show_ban.focus_lib();//busca elmentos con hash para agregar animación de scroll
     return show_ban.vars;
 
   }
@@ -328,7 +365,6 @@ var min_banner= {
         min_banner.maxi();
       },1250);
     }
-
   }
 }
 $(function(){min_banner.ini()});

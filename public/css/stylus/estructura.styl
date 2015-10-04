@@ -103,6 +103,8 @@ body
         min-width 100%
         min-height 100%
         height auto
+    > iframe
+      min-height 450px
 
   #popUp-pie
     margin auto
@@ -467,6 +469,7 @@ ul#nrno-menu
 #nrno-libros
   padding-bottom $paddingBox*4
   min-height 300px
+  line-height 1.2em
   p.tit
     font-size $fontSize
     padding $paddingBox
@@ -499,7 +502,7 @@ ul#nrno-menu
         text-decoration none
         transition ease-in-out 250ms all
         box-shadow rgba(0,0,0,0) 0 0 0 0
-
+        &:focus
         &:hover
           border 1px solid $gray3
           box-shadow rgba(0,0,0,.2) 4px 8px 10px 0
@@ -514,7 +517,6 @@ ul#nrno-menu
           .img
             transform scale(1.5) rotate(15deg)
             opacity 0.25
-
 
       .figure
         overflow hidden
@@ -541,6 +543,7 @@ ul#nrno-menu
         display flex
         color $white
         position absolute
+        text-align center
         left 0
         right 0
         top 0
@@ -579,8 +582,6 @@ ul#nrno-menu
         transition ease-in-out 500ms all
         transform scale(1) rotate(0deg)
 
-      em
-        display none
 #chrono
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center
   position relative

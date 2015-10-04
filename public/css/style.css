@@ -692,6 +692,9 @@ body.show-popUp {
   min-height: 100%;
   height: auto;
 }
+#nrno-popUp #popUp-iframe > iframe {
+  min-height: 450px;
+}
 #nrno-popUp #popUp-pie {
   margin: auto;
   position: relative;
@@ -1267,6 +1270,7 @@ ul#nrno-menu li a .text span i {
 #nrno-libros {
   padding-bottom: 40px;
   min-height: 300px;
+  line-height: 1.2em;
 }
 #nrno-libros p.tit {
   font-size: 14px;
@@ -1324,6 +1328,7 @@ ul#nrno-menu li a .text span i {
   -o-box-shadow: rgba(0,0,0,0) 0 0 0 0;
   box-shadow: rgba(0,0,0,0) 0 0 0 0;
 }
+#nrno-libros ul li a:focus,
 #nrno-libros ul li a:hover {
   border: 1px solid #cfd8dc;
   -webkit-box-shadow: rgba(0,0,0,0.2) 4px 8px 10px 0;
@@ -1333,6 +1338,7 @@ ul#nrno-menu li a .text span i {
   box-shadow: rgba(0,0,0,0.2) 4px 8px 10px 0;
   top: -5px;
 }
+#nrno-libros ul li a:focus .figure:after,
 #nrno-libros ul li a:hover .figure:after {
   -webkit-box-shadow: rgba(0,0,0,0) 0 0px 25px;
   -moz-box-shadow: rgba(0,0,0,0) 0 0px 25px;
@@ -1340,16 +1346,19 @@ ul#nrno-menu li a .text span i {
   -o-box-shadow: rgba(0,0,0,0) 0 0px 25px;
   box-shadow: rgba(0,0,0,0) 0 0px 25px;
 }
+#nrno-libros ul li a:focus .hover,
 #nrno-libros ul li a:hover .hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
+#nrno-libros ul li a:focus .figcaption,
 #nrno-libros ul li a:hover .figcaption {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
+#nrno-libros ul li a:focus .img,
 #nrno-libros ul li a:hover .img {
   -webkit-transform: scale(1.5) rotate(15deg);
   -moz-transform: scale(1.5) rotate(15deg);
@@ -1398,6 +1407,7 @@ ul#nrno-menu li a .text span i {
   display: flex;
   color: #fff;
   position: absolute;
+  text-align: center;
   left: 0;
   right: 0;
   top: 0;
@@ -1467,9 +1477,6 @@ ul#nrno-menu li a .text span i {
   -ms-transform: scale(1) rotate(0deg);
   -o-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg);
-}
-#nrno-libros ul li em {
-  display: none;
 }
 #chrono {
   background: #cfd8dc url("../img/presentacion/bg_cronologia.png") left center;
