@@ -205,7 +205,7 @@ var show_ban = {
         var $lnk_libro = $(elem);
         var id_obj = $lnk_libro.attr('href');
         var $libro_to_focus = $(id_obj);
-        var obj_top = $libro_to_focus.offset().top - 100;
+        var obj_top = ( $libro_to_focus.offset() )? $libro_to_focus.offset().top - 100 : (console.log('error en vinculo '+id_obj+' de banner hacia libros'));
 
         //aplica eventos con click
         $lnk_libro.bind('click',function(e){

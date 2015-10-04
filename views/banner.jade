@@ -8,7 +8,7 @@ div#nrno-banner(class="#{contenido.id}")
       - each banner, index in contenido.banners
         li
           a(href="##{contenido.id+index}", onclick="show_ban.view(this,event)", title=banner.titulo)
-            span=banner.titulo
+            span!=banner.titulo
             
   - if (contenido.banners.length)
     article#ban-article.article

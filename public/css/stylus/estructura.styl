@@ -5,7 +5,8 @@ html
 body
   &.show-popUp
     overflow hidden !important
-
+body.i i
+  color purple !important
 #banner
 #content
   font-family $textFont
@@ -245,7 +246,7 @@ ul#nrno-menu
         padding $paddingBox
         text-decoration none
         transition ease-in-out 250ms all
-        transform scale(1)
+        transform scale(1) translateX(0em)
         box-shadow rgba(0,0,0,0) 0 0 0 0
         .pensamiento&
         .ahora&
@@ -253,9 +254,8 @@ ul#nrno-menu
 
         &:hover
           background $white
-          text-indent 1em
           z-index 1
-          transform scale(1.1)
+          transform scale(1.05) translateX(0.25em)
           box-shadow rgba(0,0,0,.33) 4px 4px 6px 0
 
         &:active
@@ -272,6 +272,8 @@ ul#nrno-menu
             box-shadow none
             text-indent 0
 
+        small
+          font-size 1em //para que small aplique solo en el titulo
 
 
   .article
@@ -305,8 +307,10 @@ ul#nrno-menu
         font-size $text_h1
         text-align right
         margin-top 0
-        line-height 0.575em
-        padding-bottom $paddingBox *2
+        //line-height 0.575em
+        line-height 1em //por as que tienen doble linea
+        padding-top 0
+        padding-bottom $paddingBox *1.5
         margin-bottom $paddingBox *2
         border-bottom 1px solid $gray
         font-style italic
@@ -316,8 +320,7 @@ ul#nrno-menu
           color $aquamarine
 
       .inner
-        max-height 235px
-        //max-height: 225px;
+        max-height 78% //235px para que sirva en mas tamaños
         overflow auto
         overflow-x hidden
         scrollbar(rgba(#000,0))
