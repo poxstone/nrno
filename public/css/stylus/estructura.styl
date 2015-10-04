@@ -48,18 +48,23 @@ body
     display block
     opacity 1
     animation loadingShow ease-in-out 750ms
+    .modal-cont
+      animation loadingShow_int ease-in-out 750ms
   .hide-popUp &
     display block
     animation loadingHide ease-in-out 750ms
+
   .modal-cont
     background $black
     background rgba(0,0,0,.75)
     padding $paddingBox
     margin auto
-    left 25%
-    right 25%
+    left 5%
+    right 5%
+    max-width 750px
+    height auto
     top 5%
-    bottom 5%
+    bottom auto
     position absolute
     box-shadow $box-shadow3
     color $white
@@ -84,17 +89,14 @@ body
     box-shadow $box-shadow3
     background $white
     margin auto
-    position absolute
-    left $paddingBox *2
-    right $paddingBox *2
-    top $paddingBox *4
-    bottom 20%
+    position relative
+    margin-top $paddingBox *4
     overflow auto
     > iframe
     > img
       display none
-      height 100%
-      width auto
+      height auto
+      width 100%
       margin auto
       transition ease-in-out 250ms all
       &.zoom
@@ -104,12 +106,8 @@ body
 
   #popUp-pie
     margin auto
-    position absolute
-    left $paddingBox *2
-    right $paddingBox *2
-    top 80%
-    bottom 10px
-    padding-top $paddingBox *2
+    position relative
+    padding $paddingBox *2 0
     text-align justify
 
 #content
@@ -262,10 +260,16 @@ ul#nrno-menu
         &.active
           background $salmon
           color $white
+          cursor default
           .pensamiento&
           .ahora&
             background $aquamarine
             color $white
+          &:hover
+            transform scale(1)
+            box-shadow none
+            text-indent 0
+
 
 
   .article
@@ -367,11 +371,15 @@ ul#nrno-menu
       margin $paddingBox *2
       cursor pointer
       text-decoration none
+      animation opacityAlf ease-in-out 2s infinite
       .pensamiento&
       .ahora&
         background $aquamarine
 
-      span
+      .figcaption //lleva pie de página de la imagen
+        display none
+
+      .tool-tip
         display none
         background $white
         color $textColor
@@ -393,6 +401,7 @@ ul#nrno-menu
 
       &:hover
         background $salmon_hover
+        animation none
         .pensamiento&
         .ahora&
           background $aquamarine_hover

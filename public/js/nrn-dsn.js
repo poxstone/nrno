@@ -42,6 +42,35 @@ var util = {
   }
 };
 
+//*AUTO ACTIVE MENU PRINCIPAL*//
+var menu_active= {
+  check: function(){
+    var vars = menu_active.vars;
+    var url = location.href;
+    url = ( url.match('#') )? url.substr( 0,url.lastIndexOf('#') ) : url;
+    url = ( url.lastIndexOf('?') > -1 )? url.substr( 0,url.lastIndexOf('?') ) : url;
+
+    //busca botón por botón
+    for( i=0; i< vars.lnks.length; i++ ){
+      if( url.match( vars.lnks[i].href ) ){
+        util.addClass(vars.lnks[i],'active');
+        break;
+      }
+    }
+
+  },
+  ini: function(){
+    menu_active.vars = {};
+    var vars = menu_active.vars;
+    vars.menu= document.getElementById('nrno-menu');
+    if(vars.menu){
+      vars.lnks = vars.menu.getElementsByTagName('a');
+      menu_active.check();
+
+    }
+  }
+};
+$(function(){ menu_active.ini(); });
 
 //*MOSTRAR POPUP*//
 var show_popUp = {
@@ -58,6 +87,8 @@ var show_popUp = {
     if(is_biblio_item){
       //pega citar
       vars.popUp_pie.innerHTML = este.getElementsByTagName('figcaption')[0].innerHTML;
+    }else{
+      vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
     }
 
     //pega url en img o en iframe
@@ -72,6 +103,18 @@ var show_popUp = {
 
     //muestra popup
     util.addClass(vars.body,'show-popUp');
+  },
+  hide_back: function(este,evento){
+    //oculta cuando lpican en fondo
+    var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
+
+    //si es el elemento background lo oculta
+    if( evento.taget && evento.taget == vars.popUp ){
+      show_popUp.hide(este,evento);
+    }else if( evento.srcElement == vars.popUp ){
+      show_popUp.hide(este,evento);
+    }
+
   },
   hide : function(este,evento){
     //evita click
@@ -116,11 +159,15 @@ var show_popUp = {
   }
 };
 
+//*POPUP2*//
+
+
 //*MENU BANNER*//
 var show_ban = {
   auto_charge: function(){
     var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
     var change = false;
+
     //extraer variable
     var url = location.hash;
 
@@ -135,10 +182,9 @@ var show_ban = {
         }
       }
     }
-
+    //si no hay marca uno por quie por defecto es el primero
     if( !change ){
-      console.log
-      vars.ban_links[0].click();
+      util.addClass(vars.ban_links[0],'active');
     }
 
   },
@@ -208,21 +254,7 @@ var show_ban = {
 };
 $(function(){show_ban.ini()});
 
-var menu_active= {
-  check: function(lnks){
-
-  },
-  ini: function(){
-    show_ban.vars = {};
-    var vars = show_ban.vars;
-    vars.menu= document.getElementById('nrno-menu');
-    if(vars.menu){
-      vars.lnks = vars.menu.getElementsByTagName('a');
-
-    }
-  }
-};
-
+//*CHRONLOGY*//
 var goL = {
   left:function(obj,evento){
     var div = $("#chrono .envol");
@@ -264,6 +296,7 @@ var goL = {
 };
 menu_active.ini();
 
+//*MINIMIZAR BANNER*//
 var min_banner= {
   maxi_ie: function(){
     var vars= min_banner.vars;

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://www.bibliotecanacional.gov.co/js/bpopup/jquery.bpopup.js"></script>
+<script type="text/javascript" src="http://www.bibliotecanacional.gov.co/recursos_user/mapoteca/fmapoteca_100_ftsalbin_67/ZoomifyImageViewerEnterprise-min.js"></script>
+<script>
+
+;(function($) {
+
+     // DOM Ready
+    $(function() {
+
+        // Binding a click event
+        // From jQuery v.1.7.0 use .on() instead of .bind()
+        $('.my').bind('click', function(e) {
+
+            // Prevents the default action to be triggered. 
+            e.preventDefault();
+
+            // Triggering bPopup when click event is fired
+            $('#element_to_pop_up').bPopup({
+                speed: 650,
+                transition: 'slideIn',
+                transitionClose: 'slideBack',
+                modalColor: '#521003'
+            });
+
+
+        });
+
+        $('.my2').bind('click', function(e) {
+
+            
+            // Prevents the default action to be triggered. 
+            e.preventDefault();
+
+            // Triggering bPopup when click event is fired
+            $('#element_to_pop_up2').bPopup({
+                speed: 650,
+                transition: 'slideIn',
+                transitionClose: 'slideBack',
+                modalColor: '#521003'
+            });
+
+            Z.showImage("myContainer", "/recursos_user/mapoteca/fmapoteca_100_ftsalbin_67/fmapoteca_100_ftsalbin_67","zScreensaver=1&zScreensaverSpeed=2&zLogoCustomPath=/recursos_user/mapoteca/fmapoteca_100_ftsalbin_67/Assets/LogoCustom/toolbarLogoCustom.png&zRotationVisible=1&zImageFiltersVisible=1&zRulerVisible=2&zUnits=mm&zUnitsPerImage=11.5&zInitialX=3000&zInitialY=2000&zInitialZoom=25&zFullScreenVisible=0"); 
+
+
+
+        });
+
+    });
+
+})(jQuery);
+
+
+
+</script>
+<style type="text/css">
+    #element_to_pop_up { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:600px;
+    min-height: 400px;
+}
+
+#element_to_pop_up2 { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding: 5px;
+    min-width: 900px;
+    min-height: 400px;
+}
+
+
+
+
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+    color: blue;
+}
+
+#myContainer { 
+    width: 850px; height: 500px; margin:auto; border:0px; border-style:solid; border-color:#696969;
+}
+</style>
+
+
+<button class="my">FLIP</button>
+<!-- Element to pop up -->
+<div id="element_to_pop_up">
+    <a class="b-close">x<a/>
+    <h2>Prueba Flip<h2>
+    <iframe width="600px" height="400px" src="http://www.youblisher.com/p/1100985-Declaracion-de-los-Derechos-del-Hombre/"></iframe>
+
+</div>
+
+<button class="my2">Zoomify</button>
+<!-- Element to pop up -->
+<div id="element_to_pop_up2">
+    <a class="b-close">x<a/>
+    <h2>Prueba Zoomify<h2>
+    <div id="myContainer"></div>
+</div>
+
+
+
+
+    
+</body>
+</html>

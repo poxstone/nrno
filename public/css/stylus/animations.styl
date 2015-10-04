@@ -31,19 +31,16 @@
 
 @keyframes opacityAlf {
 	0% {
-		opacity 0
-	}
-	5% {
-		opacity 1
+		opacity 0.5
+		transform scale(1)
 	}
 	50% {
 		opacity 1
-	}
-	55% {
-		opacity 0
+		transform scale(1.25)
 	}
 	100%{
-		opacity 0
+		opacity 0.5
+		transform scale(1)
 	}
 }
 
@@ -115,28 +112,32 @@
 		transform translateY(0px)
 	}
 }
+
+//USE
 @keyframes loadingShow {
 	0% {
 		opacity 0
-		transform translateY(-20%)
 	}
-	50% {
+	100% {
 		opacity 1
+	}
+}
+//USE
+@keyframes loadingShow_int {
+	0% {
+		transform translateY(20%)
 	}
 	100% {
 		transform translateY(0%)
 	}
 }
+//USE
 @keyframes loadingHide {
 	0% {
-		transform translateY(0%)
-	}
-	50% {
 		opacity 1
 	}
 	100% {
 		opacity 0
-		transform translateY(20%)
 	}
 }
 
