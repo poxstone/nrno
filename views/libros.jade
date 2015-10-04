@@ -19,7 +19,7 @@ div#nrno-libros
           - href = img_src
           
         li
-          a(id="libro_#{libro.archivo}", href="#{href}", onclick="show_popUp.view(this,event);", target="_blank")
+          a(id="libro_#{libro.archivo}", href="#{href}", onclick="show_popUp.view(this,event,'#{libro.estilo}');", target="_blank")
             figure.figure
               span.imagen
                   
@@ -30,6 +30,7 @@ div#nrno-libros
                 span!= libro.pie
               figcaption.hover
                 span!= libro.hover
-                  
-            p.tit!= libro.titulo
+                
+            - if (libro.titulo!="")
+              p.tit!= libro.titulo
         

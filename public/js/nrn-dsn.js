@@ -74,38 +74,63 @@ $(function(){ menu_active.ini(); });
 
 //*MOSTRAR POPUP*//
 var show_popUp = {
-  view : function(este,evento){
-    //evita click
-    util.preventDefault(evento);
+  view : function(este,evento,estilo){
 
-    var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
+    var estylo = estilo || '';
 
-    //Declaramos variables
-    var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
+    //valida para dejar pasar el vínculo a una nueva ventana
+    if( !estylo.match(/Portada y catá?logo/i) ){
 
-    //valida si es un elemento de biblioteca o un botón de banner
-    if(is_biblio_item){
-      //pega citar
-      vars.popUp_pie.innerHTML = este.getElementsByTagName('figcaption')[0].innerHTML;
-    }else{
-      vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
+        //evita click
+        util.preventDefault(evento);
+        $(este).focus();
+
+        var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
+
+        //Declaramos variables
+        var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
+
+        //valida si es un elemento de biblioteca o un botón de banner
+        if(is_biblio_item){
+          //pega citar
+          vars.popUp_pie.innerHTML = este.getElementsByTagName('figcaption')[0].innerHTML;
+        }else{
+          vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
+        }
+
+        //pega url en img o en iframe
+        var href = este.getAttribute('href') || '';
+        if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
+          vars.image_src.src = href;
+          vars.image_src.style.display="block";
+        }else{
+          vars.iframe_src.src = href;
+          vars.iframe_src.style.display="block";
+        }
+
+        //muestra popup
+        util.addClass(vars.body,'show-popUp');
+
+        //añade evento escape al body
+        if( !$('body').is('.e_key_esc') ){
+          $('body').addClass('e_key_esc').bind('keyup',function(e){
+            if(e.keyCode==27){
+              if( $(vars.popUp_quit).is(':visible') ){
+                vars.popUp_quit.click();
+              }
+            }
+          });
+        }
+
+    }else{//el click sige de largo
+
+
     }
 
-    //pega url en img o en iframe
-    var href = este.getAttribute('href') || '';
-    if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
-      vars.image_src.src = href;
-      vars.image_src.style.display="block";
-    }else{
-      vars.iframe_src.src = href;
-      vars.iframe_src.style.display="block";
-    }
 
-    //muestra popup
-    util.addClass(vars.body,'show-popUp');
   },
   hide_back: function(este,evento){
-    //oculta cuando lpican en fondo
+    //oculta cuando le pican en fondo
     var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
 
     //si es el elemento background lo oculta

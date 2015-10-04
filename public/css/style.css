@@ -45,6 +45,262 @@
 #banner video,
 #content video {
   display: inline-block;
+  vertical-align: baseline;
+}
+#banner audio:not([controls]),
+#content audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+#banner [hidden],
+#content [hidden],
+#banner template,
+#content template {
+  display: none;
+}
+#banner a,
+#content a {
+  background-color: transparent;
+}
+#banner a:active,
+#content a:active,
+#banner a:hover,
+#content a:hover {
+  outline: 0;
+}
+#banner abbr[title],
+#content abbr[title] {
+  border-bottom: 1px dotted;
+}
+#banner b,
+#content b,
+#banner strong,
+#content strong {
+  font-weight: bold;
+}
+#banner dfn,
+#content dfn {
+  font-style: italic;
+}
+#banner h1,
+#content h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+#banner mark,
+#content mark {
+  background: #ff0;
+  color: #000;
+}
+#banner small,
+#content small {
+  font-size: 80%;
+}
+#banner sub,
+#content sub,
+#banner sup,
+#content sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+#banner sup,
+#content sup {
+  top: -0.5em;
+}
+#banner sub,
+#content sub {
+  bottom: -0.25em;
+}
+#banner img,
+#content img {
+  border: 0;
+}
+#banner svg:not(:root),
+#content svg:not(:root) {
+  overflow: hidden;
+}
+#banner figure,
+#content figure {
+  margin: 1em 40px;
+}
+#banner hr,
+#content hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+#banner pre,
+#content pre {
+  overflow: auto;
+}
+#banner code,
+#content code,
+#banner kbd,
+#content kbd,
+#banner pre,
+#content pre,
+#banner samp,
+#content samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+#banner button,
+#content button,
+#banner input,
+#content input,
+#banner optgroup,
+#content optgroup,
+#banner select,
+#content select,
+#banner textarea,
+#content textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+#banner button,
+#content button {
+  overflow: visible;
+}
+#banner button,
+#content button,
+#banner select,
+#content select {
+  text-transform: none;
+}
+#banner button,
+#content button,
+#banner html input[type="button"],
+#content html input[type="button"],
+#banner input[type="reset"],
+#content input[type="reset"],
+#banner input[type="submit"],
+#content input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+#banner button[disabled],
+#content button[disabled],
+#banner html input[disabled],
+#content html input[disabled] {
+  cursor: default;
+}
+#banner button::-moz-focus-inner,
+#content button::-moz-focus-inner,
+#banner input::-moz-focus-inner,
+#content input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+#banner input,
+#content input {
+  line-height: normal;
+}
+#banner input[type="checkbox"],
+#content input[type="checkbox"],
+#banner input[type="radio"],
+#content input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+#banner input[type="number"]::-webkit-inner-spin-button,
+#content input[type="number"]::-webkit-inner-spin-button,
+#banner input[type="number"]::-webkit-outer-spin-button,
+#content input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+#banner input[type="search"],
+#content input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+#banner input[type="search"]::-webkit-search-cancel-button,
+#content input[type="search"]::-webkit-search-cancel-button,
+#banner input[type="search"]::-webkit-search-decoration,
+#content input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+#banner fieldset,
+#content fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+#banner legend,
+#content legend {
+  border: 0;
+  padding: 0;
+}
+#banner textarea,
+#content textarea {
+  overflow: auto;
+}
+#banner optgroup,
+#content optgroup {
+  font-weight: bold;
+}
+#banner table,
+#content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#banner td,
+#content td,
+#banner th,
+#content th {
+  padding: 0;
+}
+#banner html,
+#content html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+#banner body,
+#content body {
+  margin: 0;
+}
+#banner article,
+#content article,
+#banner aside,
+#content aside,
+#banner details,
+#content details,
+#banner figcaption,
+#content figcaption,
+#banner figure,
+#content figure,
+#banner footer,
+#content footer,
+#banner header,
+#content header,
+#banner hgroup,
+#content hgroup,
+#banner main,
+#content main,
+#banner menu,
+#content menu,
+#banner nav,
+#content nav,
+#banner section,
+#content section,
+#banner summary,
+#content summary {
+  display: block;
+}
+#banner audio,
+#content audio,
+#banner canvas,
+#content canvas,
+#banner progress,
+#content progress,
+#banner video,
+#content video {
+  display: inline-block;
   zoom: 1;
   *display: inline;
   vertical-align: baseline;
@@ -798,9 +1054,6 @@ ul#nrno-menu li a .text span i {
   -ms-transition: ease-in-out 250ms all;
   -o-transition: ease-in-out 250ms all;
   transition: ease-in-out 250ms all;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
 }
 #nrno-banner .article .section .inner a:hover {
   color: #ed876c;
@@ -1037,6 +1290,7 @@ ul#nrno-menu li a .text span i {
   text-align: justify;
   margin: 0 -1.25%;
   font-style: italic;
+  width: 100%;
 }
 #nrno-libros ul li {
   width: 22.5%;
@@ -1221,6 +1475,40 @@ ul#nrno-menu li a .text span i {
   -ms-transform: scale(1) rotate(0deg);
   -o-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg);
+}
+.biblioteca #nrno-libros ul {
+  margin: 0 -0.25%;
+}
+.biblioteca #nrno-libros ul li {
+  width: 24.7%;
+  margin: 1px 0.15% 0;
+}
+.biblioteca #nrno-libros ul li a {
+  position: relative;
+  min-height: 0;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.biblioteca #nrno-libros ul li a:hover,
+.biblioteca #nrno-libros ul li a:focus {
+  top: auto;
+  z-index: 1;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.biblioteca #nrno-libros ul li a .figure:after {
+  display: none;
 }
 #chrono {
   background: #cfd8dc url("../img/presentacion/bg_cronologia.png") left center;
