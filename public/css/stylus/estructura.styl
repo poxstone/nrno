@@ -14,7 +14,8 @@ body.i i
 #content
   font-family $textFont
   line-height 1.3em
-  font-size $fontSize
+  &, p
+    font-size $fontSize
   h1,h2,h3,h4,h5,h6
     font-family $titleFont
     text-shadow none
@@ -160,13 +161,6 @@ ul#nrno-menu
       &.active
         background-color $salmon_active
 
-      &.destacada
-        background-color $aquamarine
-        &:hover
-          background-color $aquamarine_hover
-        &:active
-        &.active
-          background-color $aquamarine_active
 
       .text
         display inline-block
@@ -183,6 +177,27 @@ ul#nrno-menu
           width 100%
           i
             font-style italic
+    &.destacada
+      a
+        background-color $aquamarine
+        &:hover
+          background-color $aquamarine_hover
+        &:active
+        &.active
+          background-color $aquamarine_active
+
+  &.hide-des
+    background red
+    width 100%
+    li
+      width 16.575%
+      &.destacada
+        display none
+      a
+        height 70px
+        line-height 70px
+        span
+          display inline
 
 #nrno-banner
   position relative
@@ -627,6 +642,7 @@ ul#nrno-menu
   iframe
     width 100%
     height 450px
+    margin $paddingBox*1.5 auto $paddingBox*2
 
 #chrono
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center
