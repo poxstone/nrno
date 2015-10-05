@@ -23,7 +23,7 @@ div#nrno-banner(class="#{contenido.id}")
       div.botones
         - each boton, index in contenido.botones
           a(href=boton.link, title=boton.titulo, class=boton.tipo, onclick="show_popUp.view(this,event,'#{boton.estilo}');", target="_blank")
-            span.tool-tip ver #{boton.tipo}
+            span.tool-tip!= 'ver'+boton.tipo
             q.figcaption
               span!= boton.pie
           
