@@ -535,6 +535,9 @@ body.show-popUp {
 body.i i {
   color: #800080 !important;
 }
+.text-center {
+  text-align: center;
+}
 #banner,
 #content {
   font-family: lato, arial, sans-serif;
@@ -1025,6 +1028,9 @@ ul#nrno-menu li a .text span i {
 .ahora#nrno-banner .article .section h2 {
   color: #068e91;
 }
+#nrno-banner .article .section h2 .small {
+  font-size: 70%;
+}
 #nrno-banner .article .section .inner {
   max-height: 78%;
   overflow: auto;
@@ -1071,6 +1077,9 @@ ul#nrno-menu li a .text span i {
 .pensamiento#nrno-banner .article .section .inner a:hover,
 .ahora#nrno-banner .article .section .inner a:hover {
   color: #07b0b3;
+}
+#nrno-banner .article .section .inner .text-center {
+  display: block;
 }
 #nrno-banner .article .section .inner blockquote {
   position: relative;
