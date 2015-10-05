@@ -1247,35 +1247,46 @@ ul#nrno-menu li a .text span i {
 #nrno-social a.lnk.Blog {
   background-image: url("../img/ico-blog.png");
 }
-#contenido {
+#contenido,
+#nrno-vieo {
   background: #fff;
   padding: 1px 20px 20px;
 }
 #contenido h2.titulo_biblio,
-#contenido h2.titulo_presentacion {
+#nrno-vieo h2.titulo_biblio,
+#contenido h2.titulo_presentacion,
+#nrno-vieo h2.titulo_presentacion {
   padding-bottom: 17px;
   border-bottom: 1px solid #666;
 }
-#contenido h2.titulo_presentacion {
+#contenido h2.titulo_presentacion,
+#nrno-vieo h2.titulo_presentacion,
+#contenido h2.primary,
+#nrno-vieo h2.primary {
   color: #068e91;
 }
-#contenido p {
+#contenido p,
+#nrno-vieo p {
   text-align: justify;
   margin-bottom: 10px;
 }
-#contenido .creditos {
+#contenido .creditos,
+#nrno-vieo .creditos {
   font-style: italic;
   color: #000;
   font-weight: bold;
 }
-#contenido .creditos small {
+#contenido .creditos small,
+#nrno-vieo .creditos small {
   font-weigth: normal;
 }
-#contenido .creditos strong {
+#contenido .creditos strong,
+#nrno-vieo .creditos strong {
   font-weight: normal;
   color: #666;
 }
-#contenido .cred_antes {
+#contenido .cred_antes,
+#nrno-vieo .cred_antes {
   border-top: 1px dotted #666;
   padding-top: 10px;
 }
@@ -1361,9 +1372,9 @@ ul#nrno-menu li a .text span i {
 }
 #nrno-libros ul li a:focus .hover,
 #nrno-libros ul li a:hover .hover {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 #nrno-libros ul li a:focus .figcaption,
 #nrno-libros ul li a:hover .figcaption {
@@ -1462,6 +1473,7 @@ ul#nrno-menu li a .text span i {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
+  background: url("../img/ico-zoom.png") center center no-repeat;
 }
 #nrno-libros ul li .imagen {
   position: absolute;
@@ -1522,8 +1534,21 @@ ul#nrno-menu li a .text span i {
   -o-transform: scale(1.05);
   transform: scale(1.05);
 }
+.biblioteca #nrno-libros ul li a:hover .hover,
+.biblioteca #nrno-libros ul li a:focus .hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
 .biblioteca #nrno-libros ul li a .figure:after {
   display: none;
+}
+.biblioteca #nrno-libros ul li a .hover {
+  background-image: none;
+}
+.cont-vid iframe {
+  width: 100%;
+  height: 450px;
 }
 #chrono {
   background: #cfd8dc url("../img/presentacion/bg_cronologia.png") left center;

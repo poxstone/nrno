@@ -2,9 +2,15 @@ extends layout
 block banner
   include header
 block content
-  include banner
-
+  - if (contenido.banners)
+    include banner
+  - else if (contenido.video)
+    include video
   div#contenido(class="#{contenido.id}")
     include social
-    h2.titulo_biblio Documentos relacionados
+    h2.titulo_biblio
+      - if (contenido.subtitulo)
+        | #{contenido.subtitulo}
+      - else
+        | Documentos relacionados
     include libros

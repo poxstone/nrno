@@ -7,7 +7,7 @@ body
     overflow hidden !important
 body.i i
   color purple !important
-  
+
 .text-center
   text-align center
 #banner
@@ -451,7 +451,9 @@ ul#nrno-menu
       background-image url(../img/ico-youtube.png)
     &.Blog
       background-image url(../img/ico-blog.png)
+
 #contenido
+#nrno-vieo
   background $white
   padding 1px ($paddingBox *2) ($paddingBox *2)
   h2.titulo_biblio
@@ -459,8 +461,10 @@ ul#nrno-menu
     padding-bottom (($paddingBox *2) - 3px)
     border-bottom 1px solid $gray
 
-  h2.titulo_presentacion
-    color $aquamarine
+  h2
+    &.titulo_presentacion
+    &.primary
+      color $aquamarine
 
   p
     text-align justify
@@ -524,7 +528,7 @@ ul#nrno-menu
             box-shadow rgba(0,0,0,0) 0 0px 25px
 
           .hover
-            opacity 1
+            opacity 0.5
           .figcaption
             opacity 0
           .img
@@ -576,6 +580,7 @@ ul#nrno-menu
         opacity 0
       .hover
         opacity 0
+        background url(../img/ico-zoom.png) center center no-repeat
 
       .imagen
         position absolute
@@ -611,8 +616,17 @@ ul#nrno-menu
             //box-shadow rgba(0,0,0,0)
             z-index 1
             transform scale(1.05)
+            .hover
+              opacity 1
+
           .figure:after
             display none
+          .hover
+            background-image none
+.cont-vid
+  iframe
+    width 100%
+    height 450px
 
 #chrono
   background $gray3 url(../img/presentacion/bg_cronologia.png) left center

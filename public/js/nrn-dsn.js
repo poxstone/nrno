@@ -305,12 +305,14 @@ var show_ban = {
     var vars = show_ban.vars;
     vars.ban_article = document.getElementById('ban-article');
     vars.ban_menu = document.getElementById('ban-menu');
-    vars.ban_links = vars.ban_menu.getElementsByTagName('a');
-    vars.ban_sections = vars.ban_article.getElementsByTagName('section');
+    if( vars.ban_menu ){
+      vars.ban_links = vars.ban_menu.getElementsByTagName('a');
+      vars.ban_sections = vars.ban_article.getElementsByTagName('section');
 
-    show_ban.auto_charge();
-    show_ban.focus_lib();//busca elmentos con hash para agregar animación de scroll
-    return show_ban.vars;
+      show_ban.auto_charge();
+      show_ban.focus_lib();//busca elmentos con hash para agregar animación de scroll
+      return show_ban.vars;
+    }
 
   }
 };
@@ -382,14 +384,17 @@ var min_banner= {
     var vars= min_banner.vars;
     vars.banner = document.getElementById('nrno-banner');
 
-    if( util.agent('msie') ){
-      min_banner.maxi_ie();
-    }else{
-      min_banner.mini();
-      setTimeout(function(){
-        min_banner.maxi();
-      },1250);
+    if(vars.banner){
+      if( util.agent('msie') ){
+        min_banner.maxi_ie();
+      }else{
+        min_banner.mini();
+        setTimeout(function(){
+          min_banner.maxi();
+        },1250);
+      }
     }
+
   }
 }
 $(function(){min_banner.ini()});

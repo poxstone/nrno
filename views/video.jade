@@ -1,0 +1,7 @@
+div#nrno-vieo(class="#{contenido.id}")
+  h2.titulo_biblio.primary!= contenido.titulo
+  div.cont-vid
+    iframe(src=contenido.video.vid_img, frameborder="0", allowfullscreen="true")
+  div.cont-desc-video
+    - each parrafo, index in contenido.video.descripcion
+      p!= contenido.video.descripcion

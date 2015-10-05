@@ -637,14 +637,11 @@ derechos : {
 pensamiento : {
   id: 'pensamiento',//tambien es el folder de las imagenes
   titulo :'La aventura del pensamiento',
-  imagen : '',
-  banners : [
-    {titulo:'',parrafos:['']},
-  ],
-  botones : [
-    {tipo:'imagen',link: rdir+'/img/pensamiento/.jpg'},
-    {tipo:'vídeo',link:'#'},
-  ],
+  subtitulo :'Recorrido 360a de la exposición',
+  video : {
+    vid_img:'//www.youtube.com/embed/0ia_tA9MBgY',
+    descripcion: ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.'],
+  },
   libros : [
     {
       titulo:'',
@@ -660,14 +657,11 @@ pensamiento : {
 ahora : {
   id: 'ahora',//tambien es el folder de las imagenes
   titulo :'Ahora o nunca',
-  imagen : '',
-  banners : [
-    {titulo:'',parrafos:['']},
-  ],
-  botones : [
-    {tipo:'imagen',link: rdir+'/img/ahora/.jpg'},
-    {tipo:'vídeo',link:'#'},
-  ],
+  subtitulo :'Recorrido 360a de la exposición',
+  video : {
+    vid_img:'//www.youtube.com/embed/2mFGolAiiUo',
+    descripcion: ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.'],
+  },
   libros : [
     {
       titulo:'',
