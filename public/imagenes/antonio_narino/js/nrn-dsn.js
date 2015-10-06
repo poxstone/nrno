@@ -1,7 +1,7 @@
 ;
 var util = {
   preventDefault: function(evento){
-    if(event.preventDefault){ evento.preventDefault() }else{ evento.returnValue = false; }
+    if(evento.preventDefault){ evento.preventDefault() }else{ evento.returnValue = false; }
   },
   addClass: function(obj,clase){
     if( !obj.className.match(clase) ){
@@ -33,6 +33,28 @@ var util = {
     return retorno;
 
   },
+  agent_version : function(){
+    var nav_list = ['MSIE','Firefox','Chrome','Opera','Safari'];
+    navegador = navigator.userAgent;
+    
+    for(i=0; i < nav_list.length; i++){
+      
+      var regexp = new RegExp(nav_list[i],'i');
+      console.log( navegador, nav_list[i], ( nav_list[i].match('msie') )? navegador.match(/MSIE \d+/i) : navegador.match(regexp)  );
+      var is_navigator = ( nav_list[i].match('MSIE') )? navegador.match(/MSIE \d+/i) : navegador.match(nav_list[i]) ;
+      
+      //si es el navegador ponga la clase
+      if( is_navigator ){
+        var clase = is_navigator[0].replace(' ','_').toLowerCase();
+        var clase_actual = document.body.getAttribute('class');
+        document.body.setAttribute( 'class', clase_actual+' '+clase );
+        break;
+        
+      }
+      
+    }
+
+  },
   use_jquery: function(){
     if ( !$ && jQuery ){
       $ = jQuery;
@@ -41,6 +63,7 @@ var util = {
     }
   }
 };
+util.agent_version();
 
 //*AUTO ACTIVE MENU PRINCIPAL*//
 var menu_active= {
@@ -57,7 +80,6 @@ var menu_active= {
         break;
       }
     }
-
   },
   ini: function(){
     menu_active.vars = {};
@@ -66,11 +88,10 @@ var menu_active= {
     if(vars.menu){
       vars.lnks = vars.menu.getElementsByTagName('a');
       menu_active.check();
-
     }
   }
 };
-$(function(){ menu_active.ini(); });
+jQuery(function(){ menu_active.ini(); });
 
 //*MOSTRAR POPUP*//
 var show_popUp = {
@@ -83,7 +104,7 @@ var show_popUp = {
 
         //evita click
         util.preventDefault(evento);
-        $(este).focus();
+        jQuery(este).focus();
 
         var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
 
@@ -112,10 +133,10 @@ var show_popUp = {
         util.addClass(vars.body,'show-popUp');
 
         //añade evento escape al body
-        if( !$('body').is('.e_key_esc') ){
-          $('body').addClass('e_key_esc').bind('keyup',function(e){
+        if( !jQuery('body').is('.e_key_esc') ){
+          jQuery('body').addClass('e_key_esc').bind('keyup',function(e){
             if(e.keyCode==27){
-              if( $(vars.popUp_quit).is(':visible') ){
+              if( jQuery(vars.popUp_quit).is(':visible') ){
                 vars.popUp_quit.click();
               }
             }
@@ -192,25 +213,25 @@ var show_ban = {
   focus_lib: function(){
     var vars = ( show_ban.vars )? show_ban.vars : show_ban.ini();
     //secciones para buscar vinculos con hash
-    var $article =  $(vars.ban_article);
+    var $article =  jQuery(vars.ban_article);
 
     //valida si ya se aplicaron eventos de focus
     if( !$article.is('.e_focus_lib') ){
 
       //selecciona vinculos hacia libros
-      var $links_libros = $(vars.ban_sections).find('a[href^="#"]');
+      var $links_libros = jQuery(vars.ban_sections).find('a[href^="#"]');
 
       //bucle para aplicar eventos
       $links_libros.each(function(ind,elem){
-        var $lnk_libro = $(elem);
+        var $lnk_libro = jQuery(elem);
         var id_obj = $lnk_libro.attr('href');
-        var $libro_to_focus = $(id_obj);
+        var $libro_to_focus = jQuery(id_obj);
         var obj_top = ( $libro_to_focus.offset() )? $libro_to_focus.offset().top - 100 : (console.log('error en vinculo '+id_obj+' de banner hacia libros'));
 
         //aplica eventos con click
         $lnk_libro.bind('click',function(e){
           e.preventDefault();
-          $('html,body').stop(true).animate({
+          jQuery('html,body').stop(true).animate({
             'scrollTop' : obj_top
           }
           ,600
@@ -316,12 +337,12 @@ var show_ban = {
 
   }
 };
-$(function(){show_ban.ini()});
+jQuery(function(){show_ban.ini()});
 
 //*CHRONLOGY*//
 var goL = {
   left:function(obj,evento){
-    var div = $("#chrono .envol");
+    var div = jQuery("#chrono .envol");
     if(evento=="over"){
       var move = (div.scrollLeft() - 3000)+'px';
       var time = 15000;
@@ -338,7 +359,7 @@ var goL = {
     });
   },
   right:function(objeto,evento){
-    var div = $("#chrono .envol");
+    var div = jQuery("#chrono .envol");
     if(evento=="over"){
       var move = (div.scrollLeft() + 3000)+'px';
       var time = 15000;
@@ -364,9 +385,9 @@ menu_active.ini();
 var min_banner= {
   maxi_ie: function(){
     var vars= min_banner.vars;
-    vars.height= $(vars.banner).height();
-    $(vars.banner).height(0);
-    $(vars.banner).stop().animate({
+    vars.height= jQuery(vars.banner).height();
+    jQuery(vars.banner).height(0);
+    jQuery(vars.banner).stop().animate({
       'height': vars.height
     },2000);
   },
@@ -397,4 +418,4 @@ var min_banner= {
 
   }
 }
-$(function(){min_banner.ini()});
+jQuery(function(){min_banner.ini()});
