@@ -19,14 +19,17 @@ body.i i
   .msie_10 &, .msie_9 &, .msie_8 &
     margin-top -4px
   
+  
 .text-center
   text-align center
+  
 #banner
 #content
   font-family $textFont
   line-height 1.3em
   &, p
     font-size $fontSize
+    line-height 20px
   h1,h2,h3,h4,h5,h6
     font-family $titleFont
     text-shadow none
@@ -47,6 +50,32 @@ body.i i
 #banner
   a
     color black
+    
+    
+/*PLUGINS*/
+.minimize_script
+  position relative
+  .show_cont_a
+    text-align right
+    
+  .show_more
+    cursor pointer
+    display inline-block
+    padding-bottom $paddingBox
+    
+    .p
+      display none
+    .m
+      display inline
+  
+  &.mini 
+    .p
+      display inline 
+    .m
+      display none
+      
+    
+  
 #nrno-popUp
   display none
   position fixed
@@ -136,6 +165,12 @@ body.i i
 /*menu prindipal*/
 ul#nrno-menu
   defaultDisplay(inline-block)
+  &
+    background $salmon
+    font-size 0
+    width 99.8%
+    display block
+    
   li
     display inline-block
     width 12.4%
@@ -143,6 +178,9 @@ ul#nrno-menu
     vertical-align top
     border-top 1px solid $gray2
     border-bottom 1px solid $gray2
+    min-height 30px
+    .chrome &
+      width 12.435%
     .msie_10 &, .msie_9 &, .msie_8 &
       display block
       float left
@@ -159,13 +197,13 @@ ul#nrno-menu
       width 100%
       transition ease-in-out 250ms all
       font-family Merriweather, serif
-      font-size 0.9em
+      font-size $text_h6
       font-style normal
       font-weight lighter
       box-shadow rgba(0,0,0,0) 0 0 0
       position relative
       text-decoration none
-      .msie_10 &, .msie_9 &, .msie_8 &
+      .msie_9 &, .msie_8 &
         display block
       &:hover
         z-index 1
@@ -204,10 +242,9 @@ ul#nrno-menu
           background-color $aquamarine_active
 
   &.hide-des
-    background red
-    width 99.9%
     li
       width 16.575%
+      
       &.destacada
         display none
       a
@@ -462,7 +499,7 @@ ul#nrno-menu
   &
     float right
     white-space nowrap
-    margin ($paddingBox *1.5 - 2px) 0 ($paddingBox *1.5)
+    margin ($paddingBox *1.5) 0 ($paddingBox *1.5)
   a.lnk
     display inline-block
     background $gray2 center no-repeat
@@ -496,6 +533,7 @@ ul#nrno-menu
     border-bottom 1px solid $gray
 
   h2
+    font-size 21px
     &.titulo_presentacion
     &.primary
       color $aquamarine
@@ -530,14 +568,22 @@ ul#nrno-menu
     ulUnformat(inline-block)
     &
       text-align justify
-      margin 0 -1.25%
-      font-style italic
-      width 100%
+      margin 0 -1.5%
+      font-style normal
+      width 102.5%
+      font-size 0
+      display block
+      text-align left
     li
-      width 22.5%
+      width 22.2%
       position relative
       vertical-align top
-      margin $paddingBox 1.25%
+      margin $paddingBox 1.4%
+      font-size $text_p
+      .msie_11p &, .msie_10 &, .msie_9 &
+        margin $paddingBox 1.25%
+        width 22.4%
+      
       a
         display block
         border 1px solid transparent
@@ -636,8 +682,11 @@ ul#nrno-menu
     /*Modificadores*/
     .biblioteca &//para previsualizar en la biblioteca
       margin 0 -0.25%
+      width auto
+      text-align center
+      
       li
-        width 24.7%
+        width 24.4%
         margin 1px 0.15% 0
         a
           position relative

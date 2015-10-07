@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 #banner html,
 #content html {
   font-family: sans-serif;
@@ -562,6 +564,7 @@ body.i i {
 #banner p,
 #content p {
   font-size: 14px;
+  line-height: 20px;
 }
 #banner h1,
 #content h1,
@@ -595,6 +598,31 @@ body.i i {
 }
 #banner a {
   color: #000;
+}
+.minimize_script {
+  position: relative;
+}
+.minimize_script .show_cont_a {
+  text-align: right;
+}
+.minimize_script .show_more {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  padding-bottom: 10px;
+}
+.minimize_script .show_more .p {
+  display: none;
+}
+.minimize_script .show_more .m {
+  display: inline;
+}
+.minimize_script.mini .p {
+  display: inline;
+}
+.minimize_script.mini .m {
+  display: none;
 }
 #nrno-popUp {
   display: none;
@@ -740,6 +768,12 @@ ul#nrno-menu {
   margin: auto;
   padding: 0;
 }
+ul#nrno-menu {
+  background: #e75f3b;
+  font-size: 0;
+  width: 99.8%;
+  display: block;
+}
 ul#nrno-menu li {
   display: inline-block;
   zoom: 1;
@@ -749,6 +783,10 @@ ul#nrno-menu li {
   vertical-align: top;
   border-top: 1px solid #323232;
   border-bottom: 1px solid #323232;
+  min-height: 30px;
+}
+.chrome ul#nrno-menu li {
+  width: 12.435%;
 }
 .msie_10 ul#nrno-menu li,
 .msie_9 ul#nrno-menu li,
@@ -774,7 +812,7 @@ ul#nrno-menu li a {
   -o-transition: ease-in-out 250ms all;
   transition: ease-in-out 250ms all;
   font-family: Merriweather, serif;
-  font-size: 0.9em;
+  font-size: 12px;
   font-style: normal;
   font-weight: lighter;
   -webkit-box-shadow: rgba(0,0,0,0) 0 0 0;
@@ -785,7 +823,6 @@ ul#nrno-menu li a {
   position: relative;
   text-decoration: none;
 }
-.msie_10 ul#nrno-menu li a,
 .msie_9 ul#nrno-menu li a,
 .msie_8 ul#nrno-menu li a {
   display: block;
@@ -853,10 +890,6 @@ ul#nrno-menu li.destacada a:hover {
 ul#nrno-menu li.destacada a:active,
 ul#nrno-menu li.destacada a.active {
   background-color: #015455;
-}
-ul#nrno-menu.hide-des {
-  background: #f00;
-  width: 99.9%;
 }
 ul#nrno-menu.hide-des li {
   width: 16.575%;
@@ -1257,7 +1290,7 @@ ul#nrno-menu.hide-des li a span {
 #nrno-social {
   float: right;
   white-space: nowrap;
-  margin: 13px 0 15px;
+  margin: 15px 0 15px;
 }
 #nrno-social a.lnk {
   display: inline-block;
@@ -1314,6 +1347,10 @@ ul#nrno-menu.hide-des li a span {
   padding-bottom: 17px;
   border-bottom: 1px solid #666;
 }
+#contenido h2,
+#nrno-vieo h2 {
+  font-size: 21px;
+}
 #contenido h2.titulo_presentacion,
 #nrno-vieo h2.titulo_presentacion,
 #contenido h2.primary,
@@ -1369,15 +1406,25 @@ ul#nrno-menu.hide-des li a span {
 }
 #nrno-libros ul {
   text-align: justify;
-  margin: 0 -1.25%;
-  font-style: italic;
-  width: 100%;
+  margin: 0 -1.5%;
+  font-style: normal;
+  width: 102.5%;
+  font-size: 0;
+  display: block;
+  text-align: left;
 }
 #nrno-libros ul li {
-  width: 22.5%;
+  width: 22.2%;
   position: relative;
   vertical-align: top;
+  margin: 10px 1.4%;
+  font-size: 14px;
+}
+.msie_11p #nrno-libros ul li,
+.msie_10 #nrno-libros ul li,
+.msie_9 #nrno-libros ul li {
   margin: 10px 1.25%;
+  width: 22.4%;
 }
 #nrno-libros ul li a {
   display: block;
@@ -1560,9 +1607,11 @@ ul#nrno-menu.hide-des li a span {
 }
 .biblioteca #nrno-libros ul {
   margin: 0 -0.25%;
+  width: auto;
+  text-align: center;
 }
 .biblioteca #nrno-libros ul li {
-  width: 24.7%;
+  width: 24.4%;
   margin: 1px 0.15% 0;
 }
 .biblioteca #nrno-libros ul li a {

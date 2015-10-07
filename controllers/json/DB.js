@@ -1,19 +1,19 @@
-var rdir = 'http://www.bibliotecanacional.gov.co/imagenes/antonio_narino';
 var rdir = 'http://nrno-poxstone.c9.io/imagenes/antonio_narino';
+var rdir = 'http://www.bibliotecanacional.gov.co/imagenes/antonio_narino';
 var rdir = '/imagenes/antonio_narino';
 db = {
   glb : {//variable global
     rdir: rdir,
   },
   menu : [
-    {titulo:'La Santafé <span>de</span> Nariño',link:'santafe',clase:'normal'},
-    {titulo:'<span>La</span> biblioteca',link:'biblioteca',clase:'normal'},
-    {titulo:'Nariño <span>en la</span> tertulia',link:'narino',clase:'normal'},
-    {titulo:'<span>El</span> Santuario',link:'santuario',clase:'normal'},
-    {titulo:'<span>La</span> Imprenta <span>Patriótica</span>',link:'imprenta',clase:'normal'},
-    {titulo:'<span>La</span> impresión <span>de <i>Los Derechos</i></span><i> del Hombre</i>',link:'derechos',clase:'normal'},
-    {titulo:'<span>La</span> aventura <span>del</span> pensamiento',link:'pensamiento',clase:'destacada'},
-    {titulo:'Ahora <span>o</span> nunca',link:'ahora',clase:'destacada'},
+    {titulo:'La Santafé <span>de</span> Nariño',link:'antonio-narino-la-santafe-de-narino',clase:'normal'},
+    {titulo:'<span>La</span> biblioteca',link:'antonio-narino-la-biblioteca',clase:'normal'},
+    {titulo:'Nariño <span>en la</span> tertulia',link:'antonio-narino-narino-en-la-tertuluia',clase:'normal'},
+    {titulo:'<span>El</span> Santuario',link:'antonio-narino-el-santuario',clase:'normal'},
+    {titulo:'<span>La</span> Imprenta <span>Patriótica</span>',link:'antonio-narino-la-imprenta-patriotica',clase:'normal'},
+    {titulo:'<span>La</span> impresión <span>de <i>Los Derechos</i></span><i> del Hombre</i>',link:'antonio-narino-la-impresion-de-derechos-los-del-hombre',clase:'normal'},
+    {titulo:'<span>La</span> aventura <span>del</span> pensamiento',link:'antonio-narino-la-aventura-del-pensamiento',clase:'destacada'},
+    {titulo:'Ahora <span>o</span> nunca',link:'antonio-narino-ahora-o-nunca',clase:'destacada'},
   ],
 
   chrono : [
@@ -39,7 +39,7 @@ db = {
   social : [
     {nombre:'Facebook',link:'https://www.facebook.com/bncolombia'},
     {nombre:'Twitter',link:'https://twitter.com/BibliotecaNalCo'},
-    {nombre:'Blog',link:'http://www.bibliotecanacional.gov.co/blogs/'},
+    //{nombre:'Blog',link:'http://www.bibliotecanacional.gov.co/blogs/'},
     {nombre:'Youtube',link:'https://www.youtube.com/user/bnacionaladmin'},
   ],
 

@@ -34,14 +34,22 @@ var util = {
 
   },
   agent_version : function(){
-    var nav_list = ['MSIE','Firefox','Chrome','Opera','Safari'];
+    var nav_list = ['MSIE_11p','MSIE','Firefox','Chrome','Opera','Safari'];
     navegador = navigator.userAgent;
     
     for(i=0; i < nav_list.length; i++){
       
       var regexp = new RegExp(nav_list[i],'i');
-      console.log( navegador, nav_list[i], ( nav_list[i].match('msie') )? navegador.match(/MSIE \d+/i) : navegador.match(regexp)  );
-      var is_navigator = ( nav_list[i].match('MSIE') )? navegador.match(/MSIE \d+/i) : navegador.match(nav_list[i]) ;
+      
+      if( nav_list[i]=='MSIE_11p' ){
+        //msie11+
+        is_navigator = ( navegador.match(/Trident\/\d+.+rv:\d+/i) )? [nav_list[i]] : null;
+        
+      }else{
+        var is_navigator = ( nav_list[i].match('MSIE') )? navegador.match(/MSIE \d+/i) : navegador.match(nav_list[i]);
+        
+      }
+      //console.log(is_navigator  );
       
       //si es el navegador ponga la clase
       if( is_navigator ){
@@ -92,6 +100,67 @@ var menu_active= {
   }
 };
 jQuery(function(){ menu_active.ini(); });
+
+//minimizar parrafos grandes
+var minimize_script= {
+  inicialize: function(elemento){
+    
+    var vars =  minimize_script.vars;
+    var $content = jQuery(elemento);
+    var $bracket = $content.find('.bracket');
+    
+    
+    if($bracket.length){
+    
+      var $nexts = $bracket.nextAll('p');
+      
+      if( $nexts.length && !$content.is('.active') ){
+        
+        //añade vinculo
+        var $a_show = jQuery('<a class="show_more">[leer <i class="p">+</i><i class="m">-</i>]</a>');
+        var $cont_li = jQuery('<div class="show_cont_a"></div>').append($a_show );
+        $content.append( $cont_li );
+        
+        //añade accion
+        $a_show.click(function(e){
+          var time = ( $content.is('.active') )? 600 : 0;
+          
+          if(  $content.is('.mini') ){
+            $nexts.slideDown(time);
+            $content.removeClass('mini');
+          }else{
+            $nexts.slideUp(time);
+            $content.addClass('mini');
+          }
+          
+        });
+        
+        //primer click
+        $a_show.click();
+        
+        $content.addClass('active');
+
+      }
+    }
+    
+  },
+  ini: function(){
+    minimize_script.vars = {};
+    var vars = minimize_script.vars;
+    vars.contenedor = jQuery('.minimize_script');
+    
+    //valida existencia
+    if( vars.contenedor.length ){
+      vars.contenedor.each(function(ind,ele){
+        
+        minimize_script.inicialize(ele);
+        
+      });
+    }
+  }
+};
+jQuery(function(){  minimize_script.ini(); });
+
 
 //*MOSTRAR POPUP*//
 var show_popUp = {
