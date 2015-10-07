@@ -18,11 +18,11 @@ body.i i
 #content
   .msie_10 &, .msie_9 &, .msie_8 &
     margin-top -4px
-  
-  
+
+
 .text-center
   text-align center
-  
+
 #banner
 #content
   font-family $textFont
@@ -50,32 +50,72 @@ body.i i
 #banner
   a
     color black
-    
-    
+
+
 /*PLUGINS*/
 .minimize_script
   position relative
   .show_cont_a
     text-align right
-    
+
   .show_more
     cursor pointer
     display inline-block
     padding-bottom $paddingBox
-    
+
     .p
       display none
     .m
       display inline
-  
-  &.mini 
+
+  &.mini
     .p
-      display inline 
+      display inline
     .m
       display none
-      
-    
-  
+
+#nrno-logo
+  position fixed
+  bottom $paddingBox
+  right $paddingBox * 0.5
+  z-index 1000
+  a
+    height 235px
+    width 235px
+    display block
+    position relative
+    opacity .75
+    transform scale(.5) translate($paddingBox,$paddingBox)
+    transition ease-in-out all 500ms
+    .back-img
+      background-color rgba($carton,0)
+      border 3px dotted $carton_dark
+      position absolute
+      height 0
+      bottom 0
+      left 0
+      right 0
+      height 75%
+      width 75%
+      border-radius 100%
+      z-index -1
+      margin auto
+      transition ease-in-out all 500ms
+      animation rotate_f linear 20s infinite
+    img
+      position relative
+      z-index 1
+      top -10px
+    &:hover
+      transform scale(1) translate(0,0)
+      opacity 1
+      .back-img
+        background-color rgba(white,1)
+        border-color $carton_dark
+        height 75%
+        width 75%
+
+
 #nrno-popUp
   display none
   position fixed
@@ -170,7 +210,7 @@ ul#nrno-menu
     font-size 0
     width 99.8%
     display block
-    
+
   li
     display inline-block
     width 12.4%
@@ -244,7 +284,7 @@ ul#nrno-menu
   &.hide-des
     li
       width 16.575%
-      
+
       &.destacada
         display none
       a
@@ -583,7 +623,7 @@ ul#nrno-menu
       .msie_11p &, .msie_10 &, .msie_9 &
         margin $paddingBox 1.25%
         width 22.4%
-      
+
       a
         display block
         border 1px solid transparent
@@ -684,7 +724,7 @@ ul#nrno-menu
       margin 0 -0.25%
       width auto
       text-align center
-      
+
       li
         width 24.4%
         margin 1px 0.15% 0

@@ -11,7 +11,7 @@ db = {
     {titulo:'Nariño <span>en la</span> tertulia',link:'antonio-narino-narino-en-la-tertuluia',clase:'normal'},
     {titulo:'<span>El</span> Santuario',link:'antonio-narino-el-santuario',clase:'normal'},
     {titulo:'<span>La</span> Imprenta <span>Patriótica</span>',link:'antonio-narino-la-imprenta-patriotica',clase:'normal'},
-    {titulo:'<span>La</span> impresión <span>de <i>Los Derechos</i></span><i> del Hombre</i>',link:'antonio-narino-la-impresion-de-derechos-los-del-hombre',clase:'normal'},
+    {titulo:'<span>La</span> impresión <span>de <br> <i>Los Derechos</i></span><i> del Hombre</i>',link:'antonio-narino-la-impresion-de-los-derechos-del-hombre',clase:'normal'},
     {titulo:'<span>La</span> aventura <span>del</span> pensamiento',link:'antonio-narino-la-aventura-del-pensamiento',clase:'destacada'},
     {titulo:'Ahora <span>o</span> nunca',link:'antonio-narino-ahora-o-nunca',clase:'destacada'},
   ],
