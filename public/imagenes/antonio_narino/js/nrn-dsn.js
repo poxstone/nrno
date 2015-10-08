@@ -193,6 +193,39 @@ var show_popUp = {
         if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
           vars.image_src.src = href;
           vars.image_src.style.display="block";
+          
+          console.log('cargando');
+          var w_width = document.body.offsetWidth;
+          var w_height = document.body.offsetHeight;
+          
+          console.log( w_width, w_height );
+          
+          vars.image_src.onload=function(){
+            
+            setTimeout(function(){
+              
+              var i_width = vars.image_src.offsetWidth;
+              var i_height = vars.image_src.offsetHeight;
+              
+              if( i_width > w_width ){
+                
+                vars.image_src.style.width = (w_width * 0.5)+'px';
+                
+              }else if( i_height > w_height *0.75 ){
+                
+                vars.image_src.style.height = (w_height * 0.75)+'px';
+                vars.image_src.style.width = 'auto';
+                i_width = vars.image_src.offsetWidth;
+                
+              }
+                vars.iframe_cont.style.width = i_width+'px';
+              
+            },100);
+            
+              
+              
+          }
+          
         }else{
           vars.iframe_src.src = href;
           vars.iframe_src.style.display="block";
@@ -266,6 +299,7 @@ var show_popUp = {
     vars.body = document.body;
     vars.popUp = document.getElementById('nrno-popUp');
     vars.popUp_iframe = document.getElementById('popUp-iframe');
+    vars.iframe_cont = vars.popUp.children[0];
     vars.iframe_src = document.getElementById('iframe-src');
     vars.popUp_pie = document.getElementById('popUp-pie');
     vars.image_src = document.getElementById('image-src');

@@ -146,13 +146,14 @@ body.i i
     margin auto
     left 5%
     right 5%
-    width 750px
+    width auto
     height auto
     top 5%
     bottom auto
     position absolute
     box-shadow $box-shadow3
     color $white
+    transition ease-in-out width 250ms
   #popup-quit
     display block
     float right
@@ -176,13 +177,15 @@ body.i i
     margin auto
     position relative
     margin-top $paddingBox *4
-    overflow auto
+    overflow auto 
     > iframe
     > img
       display none
       height auto
       width 100%
       margin auto
+      max-width 100%
+      max-height 100%
       transition ease-in-out 250ms all
       &.zoom
         min-width 100%
@@ -595,7 +598,7 @@ ul#nrno-menu
     padding-top $paddingBox
 
 #nrno-libros
-  padding-bottom $paddingBox*4
+  //padding-bottom $paddingBox*4
   min-height 300px
   line-height 1.2em
   p.tit
@@ -753,10 +756,11 @@ ul#nrno-menu
     margin $paddingBox*1.5 auto $paddingBox*2
 
 #chrono
-  background $gray3 url(../img/presentacion/bg_cronologia.png) left center
+  background $gray3 url(../img/presentacion/bg_cronologia.png) 0px center
   position relative
-  scrollbar(rgba(#000,0))
+  //scrollbar(rgba(#000,0))
   animation bg_left 40s linear infinite
+  
   .envol
     overflow auto
     overflow-y hidden
@@ -969,3 +973,50 @@ ul#nrno-menu
     z-index 10px
     &:before
       content '\25B6'
+
+#zoomify
+  .cont-zoomify
+    ol, ul
+      padding-left $paddingBox *2
+      margin-left 0
+      li
+        padding-bottom $paddingBox
+    .zml-left
+      text-align justify
+      width 38%
+      float left
+    .zml-right
+      margin-top $paddingBox *2
+      width 60%
+      float right
+      border 1px solid $gray4
+      border-radius 0 0 $rad $rad
+      p
+        padding $paddingBox $paddingBox
+  #myContainer2
+    width auto
+    height 500px
+    margin auto
+    background $gray4
+  .btn-z
+    display inline-block
+    padding 1px 0px
+    display block
+    text-align left
+    background white
+    color $salmon
+    border-radius 1px
+    cursor pointer
+    box-shadow rgba(0,0,0,0) 0px 0px 0px 0
+    transition ease-in-out all 250ms
+    &:hover
+      text-indent 1em
+      box-shadow rgba(0,0,0,0.25) 2px 2px 6px 0
+      
+    
+      
+.clear
+  clear bottom
+  width 100%
+  height 1px
+  display block

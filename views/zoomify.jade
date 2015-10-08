@@ -1,0 +1,35 @@
+#zoomify
+  script(type='text/javascript', src='/imagenes/antonio_narino/zoomify/ZoomifyImageViewerPro-min.js')
+  style(type='text/css').
+  script(type='text/javascript').
+    Z.showImage("myContainer2", "/imagenes/antonio_narino/zoomify/MapaCabrer1797", "zInitialX=5200&zInitialY=2200&zInitialZoom=20&zLogoCustomPath=/imagenes/antonio_narino/zoomify/Assets/LogoCustom/toolbarLogoCustom.png&zHotspotPath=/imagenes/antonio_narino/zoomify/Assets/Hotspots/Hotspots-Categories&zHotspotListTitle=Lugares y respuestas");
+  script.
+    var category1Visibility = true;
+    var category2Visibility = true;
+    var category3Visibility = true;
+    var category4Visibility = true;
+    var category5Visibility = true;
+  h2.titulo_biblio Mapa-quiz: La Santafé de Antonio Nariño
+  div.cont-zoomify
+    div.zml-left
+      ol
+        li En su casa, que daba sobre una de las plazas principales de la ciudad, Nariño organizó una tertulia llamada El Arcano Sublime de la Filantropía. ¿En qué plaza quedaba la casa de Nariño?
+          a#category4.btn-z(onclick="category4Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '4', !category4Visibility)") Mostrar/ocultar las plazas &gt;&gt;
+        li Cerca de otra plaza, Nariño puso en funcionamiento La Imprenta Patriótica, el primer taller tipográfico de carácter privado en la historia colombiana. ¿Dónde quedaba?
+          a#category4.btn-z(onclick="category4Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '4', !category4Visibility)") Mostrar/ocultar las plazas &gt;&gt;
+        li Luego de la misa de mediodía de un domingo de diciembre de 1793, Nariño distribuyó algunas copias impresas de su traducción de los 
+          em Derechos del Hombre y del Ciudadano. ¿En las puertas de que iglesia ocurrió esto?
+          a#category1.btn-z(onclick="category1Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '1', !category1Visibility)") Mostrar/ocultar las iglesias &gt;&gt;
+        li Para evitar que las autoridades descubrieran los ‘libros prohibidos’ de su biblioteca, Nariño los envió en 1794 a una iglesia. ¿Cúal fue esta iglesia?
+          a#category1.btn-z(onclick="category1Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '1', !category1Visibility)") Mostrar/ocultar las iglesias &gt;&gt;
+        li Luego de la Independencia, una de las plazas de la ciudad fue rebautizada como Plaza de Antonio Nariño. ¿Qué plaza es?
+          a#category4.btn-z(onclick="category4Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '4', !category4Visibility)") Mostrar/ocultar las plazas &gt;&gt;
+        li
+          b Respuestas:
+          a#category5.btn-z(onclick="category5Visibility = Z.Viewport.setHotspotsVisibilityByFilter('category', '5', !category5Visibility)") Mostrar/ocultar las respuestas &gt;&gt;
+    div.zml-right
+      #myContainer2
+      p
+        em Croquis de la Ciudad de Santa Fé de Bogotá y sus Inmediaciones
+        |  (1797), Carlos Francisco Cabrer (acuarela sobre tela, 122 x 156 cm, Servicio Geográfico del Ejercito, Madrid, España).
+    .clear
