@@ -194,7 +194,6 @@ var show_popUp = {
           vars.image_src.src = href;
           vars.image_src.style.display="block";
           
-          console.log('cargando');
           var w_width = document.body.offsetWidth;
           var w_height = document.body.offsetHeight;
           
@@ -288,6 +287,9 @@ var show_popUp = {
       vars.image_src.style.display="none";
       vars.iframe_src.src = '';
       vars.iframe_src.style.display="none";
+      
+      //quita stilos
+      vars.iframe_cont.setAttribute('style','');
 
       //Limiamos pie de pagina
       vars.popUp_pie.innerHTML = "";
