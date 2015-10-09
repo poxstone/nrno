@@ -165,91 +165,104 @@ jQuery(function(){  minimize_script.ini(); });
 //*MOSTRAR POPUP*//
 var show_popUp = {
   view : function(este,evento,estilo){
-
+  
     var estylo = estilo || '';
-
+  
     //valida para dejar pasar el vínculo a una nueva ventana
     if( !estylo.match(/Portada y catá?logo/i) ){
-
-        //evita click
-        util.preventDefault(evento);
-        jQuery(este).focus();
-
-        var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
-
-        //Declaramos variables
-        var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
-
-        //valida si es un elemento de biblioteca o un botón de banner
-        if(is_biblio_item){
-          //pega citar
-          vars.popUp_pie.innerHTML = este.getElementsByTagName('figcaption')[0].innerHTML;
-        }else{
-          vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
-        }
-
-        //pega url en img o en iframe
-        var href = este.getAttribute('href') || '';
-        if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
-          vars.image_src.src = href;
-          vars.image_src.style.display="block";
-          
-          var w_width = document.body.offsetWidth;
-          var w_height = document.body.offsetHeight;
-          
-          console.log( w_width, w_height );
-          
-          vars.image_src.onload=function(){
-            
-            setTimeout(function(){
-              
-              var i_width = vars.image_src.offsetWidth;
-              var i_height = vars.image_src.offsetHeight;
-              
-              if( i_width > w_width ){
-                
-                vars.image_src.style.width = (w_width * 0.5)+'px';
-                
-              }else if( i_height > w_height *0.75 ){
-                
-                vars.image_src.style.height = (w_height * 0.75)+'px';
-                vars.image_src.style.width = 'auto';
-                i_width = vars.image_src.offsetWidth;
-                
-              }
-                vars.iframe_cont.style.width = i_width+'px';
-              
-            },100);
-            
-              
-              
+  
+      //evita click
+      util.preventDefault(evento);
+      jQuery(este).focus();
+  
+      var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
+  
+      var is_zoomy_item = ( estilo == 'zoomify' )? true : false;
+  
+      //Declaramos variables
+      var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
+  
+      //valida si es un elemento de biblioteca o un botón de banner
+      if(is_biblio_item){
+        //pega citar
+        vars.popUp_pie.innerHTML = este.getElementsByTagName('figcaption')[0].innerHTML;
+      }else if( is_zoomy_item ){
+        //es zoomyfile
+        vars.popUp_pie.innerHTML = '';
+  
+      }else{
+        vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
+      }
+  
+      //pega url en img o en iframe
+      var href = este.getAttribute('href') || '';
+      if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
+  
+        var w_width = document.body.offsetWidth;
+        var w_height = document.body.offsetHeight;
+  
+        var i_new = new Image();
+        var i_new_h;
+        var i_new_w;
+        i_new.src = href;
+  
+        vars.image_src.src = href;
+        vars.image_src.style.display= "block";
+  
+        function image_put(){
+  
+          if( i_new_h > w_height ){
+  
+            vars.image_src.style.width = 'auto';
+            vars.image_src.style.maxHeight = (w_height*0.66)+'px';
+            //console.log('mas alto: ', vars.image_src.style.maxHeight);
+  
+          }else if( i_new_w > w_width ){
+  
+            vars.image_src.style.height = 'auto';
+            vars.image_src.style.maxWidth = (vars.iframe_cont.offsetWidth - 20)+'px';
+            //console.log('mas ancho: ', vars.image_src.style.maxWidth);
+  
           }
-          
-        }else{
-          vars.iframe_src.src = href;
-          vars.iframe_src.style.display="block";
-        }
-
-        //muestra popup
-        util.addClass(vars.body,'show-popUp');
-
-        //añade evento escape al body
-        if( !jQuery('body').is('.e_key_esc') ){
-          jQuery('body').addClass('e_key_esc').bind('keyup',function(e){
-            if(e.keyCode==27){
-              if( jQuery(vars.popUp_quit).is(':visible') ){
-                vars.popUp_quit.click();
-              }
+        //contenedor width
+        setTimeout(function(){
+          vars.iframe_cont.style.width = (vars.image_src.offsetWidth)+'px';
+        },500);
+        
+        
+      }
+  
+      i_new.onload= function(e){
+        i_new_w= i_new.width;
+        i_new_h= i_new.height;
+        //alert( i_new_w+' '+i_new_h );
+  
+        setTimeout(function(){
+          image_put();
+        },100);
+  
+      }
+  
+  
+      }else{
+        vars.iframe_src.src = href;
+        vars.iframe_src.style.display="block";
+      }
+  
+      //muestra popup
+      util.addClass(vars.body,'show-popUp');
+  
+      //añade evento escape al body
+      if( !jQuery('body').is('.e_key_esc') ){
+        jQuery('body').addClass('e_key_esc').bind('keyup',function(e){
+          if(e.keyCode==27){
+            if( jQuery(vars.popUp_quit).is(':visible') ){
+              vars.popUp_quit.click();
             }
-          });
-        }
-
-    }else{//el click sige de largo
-
-
+          }
+        });
+      }
     }
-
-
   },
   hide_back: function(este,evento){
     //oculta cuando le pican en fondo
@@ -290,6 +303,7 @@ var show_popUp = {
       
       //quita stilos
       vars.iframe_cont.setAttribute('style','');
+      vars.image_src.setAttribute('style','');
 
       //Limiamos pie de pagina
       vars.popUp_pie.innerHTML = "";
@@ -524,3 +538,69 @@ var min_banner= {
   }
 }
 jQuery(function(){min_banner.ini()});
+
+
+
+//*ZOOMIY*//
+var zoomify_click = {
+  buscar_vinculos: function(){
+    
+    var vars = zoomify_click.vars;
+    vars.repeats = 0;//repeticiones si no encuentra nada
+    vars.$vinculos = null;
+    
+    vars.time = setInterval(function(){
+      
+      vars.$vinculos = jQuery('a:has(img)',vars.$cont_zoomfy);
+      
+      if( vars.$vinculos.length ){
+        
+        zoomify_click.eventos();
+        //clearInterval( vars.time );
+        
+      }else if( vars.repeats == 10 ){
+        
+        clearInterval( vars.time );
+        
+      }
+      vars.repeats++;
+      
+    },250)
+    
+  },
+  eventos: function(){
+    var vars = zoomify_click.vars;
+    vars.$vinculos.each(function(event,element){
+        
+        var $vinculo = jQuery(element);
+        
+        if( !$vinculo.is( '.evento_popup' ) ){
+          
+            $vinculo.click(function(e){
+              
+              show_popUp.view( element, e, 'zoomify' );
+              
+            });
+            
+            $vinculo.addClass( 'evento_popup' );
+            
+            //console.log( 'elemento: ', element );
+        }
+        
+      }
+    );
+    
+  },
+  ini: function(){
+    
+    zoomify_click.vars = {};
+    var vars = zoomify_click.vars;
+    vars.$cont_zoomfy = jQuery('#zoomify');
+    
+    if( vars.$cont_zoomfy.length ){
+      zoomify_click.buscar_vinculos();
+    }
+    
+  }
+};
+jQuery( function(){ zoomify_click.ini(); } );

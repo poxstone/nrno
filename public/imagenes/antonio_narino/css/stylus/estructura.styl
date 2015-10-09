@@ -85,7 +85,7 @@ body.i i
     display block
     position relative
     opacity .75
-    transform scale(.5) translate($paddingBox,$paddingBox)
+    transform scale(.8) translate($paddingBox,$paddingBox)
     transition ease-in-out all 500ms
     .back-img
       background-color rgba($carton,0)
@@ -146,7 +146,7 @@ body.i i
     margin auto
     left 5%
     right 5%
-    width auto
+    width 750px
     height auto
     top 5%
     bottom auto
@@ -199,6 +199,8 @@ body.i i
     position relative
     padding $paddingBox *2 0
     text-align justify
+    &:empty
+      display none
 
 #content
   h1

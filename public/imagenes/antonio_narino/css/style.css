@@ -638,11 +638,11 @@ body.i i {
   opacity: 0.75;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   filter: alpha(opacity=75);
-  -webkit-transform: scale(0.5) translate(10px, 10px);
-  -moz-transform: scale(0.5) translate(10px, 10px);
-  -ms-transform: scale(0.5) translate(10px, 10px);
-  -o-transform: scale(0.5) translate(10px, 10px);
-  transform: scale(0.5) translate(10px, 10px);
+  -webkit-transform: scale(0.8) translate(10px, 10px);
+  -moz-transform: scale(0.8) translate(10px, 10px);
+  -ms-transform: scale(0.8) translate(10px, 10px);
+  -o-transform: scale(0.8) translate(10px, 10px);
+  transform: scale(0.8) translate(10px, 10px);
   -webkit-transition: ease-in-out all 500ms;
   -moz-transition: ease-in-out all 500ms;
   -ms-transition: ease-in-out all 500ms;
@@ -751,7 +751,7 @@ body.i i {
   margin: auto;
   left: 5%;
   right: 5%;
-  width: auto;
+  width: 750px;
   height: auto;
   top: 5%;
   bottom: auto;
@@ -834,6 +834,9 @@ body.i i {
   position: relative;
   padding: 20px 0;
   text-align: justify;
+}
+#nrno-popUp #popUp-pie:empty {
+  display: none;
 }
 #content h1 {
   color: #ffa500;
