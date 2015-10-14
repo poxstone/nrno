@@ -1,11 +1,18 @@
 support-for-ie = true
 
 vendor(prop, args)
-	-webkit-{prop} args
-	-moz-{prop} args
-	-ms-{prop} args
-	-o-{prop} args
-	{prop} args
+	if args ==flex
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+	else
+		-webkit-{prop} args
+		-moz-{prop} args
+		-ms-{prop} args
+		-o-{prop} args
+		{prop} args
 /*
 div
 	vendor animation, foo 250ms ease-in-out*/

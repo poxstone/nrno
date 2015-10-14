@@ -2,7 +2,8 @@ link#stylo(rel="stylesheet",href="#{glb.rdir}/css/style.css")
 //script(src="#{glb.rdir}/js/jquery.min.js")
 script(src="#{glb.rdir}/js/nrn-dsn.js")
 div#nrno-logo
-  a(href="/antonio-narino-presentacion")
+  -var query= ( qr.html )? '?html='+qr.html : '';
+  a(href="/antonio-narino-presentacion#{query}")
     i.back-img
     img(src="#{glb.rdir}/img/narino_logob.png")
 div#nrno-popUp(onclick="show_popUp.hide_back(this,event)")

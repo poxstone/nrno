@@ -21,7 +21,6 @@ body.i i
   .msie_10 &, .msie_9 &, .msie_8 &
     margin-top -4px
 
-
 .text-center
   text-align center
 
@@ -32,6 +31,9 @@ body.i i
   &, p
     font-size $fontSize
     line-height 20px
+    @media width(max-width: 768px)
+      line-height 15px
+      
   h1,h2,h3,h4,h5,h6
     font-family $titleFont
     text-shadow none
@@ -211,6 +213,12 @@ body.i i
     text-align justify
     &:empty
       display none
+      
+  @media (max-width: 768px)
+    .modal-cont
+      width 80%
+    #popup-quit
+      margin auto
 
 #content
   h1
@@ -245,7 +253,7 @@ ul#nrno-menu
       background $salmon url(../img/bg-menu.png) center 90% no-repeat
       color $white
       display block
-      display flex
+      vendor(display, flex)
       text-align center
       height 100px
       line-height 100px
@@ -308,6 +316,7 @@ ul#nrno-menu
             display inline
   @media(max-width: 768px)
     &
+    &.hide-des
       display block
       background purple
       li
@@ -319,7 +328,16 @@ ul#nrno-menu
         & + li
           border-left none
         a
+          background-position center 80%
           min-height 0
+          line-height 50px
+          height 50px
+          .text
+            padding-top 0
+            padding-bottom 0
+            
+          br
+            display none
           .text{}
             
 
@@ -418,7 +436,26 @@ ul#nrno-menu
 
         small
           font-size 1em //para que small aplique solo en el titulo
-
+  @media (max-width: 768px)
+    &.maxi
+      &.presentacion
+        height 300px !important
+    ul.menu
+      vendor(display, flex)
+      width 100%
+      bottom 0
+      flex-wrap wrap
+      li
+        margin-top 1px
+        margin-bottom 0
+        flex-grow 1
+        a
+          span
+            text-align center
+    .cont-img img.img
+      width auto
+      height 100%
+      left 0
 
   .article
     position absolute
@@ -510,6 +547,26 @@ ul#nrno-menu
         blockquote:first-child
           padding-top 0
           margin-top 0
+    
+  @media (max-width: 768px)
+    .article
+      margin-top $paddingBox
+      .section
+        width auto
+        margin auto
+        left $paddingBox
+        right $paddingBox
+        height 50%
+        h2
+          text-align left
+          margin-bottom 0
+          font-size $text_h4
+          padding-bottom $paddingBox
+        .inner
+          p:first-child
+            padding-top $paddingBox
+            max-height 87.5%
+            
   .botones
     position absolute
     right $paddingBox *10
@@ -563,6 +620,10 @@ ul#nrno-menu
         span
           animation menuUp ease-in-out 250ms
           display block
+  
+    @media (max-width: 768px)
+      right 0
+      bottom 50%
 
 #nrno-social
   ulUnformat(inline-block)
@@ -715,7 +776,7 @@ ul#nrno-menu
       .figcaption
       .hover
         display block
-        display flex
+        vendor(display, flex)
         color $white
         position absolute
         text-align center
@@ -793,13 +854,16 @@ ul#nrno-menu
         width auto !important
         display block
         a
-          display flex
+          vendor(display, flex)
           min-height 0
           .figure
             height 100px
             flex 1
           .tit
             flex 2
+            padding-top 0
+            padding-bottom 0
+            text-align left
     .biblioteca &
       li a
         .imagen
@@ -1036,6 +1100,10 @@ ul#nrno-menu
     z-index 10px
     &:before
       content '\25B6'
+  @media (max-width: 768px)
+    img
+      width 90%
+      left 5%
 
 #zoomify
   .cont-zoomify
@@ -1076,7 +1144,36 @@ ul#nrno-menu
       text-indent 1em
       box-shadow rgba(0,0,0,0.25) 2px 2px 6px 0
       
-    
+  @media (max-width: 768px)
+    h2.titulo_biblio
+      padding-top $paddingBox *2
+    .cont-zoomify
+      vendor(display, flex)
+      flex-direction column-reverse
+      .zml-left
+      .zml-right
+        float none
+        width auto
+      .zml-left
+        overflow hidden
+        max-height 150px
+        overflow auto
+        overflow-x hidden
+        border 1px solid $gray4
+      .zml-right
+        margin auto
+        height auto
+        vendor(display, flex)
+        flex-direction column-reverse
+        border-radius 0
+        
+        #myContainer2
+          height 300px
+          flex 2
+          width 100%
+        p
+          flex 1
+          margin auto
       
 .clear
   clear bottom
