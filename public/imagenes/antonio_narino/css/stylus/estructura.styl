@@ -1,6 +1,8 @@
 html
   background #f4f2ef
   min-width $wrapper
+  @media (max-width: 768px)
+    min-width 0
 html
 body
   &.show-popUp
@@ -114,6 +116,14 @@ body.i i
         border-color $carton_dark
         height 75%
         width 75%
+  @media (max-width: 768px)
+    &
+      a
+        height 100px
+        width 100px
+        transform none
+        img
+          height 100%
 
 
 #nrno-popUp
@@ -259,7 +269,6 @@ ul#nrno-menu
       &.active
         background-color $salmon_active
 
-
       .text
         display inline-block
         line-height 1.2em
@@ -296,7 +305,23 @@ ul#nrno-menu
         height 70px
         line-height 70px
         span
-          display inline
+            display inline
+  @media(max-width: 768px)
+    &
+      display block
+      background purple
+      li
+        display block
+        width auto !important
+        background green
+        float none
+        border-top none
+        & + li
+          border-left none
+        a
+          min-height 0
+          .text{}
+            
 
 #nrno-banner
   position relative
@@ -567,7 +592,12 @@ ul#nrno-menu
       background-image url(../img/ico-youtube.png)
     &.Blog
       background-image url(../img/ico-blog.png)
-
+  @media(max-width: 768px)
+    &
+      display block
+      float none
+      text-align right
+    
 #contenido
 #nrno-vieo
   background $white
@@ -598,6 +628,9 @@ ul#nrno-menu
   .cred_antes
     border-top 1px dotted $gray
     padding-top $paddingBox
+  @media (max-width: 768px)
+    h2
+      padding-top 0
 
 #nrno-libros
   //padding-bottom $paddingBox*4
@@ -749,8 +782,36 @@ ul#nrno-menu
 
           .figure:after
             display none
+          .figcaption
+            display none
           .hover
             background-image none
+            
+  @media(max-width: 768px)
+    ul
+      li
+        width auto !important
+        display block
+        a
+          display flex
+          min-height 0
+          .figure
+            height 100px
+            flex 1
+          .tit
+            flex 2
+    .biblioteca &
+      li a
+        .imagen
+          width 33%
+        .hover
+          opacity 1
+          color $textColor
+          text-shadow none
+          width 66%
+          left 33%
+          text-align left
+        
 .cont-vid
   iframe
     width 100%

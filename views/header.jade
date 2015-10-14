@@ -1,4 +1,4 @@
-link(rel="stylesheet",href="#{glb.rdir}/css/style.css")
+link#stylo(rel="stylesheet",href="#{glb.rdir}/css/style.css")
 //script(src="#{glb.rdir}/js/jquery.min.js")
 script(src="#{glb.rdir}/js/nrn-dsn.js")
 div#nrno-logo
@@ -16,5 +16,6 @@ div#nrno-popUp(onclick="show_popUp.hide_back(this,event)")
 ul#nrno-menu(class="hide-des #{contenido.id}")
   - each link, index in db.menu
     li(class=link.clase)
-      a(href=link.link,class=link.clase)
+      -var vinculo= ( qr.html )? link.link+'?html='+qr.html : link.link;
+      a(href=vinculo,class=link.clase)
         span.text!= link.titulo
