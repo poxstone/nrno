@@ -1,7 +1,7 @@
 html
   background #f4f2ef
   min-width $wrapper
-  @media (max-width: 768px)
+  @media (max-width: $screen-sm)
     min-width 0
 html
 body
@@ -16,7 +16,7 @@ body.i i
   .breadcrumb
     display none !important
 #block-system-main > .content
-  width 940px
+  width 942px
 #content
   .msie_10 &, .msie_9 &, .msie_8 &
     margin-top -4px
@@ -31,9 +31,9 @@ body.i i
   &, p
     font-size $fontSize
     line-height 20px
-    @media width(max-width: 768px)
+    @media (max-width: $screen-sm)
       line-height 15px
-      
+
   h1,h2,h3,h4,h5,h6
     font-family $titleFont
     text-shadow none
@@ -45,7 +45,7 @@ body.i i
 
   > div
     //outline 1px solid rgba(0,255,0,.25)
-    padding 0 10px
+    //padding 0 10px
     max-width ($wrapper - 20)
     margin auto
     > *
@@ -118,7 +118,7 @@ body.i i
         border-color $carton_dark
         height 75%
         width 75%
-  @media (max-width: 768px)
+  @media (max-width: $screen-sm)
     &
       a
         height 100px
@@ -189,7 +189,7 @@ body.i i
     margin auto
     position relative
     margin-top $paddingBox *4
-    overflow auto 
+    overflow auto
     > iframe
     > img
       display none
@@ -213,8 +213,8 @@ body.i i
     text-align justify
     &:empty
       display none
-      
-  @media (max-width: 768px)
+
+  @media (max-width: $screen-sm)
     .modal-cont
       width 80%
     #popup-quit
@@ -233,6 +233,7 @@ ul#nrno-menu
     font-size 0
     width 99.8%
     display block
+    vendor display flex
 
   li
     display inline-block
@@ -243,7 +244,7 @@ ul#nrno-menu
     border-bottom 1px solid $gray2
     min-height 30px
     .chrome &
-      width 12.435%
+      width 12.4%
     .msie_10 &, .msie_9 &, .msie_8 &
       display block
       float left
@@ -253,7 +254,7 @@ ul#nrno-menu
       background $salmon url(../img/bg-menu.png) center 90% no-repeat
       color $white
       display block
-      vendor(display, flex)
+      vendor display flex
       text-align center
       height 100px
       line-height 100px
@@ -308,19 +309,55 @@ ul#nrno-menu
       width 16.575%
 
       &.destacada
-        display none
+        display none !important
       a
         height 70px
         line-height 70px
         span
             display inline
-  @media(max-width: 768px)
-    &
-    &.hide-des
+  @media (max-width: $screen-sm)
+    position fixed
+    top $paddingBox
+    left $paddingBox
+    right $paddingBox
+    max-height 95%
+    overflow auto
+    overflow-x hidden
+    z-index 10
+    height 0
+    width auto
+    box-shadow rgba(0,0,0,0) 0 0 12px 4px
+    transition 250ms ease-in-out all
+    background rgba($salmon, .75)
+
+    /.menu-button //botón de responsive
+      content ''
+      box-shadow rgba(0,0,0,0.5) 2px 4px 8px 0
       display block
-      background purple
-      li
+      position fixed
+      top $paddingBox
+      left $paddingBox
+      size 50px
+      background url('../img/ico-menu.png') center center no-repeat $salmon
+      background-size 66% auto
+      z-index 11
+      opacity .75
+      &.menu-open
         display block
+        box-shadow rgba(0,0,0,.1) 1px 1px 4px 0
+
+
+    &, &.hide-des
+      display block
+
+      &.menu-open
+        height 100%
+        box-shadow rgba(0,0,0,0.5) 0 0 12px 4px
+        li
+          display block
+
+      li
+        display none
         width auto !important
         background green
         float none
@@ -335,11 +372,12 @@ ul#nrno-menu
           .text
             padding-top 0
             padding-bottom 0
-            
+            span
+              width auto
+
           br
             display none
-          .text{}
-            
+
 
 #nrno-banner
   position relative
@@ -436,12 +474,12 @@ ul#nrno-menu
 
         small
           font-size 1em //para que small aplique solo en el titulo
-  @media (max-width: 768px)
+  @media (max-width: $screen-sm)
     &.maxi
       &.presentacion
         height 300px !important
     ul.menu
-      vendor(display, flex)
+      vendor display flex
       width 100%
       bottom 0
       flex-wrap wrap
@@ -547,8 +585,8 @@ ul#nrno-menu
         blockquote:first-child
           padding-top 0
           margin-top 0
-    
-  @media (max-width: 768px)
+
+  @media (max-width: $screen-sm)
     .article
       margin-top $paddingBox
       .section
@@ -565,8 +603,13 @@ ul#nrno-menu
         .inner
           p:first-child
             padding-top $paddingBox
-            max-height 87.5%
-            
+            //max-height 87.5% no funciona bien para mobil
+          blockquote
+          text-align left
+            padding 0 $paddingBox *2 0 $paddingBox *2
+            &, &:after
+              background-size 20px auto
+
   .botones
     position absolute
     right $paddingBox *10
@@ -620,8 +663,8 @@ ul#nrno-menu
         span
           animation menuUp ease-in-out 250ms
           display block
-  
-    @media (max-width: 768px)
+
+    @media (max-width: $screen-sm)
       right 0
       bottom 50%
 
@@ -653,12 +696,12 @@ ul#nrno-menu
       background-image url(../img/ico-youtube.png)
     &.Blog
       background-image url(../img/ico-blog.png)
-  @media(max-width: 768px)
+  @media (max-width: $screen-sm)
     &
       display block
       float none
       text-align right
-    
+
 #contenido
 #nrno-vieo
   background $white
@@ -689,7 +732,7 @@ ul#nrno-menu
   .cred_antes
     border-top 1px dotted $gray
     padding-top $paddingBox
-  @media (max-width: 768px)
+  @media (max-width: $screen-sm)
     h2
       padding-top 0
 
@@ -776,7 +819,7 @@ ul#nrno-menu
       .figcaption
       .hover
         display block
-        vendor(display, flex)
+        vendor display flex
         color $white
         position absolute
         text-align center
@@ -847,14 +890,14 @@ ul#nrno-menu
             display none
           .hover
             background-image none
-            
-  @media(max-width: 768px)
+
+  @media (max-width: $screen-sm)
     ul
       li
         width auto !important
         display block
         a
-          vendor(display, flex)
+          vendor display flex
           min-height 0
           .figure
             height 100px
@@ -875,7 +918,7 @@ ul#nrno-menu
           width 66%
           left 33%
           text-align left
-        
+
 .cont-vid
   iframe
     width 100%
@@ -887,7 +930,7 @@ ul#nrno-menu
   position relative
   //scrollbar(rgba(#000,0))
   animation bg_left 40s linear infinite
-  
+
   .envol
     overflow auto
     overflow-y hidden
@@ -1100,7 +1143,7 @@ ul#nrno-menu
     z-index 10px
     &:before
       content '\25B6'
-  @media (max-width: 768px)
+  @media (max-width: $screen-sm)
     img
       width 90%
       left 5%
@@ -1143,12 +1186,12 @@ ul#nrno-menu
     &:hover
       text-indent 1em
       box-shadow rgba(0,0,0,0.25) 2px 2px 6px 0
-      
-  @media (max-width: 768px)
+
+  @media (max-width: $screen-sm)
     h2.titulo_biblio
       padding-top $paddingBox *2
     .cont-zoomify
-      vendor(display, flex)
+      vendor display flex
       flex-direction column-reverse
       .zml-left
       .zml-right
@@ -1162,19 +1205,19 @@ ul#nrno-menu
         border 1px solid $gray4
       .zml-right
         margin auto
-        height auto
-        vendor(display, flex)
+        height 350px//auto no es
+        vendor display flex
         flex-direction column-reverse
         border-radius 0
-        
+
         #myContainer2
           height 300px
-          flex 2
+          flex 3
           width 100%
         p
           flex 1
           margin auto
-      
+
 .clear
   clear bottom
   width 100%

@@ -36,30 +36,30 @@ var util = {
   agent_version : function(){
     var nav_list = ['MSIE_11p','MSIE','Firefox','Chrome','Opera','Safari'];
     navegador = navigator.userAgent;
-    
+
     for(i=0; i < nav_list.length; i++){
-      
+
       var regexp = new RegExp(nav_list[i],'i');
-      
+
       if( nav_list[i]=='MSIE_11p' ){
         //msie11+
         is_navigator = ( navegador.match(/Trident\/\d+.+rv:\d+/i) )? [nav_list[i]] : null;
-        
+
       }else{
         var is_navigator = ( nav_list[i].match('MSIE') )? navegador.match(/MSIE \d+/i) : navegador.match(nav_list[i]);
-        
+
       }
       //console.log(is_navigator  );
-      
+
       //si es el navegador ponga la clase
       if( is_navigator ){
         var clase = is_navigator[0].replace(' ','_').toLowerCase();
         var clase_actual = document.body.getAttribute('class');
         document.body.setAttribute( 'class', clase_actual+' '+clase );
         break;
-        
+
       }
-      
+
     }
 
   },
@@ -104,27 +104,27 @@ jQuery(function(){ menu_active.ini(); });
 //minimizar parrafos grandes
 var minimize_script= {
   inicialize: function(elemento){
-    
+
     var vars =  minimize_script.vars;
     var $content = jQuery(elemento);
     var $bracket = $content.find('.bracket');
-    
-    
+
+
     if($bracket.length){
-    
+
       var $nexts = $bracket.nextAll('p');
-      
+
       if( $nexts.length && !$content.is('.active') ){
-        
+
         //añade vinculo
         var $a_show = jQuery('<a class="show_more">[leer <i class="p">+</i><i class="m">-</i>]</a>');
         var $cont_li = jQuery('<div class="show_cont_a"></div>').append($a_show );
         $content.append( $cont_li );
-        
+
         //añade accion
         $a_show.click(function(e){
           var time = ( $content.is('.active') )? 600 : 0;
-          
+
           if(  $content.is('.mini') ){
             $nexts.slideDown(time);
             $content.removeClass('mini');
@@ -132,29 +132,29 @@ var minimize_script= {
             $nexts.slideUp(time);
             $content.addClass('mini');
           }
-          
+
         });
-        
+
         //primer click
         $a_show.click();
-        
+
         $content.addClass('active');
 
       }
     }
-    
+
   },
   ini: function(){
     minimize_script.vars = {};
     var vars = minimize_script.vars;
     vars.contenedor = jQuery('.minimize_script');
-    
+
     //valida existencia
     if( vars.contenedor.length ){
       vars.contenedor.each(function(ind,ele){
-        
+
         minimize_script.inicialize(ele);
-        
+
       });
     }
   }
@@ -165,23 +165,23 @@ jQuery(function(){  minimize_script.ini(); });
 //*MOSTRAR POPUP*//
 var show_popUp = {
   view : function(este,evento,estilo){
-  
+
     var estylo = estilo || '';
-  
+
     //valida para dejar pasar el vínculo a una nueva ventana
     if( !estylo.match(/Portada y catá?logo/i) ){
-  
+
       //evita click
       util.preventDefault(evento);
       jQuery(este).focus();
-  
+
       var is_biblio_item = (este.parentNode.tagName.match(/li/i))? true : false;
-  
+
       var is_zoomy_item = ( estilo == 'zoomify' )? true : false;
-  
+
       //Declaramos variables
       var vars = ( show_popUp.vars )? show_popUp.vars : show_popUp.ini();
-  
+
       //valida si es un elemento de biblioteca o un botón de banner
       if(is_biblio_item){
         //pega citar
@@ -189,69 +189,69 @@ var show_popUp = {
       }else if( is_zoomy_item ){
         //es zoomyfile
         vars.popUp_pie.innerHTML = '';
-  
+
       }else{
         vars.popUp_pie.innerHTML = este.getElementsByTagName('q')[0].innerHTML;
       }
-  
+
       //pega url en img o en iframe
       var href = este.getAttribute('href') || '';
       if( href.match(/\.((jpe?g)|(png)|(gif))$/i) ){
-  
+
         var w_width = document.body.offsetWidth;
         var w_height = document.body.offsetHeight;
-  
+
         var i_new = new Image();
         var i_new_h;
         var i_new_w;
         i_new.src = href;
-  
+
         vars.image_src.src = href;
         vars.image_src.style.display= "block";
-  
+
         function image_put(){
-  
+
           if( i_new_h > w_height ){
-  
+
             vars.image_src.style.width = 'auto';
             vars.image_src.style.maxHeight = (w_height*0.66)+'px';
             //console.log('mas alto: ', vars.image_src.style.maxHeight);
-  
+
           }else if( i_new_w > w_width ){
-  
+
             vars.image_src.style.height = 'auto';
             vars.image_src.style.maxWidth = (vars.iframe_cont.offsetWidth - 20)+'px';
             //console.log('mas ancho: ', vars.image_src.style.maxWidth);
-  
+
           }
         //contenedor width
         setTimeout(function(){
           vars.iframe_cont.style.width = (vars.image_src.offsetWidth)+'px';
         },500);
-        
-        
+
+
       }
-  
+
       i_new.onload= function(e){
         i_new_w= i_new.width;
         i_new_h= i_new.height;
         //alert( i_new_w+' '+i_new_h );
-  
+
         setTimeout(function(){
           image_put();
         },100);
-  
+
       }
-  
-  
+
+
       }else{
         vars.iframe_src.src = href;
         vars.iframe_src.style.display="block";
       }
-  
+
       //muestra popup
       util.addClass(vars.body,'show-popUp');
-  
+
       //añade evento escape al body
       if( !jQuery('body').is('.e_key_esc') ){
         jQuery('body').addClass('e_key_esc').bind('keyup',function(e){
@@ -300,7 +300,7 @@ var show_popUp = {
       vars.image_src.style.display="none";
       vars.iframe_src.src = '';
       vars.iframe_src.style.display="none";
-      
+
       //quita stilos
       vars.iframe_cont.setAttribute('style','');
       vars.image_src.setAttribute('style','');
@@ -544,63 +544,85 @@ jQuery(function(){min_banner.ini()});
 //*ZOOMIY*//
 var zoomify_click = {
   buscar_vinculos: function(){
-    
+
     var vars = zoomify_click.vars;
     vars.repeats = 0;//repeticiones si no encuentra nada
     vars.$vinculos = null;
-    
+
     vars.time = setInterval(function(){
-      
+
       vars.$vinculos = jQuery('a:has(img)',vars.$cont_zoomfy);
-      
+
       if( vars.$vinculos.length ){
-        
+
         zoomify_click.eventos();
         //clearInterval( vars.time );
-        
+
       }else if( vars.repeats == 10 ){
-        
+
         clearInterval( vars.time );
-        
+
       }
       vars.repeats++;
-      
+
     },250)
-    
+
   },
   eventos: function(){
     var vars = zoomify_click.vars;
     vars.$vinculos.each(function(event,element){
-        
+
         var $vinculo = jQuery(element);
-        
+
         if( !$vinculo.is( '.evento_popup' ) ){
-          
+
             $vinculo.click(function(e){
-              
+
               show_popUp.view( element, e, 'zoomify' );
-              
+
             });
-            
+
             $vinculo.addClass( 'evento_popup' );
-            
+
             //console.log( 'elemento: ', element );
         }
-        
+
       }
     );
-    
+
   },
   ini: function(){
-    
+
     zoomify_click.vars = {};
     var vars = zoomify_click.vars;
     vars.$cont_zoomfy = jQuery('#zoomify');
-    
+
     if( vars.$cont_zoomfy.length ){
       zoomify_click.buscar_vinculos();
     }
-    
+
   }
 };
 jQuery( function(){ zoomify_click.ini(); } );
+
+
+//*BOTÓN MENÚ RESPONSIVE*//
+var menu_button= {
+  togleClick: function(este,evento){
+    var vars = {};
+    vars.$btn = jQuery(este);
+    vars.$cont = jQuery('#nrno-menu');
+
+    console.log( vars.$cont.length );
+
+    if( vars.$cont.is('.menu-open') ){
+        vars.$cont.removeClass('menu-open');
+        vars.$btn.removeClass('menu-open');
+    }else{
+        vars.$cont.addClass('menu-open');
+        vars.$btn.addClass('menu-open');
+    }
+
+  },
+  ini: function(){}
+};

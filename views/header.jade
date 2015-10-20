@@ -14,6 +14,7 @@ div#nrno-popUp(onclick="show_popUp.hide_back(this,event)")
       img#image-src(onclick="util.tgClass(this,'zoom')")
     div#popUp-pie
   
+div.menu-button(onclick="menu_button.togleClick(this,event)")
 ul#nrno-menu(class="hide-des #{contenido.id}")
   - each link, index in db.menu
     li(class=link.clase)
