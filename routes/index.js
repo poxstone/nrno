@@ -3,6 +3,11 @@ var router = express.Router();
 var json_db = require('../controllers/json/DB');
 
 /* GET home page. */
+router.get('/', function(req, res, next) {
+  var qry = req.query;
+  res.render('presentacion', { glb:db.glb, db:json_db, qr:qry, contenido:json_db.presentacion});
+});
+
 router.get('/antonio-narino-presentacion', function(req, res, next) {
   var qry = req.query;
   res.render('presentacion', { glb:db.glb, db:json_db, qr:qry, contenido:json_db.presentacion});
